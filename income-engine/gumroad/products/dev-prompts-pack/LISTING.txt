@@ -1,0 +1,30 @@
+TITLE:       150 Developer Productivity Prompts
+PRICE:       $14
+CATEGORY:    Developer Tools / Prompts
+FILE:        upload PRODUCT.md as "Software / File" (or export the prompts to a .txt/.md bundle)
+
+DESCRIPTION (copy everything below the line):
+------------------------------------------------------------------------
+Battle-tested AI prompts that turn ChatGPT, Claude, and Copilot into a senior
+engineering pair. 150 copy-paste prompts across 6 categories: Code Review,
+Debugging, Architecture Design, Refactoring, Testing, and Documentation.
+
+What you get:
+- 150 ready-to-use prompts covering the full development lifecycle
+- Works with ChatGPT, Claude, Copilot, or any LLM
+- Copy-paste templates for code review, debugging, architecture, refactoring,
+  testing, and docs
+
+Who it's for: solo developers, engineering teams, code reviewers, and tech
+leads who want senior-engineer-quality output from every AI conversation.
+
+Note: this is a prompt library, not a get-rich scheme — it saves real
+engineering time. All prompts are original and reusable.
+------------------------------------------------------------------------
+
+PUBLISH STEPS:
+1. Gumroad > Products > New product
+2. Name = TITLE above; Price = $14; Category = Developer Tools
+3. Add file: upload PRODUCT.md (access = "Software / File")
+4. Paste DESCRIPTION above
+5. Publish

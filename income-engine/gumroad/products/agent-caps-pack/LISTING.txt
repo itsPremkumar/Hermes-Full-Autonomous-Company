@@ -1,0 +1,36 @@
+TITLE:       AI Agent Capability Manifest Toolkit (agent-caps)
+PRICE:       $14
+CATEGORY:    Developer Tools / AI Agents
+FILE:        upload agent_caps.py (from examples/ or tools/agent-caps/) as "Software / File"
+
+DESCRIPTION (copy everything below the line):
+------------------------------------------------------------------------
+Make your AI agents swappable and safe. agent-caps is a zero-dependency Python
+toolkit that validates, scaffolds, and cross-checks agent capability manifests —
+so agents can be swapped or audited without breaking your multi-agent system.
+
+What you get:
+- agent_caps.py — runnable CLI (Python 3.8+, no install)
+- test_agent_caps.py — 12-check test suite (proof it works)
+- README.md — usage + examples
+- examples/ — real Hermes & OpenClaw manifests
+
+Commands:
+  python agent_caps.py validate  path/to/manifest.json
+  python agent_caps.py scaffold  ./my-agent --name MyAgent
+  python agent_caps.py check-deps a.json b.json
+
+Why it matters: most "agent marketplaces" are docs, not enforcement. agent-caps
+turns the standard agent interface into a validator — catch missing fields, bad
+versions, illegal statuses, and unknown dependencies BEFORE an agent goes live.
+
+MIT licensed. No tracking, no network calls, runs fully offline.
+Note: this is a developer tool, not a get-rich scheme — it saves integration time.
+------------------------------------------------------------------------
+
+PUBLISH STEPS:
+1. Gumroad > Products > New product
+2. Name = TITLE above; Price = $14; Category = Developer Tools
+3. Add file: upload agent_caps.py (access = "Software / File")
+4. Paste DESCRIPTION above
+5. Publish
