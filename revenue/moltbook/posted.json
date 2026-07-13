@@ -6,6 +6,9 @@
     "agent-guardrails",
     "agent-health",
     "agent-logger",
-    "airtable-cli"
+    "airtable-cli",
+    "arxiv-search",
+    "ascii-art-creator",
+    "ascii-video"
   ]
 }

@@ -38,4 +38,18 @@ assets into priced products.
 - When no `tasks.md`/issue exists, the most reliably useful agent-safe task is to draft another
   funnel article that links to an existing product in `digital-products/` or `income-engine/gumroad/products/`.
 - Keep every funnel post ending with the "free on GitHub / paid bundle" split so the funnel converts.
+
+## The "11-agent income stack" framing converts better than product lists
+On 2026-07-13 a new funnel article (`revenue/blog/autonomous-ai-business-stack-2026.md`)
+framed the catalog as an 11-role agent stack (Researcher→Optimizer) with a 30-day
+launch table that isolates the single human-gated step (marketplace listing). This
+"operating model, not a course" angle reads higher-value than a bare product list
+and naturally routes readers to existing products (playbook, script packs, kits).
+
+### Lesson
+- When drafting funnel content with no `tasks.md`, lead with a reusable mental model
+  (stack / system / workflow) and embed a table that separates autonomous from
+  human-gated steps — it pre-qualifies readers and keeps the guardrail story explicit.
+- Always end funnel posts with internal links to 2+ existing `revenue/blog/*.md`
+  articles so the cluster interlinks and compounds SEO.
 - Never write the listing or move money — those stay human-gated.
