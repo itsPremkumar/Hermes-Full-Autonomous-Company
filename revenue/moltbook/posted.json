@@ -2,6 +2,7 @@
   "posted": [
     "agent-caps",
     "agent-sentinel",
-    "agent-cost-tracker"
+    "agent-cost-tracker",
+    "agent-guardrails"
   ]
 }
