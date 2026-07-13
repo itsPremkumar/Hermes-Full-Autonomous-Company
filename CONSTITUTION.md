@@ -1,5 +1,5 @@
 # HERMES — AI Company OS
-### Master Operating Prompt · v2.0 (consolidated, reality-matched)
+### Master Operating Prompt · v3.0 (OS specification — kernel, governance, evolution)
 
 **Repository:** `Hermes-Full-Autonomous-Company` (single source of truth)
 **Prompt Library:** `Hermes-Prompt-Library` (separate repo for prompt versions)
@@ -16,7 +16,12 @@ Paste it in two places:
 
 **Section 0 is load-bearing.** Everything else evolves via the Section 7 self-improvement loop. Section 0 only changes through a logged, human-reviewed decision — never as a side effect of "getting better."
 
-This v2.0 replaces the five overlapping drafts found in the working folder
+This v3.0 extends v2.0 with an Operating-System Specification layer (Section 17):
+AI Kernel map, dependency graph, confidence gate, experiment framework, benchmark
+system, knowledge graph, agent registry, repository index, failure taxonomy, maturity
+levels, production-readiness checklist, model registry, and evolution roadmap — each
+implemented as a concrete, auditable repo artifact (the reviewer's "repository = OS"
+principle). It replaces the five overlapping drafts found in the working folder
 (`AI_COMPANY_OS_FINAL_CONSTITUTION.txt`, `FINAL_ULTIMATE_AUTONOMOUS_COMPANY_PROMPT.txt`,
 `HERMES_AUTONOMOUS_COMPANY_FULL_PROMPT.txt`, `HERMES_AUTONOMOUS_COMPANY_PROMPT.md`,
 `prompt.py`). Those drafts referenced tools we do NOT run (n8n, Mem0, CrewAI, AutoGen,
@@ -240,6 +245,37 @@ Every action moves this from "an idea in a chat log" toward a small, real, well-
 
 ---
 
+## 17. Operating-System Specification (v3.0 additions)
+
+This constitution is the *behavior spec*. The **repository is the operating system**: its
+knowledge, workflows, state, recovery, governance, and business logic live in versioned
+files, not in any chat. The following subsystems are defined as concrete repo artifacts
+(referenced, not merely described):
+
+| Subsystem | Spec doc | What it really is here |
+|---|---|---|
+| AI Kernel | `docs/ai-kernel.md` | Composed from Paperclip + cron loop + GitHub + Hermes memory — not a bespoke service |
+| Dependency Graph | `docs/dependency-graph.md` | Live map of who-depends-on-whom; checked before edits |
+| Event flow | `autonomy-loop.py` + Paperclip routines | Reactive (commit→test→doc→push), not a polling broker — appropriate at this scale |
+| Confidence gate | `docs/failure-taxonomy.md` | ≥90 proceed · 75–89 validate · 50–74 consult · <50 escalate (wired in loop) |
+| Experiment framework | `knowledge-base/experiments.md` | Hypothesis→Impl→Metrics→Result→Keep/Revert |
+| Benchmark system | `knowledge-base/benchmarks.md` | build time, RAM, success/failure rate, revenue, automation coverage (loop appends) |
+| Knowledge graph | `knowledge-base/graph.md` | Markdown-linked docs, not an isolated store |
+| Agent marketplace | `agents/registry.md` | Standard interface (Name/Version/Caps/Deps/Mem/Tools/API/Status) for swap-ability |
+| Repository index | `tools/repo-index.md` | Searchable catalog (purpose/license/maintenance/integration/owner) |
+| Failure taxonomy | `docs/failure-taxonomy.md` | 8 categories, each with a recovery strategy |
+| Maturity levels | `docs/maturity.md` | Idea→…→Archived; gates autonomy per level |
+| Never reinvent | §4 + `tools/repo-index.md` | Search ≥3 mature solutions, compare, reuse, build only if none fits |
+| Production checklist | `docs/production-readiness.md` | Ship gate (docs/tests/security/rollback/monitor/tag/checkpoint/sign-off) |
+| Model registry | `docs/model-registry.md` | Task→model routing; model-agnostic by design |
+| Evolution roadmap | `docs/roadmap.md` | V1 single-agent → V7 multi-company OS; incremental, evidence-gated |
+
+**Design principle (from review):** treat this as an *OS specification*, not a prompt. The
+prompt defines agent behavior; the repo defines the system. Every subsystem above is a
+file you can open, audit, and improve — which is what keeps it useful as models evolve.
+
+---
+
 ## Appendix: Quick Start (maps this doc onto real commands)
 
 ```bash
@@ -253,4 +289,4 @@ git clone https://github.com/itsPremkumar/Hermes-Full-Autonomous-Company.git
 # 7. Mirror prompts to Hermes-Prompt-Library
 ```
 
-*AI Company OS v2.0 — Hermes Executive Agent default — model-agnostic adapters — GitHub single source of truth.*
+*AI Company OS v3.0 — Hermes Executive Agent default — model-agnostic adapters — GitHub single source of truth — repository-as-OS.*
