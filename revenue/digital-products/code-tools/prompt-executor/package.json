@@ -1,0 +1,30 @@
+{
+  "name": "prompt-executor",
+  "version": "1.0.0",
+  "description": "A tiny, dependency-free CLI that takes a prompt category and prints the matching expert prompt. $9 digital product.",
+  "keywords": [
+    "cli",
+    "prompt",
+    "prompts",
+    "ai",
+    "llm",
+    "productivity"
+  ],
+  "license": "MIT",
+  "author": "Paperclip Company",
+  "bin": {
+    "prompt-executor": "bin/prompt-executor.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "node bin/prompt-executor.js",
+    "test": "node test/prompt-executor.test.js"
+  }
+}
