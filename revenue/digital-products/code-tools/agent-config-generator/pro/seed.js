@@ -207,6 +207,13 @@ export function parseArgs(argv) {
       const key = body.slice(0, eq);
       const value = coerceOverride(body.slice(eq + 1));
       opts.overrides[key] = value;
+    } else if (a === '--set') {
+      const body = argv[++i];
+      const eq = body.indexOf('=');
+      if (eq === -1) throw new Error(`Invalid --set (expected key=value): ${a} ${body}`);
+      const key = body.slice(0, eq);
+      const value = coerceOverride(body.slice(eq + 1));
+      opts.overrides[key] = value;
     } else {
       throw new Error(`Unknown argument: ${a}`);
     }
@@ -319,4 +326,6 @@ if (isMain) {
     });
 }
 
+export { VERSION };
+export { coerceOverride };
 export default { loadTemplate, applyOverrides, validateConfig, postToApi, parseArgs, main, VERSION };
