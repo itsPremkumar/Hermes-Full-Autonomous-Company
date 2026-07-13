@@ -1,0 +1,111 @@
+{
+  "service": "lead-enrichment",
+  "gig_title": "I will enrich your leads with automated web research",
+  "price": 300,
+  "tags": [
+    "lead generation",
+    "data enrichment",
+    "web scraping",
+    "b2b leads",
+    "prospect list",
+    "n8n automation"
+  ],
+  "description": "\ud83d\udd27 I will enrich your leads with automated web research\n\nI deliver a clean CSV of enriched leads (emails, titles, socials) from any company list using n8n + Firecrawl/Crawl4AI + maps-cli patterns.\n\n\u2705 What you get:\n\u2022 Done-for-you setup \u2014 no technical skills needed\n\u2022 Free, open-source tools (you own it, no lock-in)\n\u2022 $0.10\u2013$0.50/lead or $29\u2013$99/mo SaaS tier\n\u2022 7-day support after delivery\n\n\ud83d\udce6 Packages:\n\u2022 Basic ($75, 3 days, 1 rev): Setup only, 1 workflow, Email support\n\u2022 Standard ($300, 5 days, 2 rev): Setup + test, Up to 3 workflows, Loom walkthrough, 7-day support\n\u2022 Premium ($600, 7 days, 3 rev): Full system, Unlimited workflows, Monthly retainer option, Priority support\n\n\ud83d\ude80 How it works:\n1. You tell me your stack/goal (form on order)\n2. I build & test the automation\n3. I hand over + record a 5-min Loom walkthrough\n\n\u26a1 Why me: I use the same tools that power a 31-skill autonomous company.\n",
+  "packages": [
+    {
+      "name": "Basic",
+      "price": 75,
+      "delivery": "3 days",
+      "revisions": 1,
+      "features": [
+        "Setup only",
+        "1 workflow",
+        "Email support"
+      ]
+    },
+    {
+      "name": "Standard",
+      "price": 300,
+      "delivery": "5 days",
+      "revisions": 2,
+      "features": [
+        "Setup + test",
+        "Up to 3 workflows",
+        "Loom walkthrough",
+        "7-day support"
+      ]
+    },
+    {
+      "name": "Premium",
+      "price": 600,
+      "delivery": "7 days",
+      "revisions": 3,
+      "features": [
+        "Full system",
+        "Unlimited workflows",
+        "Monthly retainer option",
+        "Priority support"
+      ]
+    }
+  ],
+  "n8n_workflow": {
+    "name": "deliver-lead-enrichment",
+    "nodes": [
+      {
+        "parameters": {},
+        "name": "Webhook (order intake)",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 1,
+        "position": [
+          0,
+          0
+        ]
+      },
+      {
+        "parameters": {},
+        "name": "Build automation",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 1,
+        "position": [
+          300,
+          0
+        ]
+      },
+      {
+        "parameters": {},
+        "name": "Deliver + notify",
+        "type": "n8n-nodes-base.emailSend",
+        "typeVersion": 1,
+        "position": [
+          600,
+          0
+        ]
+      }
+    ],
+    "connections": {
+      "Webhook (order intake)": {
+        "main": [
+          [
+            {
+              "node": "Build automation",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Build automation": {
+        "main": [
+          [
+            {
+              "node": "Deliver + notify",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "note": "Tools: n8n + Firecrawl/Crawl4AI + maps-cli patterns. Replace code node with your delivery logic."
+  }
+}

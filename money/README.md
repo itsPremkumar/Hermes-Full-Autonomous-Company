@@ -1,38 +1,33 @@
-# 💰 Money Pipeline #1 — Fiverr Gig Factory
+# 💰 Money Pipelines — Autonomous Income System
 
-Part of the autonomous money system. Generates ready-to-publish Fiverr gig packages
-+ importable n8n workflow stubs for 8 validated automation services.
+Part of the autonomous money system. Each pipeline turns free OSS tools from the
+`ai-company` blueprint into a sellable, automated income stream.
 
-## What it does
-`pipeline1_fiverr_gig_factory.py` turns any of 8 automation services into:
-- A gig **title** + **description** (outcome-focused, not "AI")
-- **3 pricing tiers** (Basic / Standard / Premium) with validated 2026 rates
-- **SEO tags** for Fiverr discoverability
-- An **n8n workflow JSON** stub for the delivery automation
+## Pipeline #1 — Fiverr Gig Factory ✅
+`pipeline1_fiverr_gig_factory.py` → generates 8 ready-to-publish Fiverr gigs
+(title, description, 3 tiers, SEO tags) + n8n delivery stub.
+- **Gigs generated:** `gigs/*.json` (8 files, paste-ready)
+- Validated 2026 pricing: $120–$1500/gig, 95–99% margin
+
+## Pipeline #2 — Cold-Email Agency ✅
+`pipeline2_cold_email_agency.py` → generates a done-for-you cold-outreach package
+(3-touch sequence, subject lines, n8n workflow, onboarding brief, report template).
+- **Packages generated:** `email_packs/*.json` (5 niches)
+- Validated 2026 pricing: $450–$700 setup + $99–$149/mo management, 95% margin
+- Tools: n8n + Listmonk + Postal + Stirling-PDF (all free/self-hosted)
 
 ## Usage
 ```bash
-python pipeline1_fiverr_gig_factory.py --list                 # show 8 services
-python pipeline1_fiverr_gig_factory.py --service email-automation --out gig.json
-python pipeline1_fiverr_gig_factory.py self-test             # verify all 8
+python pipeline1_fiverr_gig_factory.py --list
+python pipeline1_fiverr_gig_factory.py --service email-automation --out gigs/email.json
+python pipeline1_fiverr_gig_factory.py self-test
+
+python pipeline2_cold_email_agency.py --list
+python pipeline2_cold_email_agency.py --niche saas --out email_packs/saas.json
+python pipeline2_cold_email_agency.py self-test
 ```
 
-## Services (validated pricing from MONEY_AUTOMATION_IDEAS.md)
-| Service | Gig price | Margin note |
-|---------|----------|-------------|
-| email-automation | $500 | $3–$8 cost = 95–99% margin |
-| chatbot | $800 | + $99–$299/mo retainer |
-| video | $250 | your Automated-Video-Generator edge |
-| lead-enrichment | $300 | $0.10–$0.50/lead |
-| seo-audit | $149 | $49–$199/mo recurring |
-| contract | $120 | $50–$300/doc |
-| social-content | $400 | $300–$800/mo/client |
-| rag-kb | $1500 | + $99–$199/mo hosting |
-
-## Next steps to actual income
-1. Generate gig JSON for your top 3 services
-2. Paste titles/descriptions into Fiverr gig creator
-3. Import the n8n workflow stub, fill the code node with real delivery logic
-4. Publish → first $ in 1–2 weeks (340% YoY Fiverr AI-gig growth)
+## Idea bank
+See `MONEY_AUTOMATION_IDEAS.md` (12 validated pipelines ranked by speed-to-first-dollar).
 
 > Zero dependencies (stdlib only). Part of `Hermes-Full-Autonomous-Company/money/`.

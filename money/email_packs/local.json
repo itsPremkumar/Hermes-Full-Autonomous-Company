@@ -1,0 +1,140 @@
+{
+  "niche": "local",
+  "audience": "local service businesses (roofing, HVAC, legal, dental)",
+  "pain": "no systematic lead generation beyond word-of-mouth",
+  "offer": "a local cold-email blast that books 15-30 calls/month",
+  "pricing": {
+    "setup": 450,
+    "monthly_management": 99,
+    "ai_cost_per_delivery": 3,
+    "margin_pct": 95
+  },
+  "sequence": [
+    {
+      "touch": 1,
+      "day": 0,
+      "goal": "open loop / curiosity",
+      "body": "Hi {{first_name}}, saw {trigger}. Quick q - are you currently using anything for {pain}? If it's on the roadmap this quarter, happy to share how similar {audience} are solving it. {{sig}}"
+    },
+    {
+      "touch": 2,
+      "day": 3,
+      "goal": "value / proof",
+      "body": "Hi {{first_name}}, following up with a concrete example: we helped a {audience_company} go from 0 to 14 demos/mo in 6 weeks using {offer}. Worth a 15-min look? {{sig}}"
+    },
+    {
+      "touch": 3,
+      "day": 7,
+      "goal": "soft close / break-up",
+      "body": "Hi {{first_name}}, I'll assume timing isn't right and stop here. If {pain} ever becomes a priority, just reply 'later' and I'll send the playbook. {{sig}}"
+    }
+  ],
+  "subject_lines": [
+    "{{first_name}}, {service} in {city}?",
+    "quick q re: {property}",
+    "referred by a neighbor in {zip}"
+  ],
+  "n8n_workflow": {
+    "name": "cold-email-outreach",
+    "nodes": [
+      {
+        "name": "CRON (daily send)",
+        "type": "n8n-nodes-base.cron",
+        "position": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "Enrich leads (Firecrawl/API)",
+        "type": "n8n-nodes-base.httpRequest",
+        "position": [
+          300,
+          0
+        ]
+      },
+      {
+        "name": "Branch by touch (1/2/3)",
+        "type": "n8n-nodes-base.switch",
+        "position": [
+          600,
+          0
+        ]
+      },
+      {
+        "name": "Send via Listmonk/Postal",
+        "type": "n8n-nodes-base.emailSend",
+        "position": [
+          900,
+          0
+        ]
+      },
+      {
+        "name": "Log to Google Sheet/DB",
+        "type": "n8n-nodes-base.googleSheets",
+        "position": [
+          900,
+          200
+        ]
+      },
+      {
+        "name": "Weekly report (Stirling-PDF)",
+        "type": "n8n-nodes-base.code",
+        "position": [
+          1200,
+          0
+        ]
+      }
+    ],
+    "connections": {
+      "CRON (daily send)": {
+        "main": [
+          [
+            {
+              "node": "Enrich leads (Firecrawl/API)",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Enrich leads (Firecrawl/API)": {
+        "main": [
+          [
+            {
+              "node": "Branch by touch (1/2/3)",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Branch by touch (1/2/3)": {
+        "main": [
+          [
+            {
+              "node": "Send via Listmonk/Postal",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Send via Listmonk/Postal": {
+        "main": [
+          [
+            {
+              "node": "Log to Google Sheet/DB",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "tools": "n8n + Listmonk + Postal + Stirling-PDF (all free/self-hosted)",
+    "note": "Replace enrich + send nodes with client's real list & domain."
+  },
+  "onboarding_brief": "Client: ___\nNiche: local\nAudience: local service businesses (roofing, HVAC, legal, dental)\nList source: ___\nOffer: a local cold-email blast that books 15-30 calls/month\nVolume/mo: ___\nDeliverables: 3-touch sequence + Listmonk sender + weekly report",
+  "monthly_report_template": "Month: ___\nSent: ___\nOpens: ___ ({}%)\nReplies: ___\nMeetings booked: ___\nPipeline value: ___\nNext actions: ___"
+}

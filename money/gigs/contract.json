@@ -1,0 +1,111 @@
+{
+  "service": "contract",
+  "gig_title": "I will generate your legal contract or proposal",
+  "price": 120,
+  "tags": [
+    "legal document",
+    "contract generator",
+    "proposal writer",
+    "freelance contract",
+    "nda",
+    "docassemble"
+  ],
+  "description": "\ud83d\udd27 I will generate your legal contract or proposal\n\nI deliver a tailored, legally-structured doc from a simple intake form using DocAssemble + Hermes drafting + your doc-extractor skill.\n\n\u2705 What you get:\n\u2022 Done-for-you setup \u2014 no technical skills needed\n\u2022 Free, open-source tools (you own it, no lock-in)\n\u2022 $50\u2013$300/doc, $5 AI cost\n\u2022 7-day support after delivery\n\n\ud83d\udce6 Packages:\n\u2022 Basic ($30, 3 days, 1 rev): Setup only, 1 workflow, Email support\n\u2022 Standard ($120, 5 days, 2 rev): Setup + test, Up to 3 workflows, Loom walkthrough, 7-day support\n\u2022 Premium ($240, 7 days, 3 rev): Full system, Unlimited workflows, Monthly retainer option, Priority support\n\n\ud83d\ude80 How it works:\n1. You tell me your stack/goal (form on order)\n2. I build & test the automation\n3. I hand over + record a 5-min Loom walkthrough\n\n\u26a1 Why me: I use the same tools that power a 31-skill autonomous company.\n",
+  "packages": [
+    {
+      "name": "Basic",
+      "price": 30,
+      "delivery": "3 days",
+      "revisions": 1,
+      "features": [
+        "Setup only",
+        "1 workflow",
+        "Email support"
+      ]
+    },
+    {
+      "name": "Standard",
+      "price": 120,
+      "delivery": "5 days",
+      "revisions": 2,
+      "features": [
+        "Setup + test",
+        "Up to 3 workflows",
+        "Loom walkthrough",
+        "7-day support"
+      ]
+    },
+    {
+      "name": "Premium",
+      "price": 240,
+      "delivery": "7 days",
+      "revisions": 3,
+      "features": [
+        "Full system",
+        "Unlimited workflows",
+        "Monthly retainer option",
+        "Priority support"
+      ]
+    }
+  ],
+  "n8n_workflow": {
+    "name": "deliver-contract",
+    "nodes": [
+      {
+        "parameters": {},
+        "name": "Webhook (order intake)",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 1,
+        "position": [
+          0,
+          0
+        ]
+      },
+      {
+        "parameters": {},
+        "name": "Build automation",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 1,
+        "position": [
+          300,
+          0
+        ]
+      },
+      {
+        "parameters": {},
+        "name": "Deliver + notify",
+        "type": "n8n-nodes-base.emailSend",
+        "typeVersion": 1,
+        "position": [
+          600,
+          0
+        ]
+      }
+    ],
+    "connections": {
+      "Webhook (order intake)": {
+        "main": [
+          [
+            {
+              "node": "Build automation",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Build automation": {
+        "main": [
+          [
+            {
+              "node": "Deliver + notify",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "note": "Tools: DocAssemble + Hermes drafting + your doc-extractor skill. Replace code node with your delivery logic."
+  }
+}
