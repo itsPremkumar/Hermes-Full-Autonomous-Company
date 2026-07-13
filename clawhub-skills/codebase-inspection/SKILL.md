@@ -1,86 +1,117 @@
 ---
 name: codebase-inspection
-version: 1.0.0
-description: Analyze codebases: lines of code, language breakdowns, file-type ratios, and complexity metrics. Zero deps (Python stdlib).
-tags: ["codebase", "analysis", "metrics", "devtools", "python", "cli"]
+version: 2.0.0
+description: Advanced codebase analysis with HTML reports, git-aware diffs, trend tracking, SVG badges, CSV export, and CI/CD integration. Zero deps (Python stdlib).
+tags: ["codebase", "analysis", "metrics", "devtools", "python", "cli", "ci", "reports"]
 ---
 
-# Codebase Inspector
+# Codebase Inspector v2 🚀
 
-A zero-dependency Python CLI tool that walks any directory tree and reports detailed codebase statistics — lines of code per language, blank lines, comment lines, file counts, and language distribution ratios.
+A zero-dependency Python CLI that walks any directory tree and delivers **production-grade codebase intelligence** — language breakdowns, line counts, complexity metrics, visual HTML reports, historical trend tracking, and CI-ready output formats.
+
+## 🆕 What's New in v2
+
+| Feature | Description |
+|---------|-------------|
+| 📊 **HTML Reports** | Full-color bar charts, summary cards, top-files table |
+| 📈 **Trend Tracking** | `--snapshot` + `--trend` to watch your codebase grow over time |
+| 🔍 **Git-aware Diff** | `--diff <dir>` compare two branches/checkouts |
+| 🏷️ **SVG Badge** | `--badge` generates a shields.io badge URL for your README |
+| 📋 **CSV Export** | `--csv` for spreadsheet import |
+| 📂 **File-level Detail** | Top 20 largest files with location + language |
+| ⚙️ **Exclusion Patterns** | `--exclude "target,.build"` skip custom dirs |
+| 🧪 **Built-in Self-test** | `self-test` subcommand with 13 checks |
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/codebase-inspection/main/codebase_inspector.py
+
 # Or copy the file anywhere — it's self-contained.
 ```
-
-## Usage
-
-### Basic scan
-```bash
-python codebase_inspector.py /path/to/project
-```
-
-### JSON output (for programmatic consumption)
-```bash
-python codebase_inspector.py /path/to/project --json
-```
-
-### Example output
-```
-Codebase: /home/user/projects/my-app
-
-Language             Files    Lines    Blank  Comments
-Python                  42     3845      412       189
-JavaScript              18     2104      198        76
-TypeScript               7     1567      145        34
-Markdown                12      845      210         0
-HTML                     5      423       42         5
-JSON                     8      312        0         0
-CSS                      3      189       24         8
-YAML                     4       78       12         3
-------------------------------------------------------------------------
-TOTAL                   99     9363     1043       315
-```
-
-## Features
-
-- **Automatic language detection** — recognizes 25+ file extensions from `.py` to `.toml`
-- **Smart directory skipping** — ignores `.git`, `node_modules`, `__pycache__`, `venv`, `dist`, `.next`, and other build artifacts
-- **Blank line and comment counting** — identifies comment lines (starting with `#`, `//`, `/*`, etc.)
-- **JSON mode** — machine-readable output for CI/CD pipelines and dashboards
-- **Cross-platform** — works on Windows, macOS, Linux
-- **Offline** — no network calls, no telemetry
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `python codebase_inspector.py <dir>` | Analyze directory and print human-readable report |
-| `python codebase_inspector.py <dir> --json` | Output results as JSON |
-| `python codebase_inspector.py <dir> --sort` | Sort by line count (default) |
+| `python codebase_inspector.py <dir>` | Analyze and print human-readable report |
+| `python codebase_inspector.py <dir> --json` | JSON output for pipelines |
+| `python codebase_inspector.py <dir> --html report.html` | Generate visual HTML report |
+| `python codebase_inspector.py <dir> --csv` | CSV for spreadsheet import |
+| `python codebase_inspector.py <dir> --badge` | SVG badge URL for README |
+| `python codebase_inspector.py <dir> --snapshot` | Save as trend data point |
+| `python codebase_inspector.py <dir> --trend` | Show historical trends |
+| `python codebase_inspector.py <dir> --diff <dir2>` | Compare two codebases |
+| `python codebase_inspector.py <dir> --exclude "dir1,dir2"` | Skip custom directories |
+| `python codebase_inspector.py self-test` | Run built-in tests (13 checks) |
 
-## How it works
+## Example Output
 
-The tool walks the directory tree using `os.walk()`, reads each text file, and categorizes it by file extension. For every file it counts:
-1. **Total lines** — all lines in the file
-2. **Blank lines** — lines that are empty or contain only whitespace
-3. **Comment lines** — lines starting with `#`, `//`, `/*`, `*`, or `--`
+### Text Report
+```
+Codebase: /home/user/projects/my-app
 
-Languages are mapped from file extensions (`.py` → Python, `.js` → JavaScript, `.ts` → TypeScript, etc.). Unrecognized extensions are grouped under "Other".
+Language             Files    Lines    Blank  Comments    Code
+Python                  42     3845      412       189    3244
+JavaScript              18     2104      198        76    1830
+TypeScript               7     1567      145        34    1388
+Markdown                12      845      210         0     635
+HTML                     5      423       42         5     376
+JSON                     8      312        0         0     312
+CSS                      3      189       24         8     157
+YAML                     4       78       12         3      63
+------------------------------------------------------------------------
+TOTAL                   99     9363     1043       315    8005
 
-## Use cases
+Avg lines/file: 94.6
+Comment density: 3.4%
 
-- **Due diligence** — before refactoring, know which languages dominate
-- **CI gating** — enforce file-type ratio rules in pull requests
-- **Migration planning** — track language adoption over time
-- **Cost estimation** — rough project size for quotes or timelines
-- **Portfolio display** — generate language-breakdown badges for README
+Top 10 largest files:
+   1. src/app.py (245 lines, Python)
+   2. src/components/Header.tsx (189 lines, TypeScript)
+```
 
-## Example: CI integration
+### HTML Report
+```
+python codebase_inspector.py /path/to/project --html report.html
+→ HTML report: /cwd/report.html
+```
+The HTML report includes: 6 summary cards (Files, Lines, Avg L/file, Comments%, Code Lines, Blank Lines), a color-coded language breakdown table with visual bars, and a top-10 largest files table.
+
+### Trend Tracking
+```bash
+# First run (baseline)
+python codebase_inspector.py . --snapshot
+
+# After some development
+python codebase_inspector.py . --snapshot
+
+# View the trend
+python codebase_inspector.py . --trend
+```
+
+### Diff Two Checkouts
+```bash
+python codebase_inspector.py ./branch-a --diff ./branch-b
+```
+
+## Features
+
+- **Automatic language detection** — 40+ extensions mapped to 30+ languages
+- **Smart directory skipping** — `.git`, `node_modules`, `__pycache__`, `venv`, `dist`, `.next`, `target`, `.idea` + custom via `--exclude`
+- **Blank line and comment counting** — identifies comment prefixes: `#`, `//`, `/*`, `--`, `;`, `%` and others
+- **HTML visual report** — bar charts, summary statistics, mobile-friendly
+- **Historical trend tracking** — snapshot-based, inspect codebase growth over time
+- **Codebase diffing** — compare two directories for migration/refactor analysis
+- **SVG badge** — copy-paste a shields.io badge into your README
+- **CSV export** — import into Google Sheets or Excel
+- **JSON mode** — machine-readable for CI/CD pipelines and dashboards
+- **Cross-platform** — Windows, macOS, Linux
+- **Offline** — no network calls, no telemetry
+- **13 built-in self-tests** — verify integrity with `self-test`
+
+## CI Integration
 
 ```yaml
 # .github/workflows/codebase-metrics.yml
@@ -105,10 +136,29 @@ jobs:
           print(f'Python: {ratio:.1f}%')
           assert ratio > 30, 'Python ratio too low'
           "
+      - name: Generate HTML report
+        run: |
+          python codebase_inspector.py . --html codebase-report.html
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: codebase-report
+          path: codebase-report.html
 ```
+
+## Use Cases
+
+- **Due diligence** — before refactoring, know which languages dominate
+- **CI gating** — enforce file-type ratio rules in pull requests
+- **Migration planning** — track language adoption over time with `--trend`
+- **Cost estimation** — rough project size for quotes or timelines
+- **Portfolio display** — generate language-breakdown badges for README
+- **Code review** — `--diff` to see what a PR branch added/removed
 
 ## Support
 
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+⭐ Star on [GitHub](https://github.com/itsPremkumar/codebase-inspection)
