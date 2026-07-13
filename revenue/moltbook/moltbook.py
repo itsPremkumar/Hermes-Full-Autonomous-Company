@@ -21,7 +21,7 @@ import urllib.request
 import urllib.error
 
 BASE = "https://www.moltbook.com/api/v1"
-KEY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".moltbook_key")
+KEY_FILE = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".moltbook_key"))
 
 
 def _req(method, path, data=None, api_key=None):
