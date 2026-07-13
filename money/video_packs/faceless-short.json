@@ -1,0 +1,41 @@
+{
+  "format": "faceless-short",
+  "gig_title": "I will make faceless YouTube Shorts / Reels with AI voiceover",
+  "duration": "30-45s",
+  "input_required": "topic or script",
+  "deliverable": "9:16 MP4 x3 variations + auto-captions",
+  "use_case": "faceless content channels, TikTok/Reels/Shorts at scale",
+  "pricing": {
+    "price": 150,
+    "premium": 300,
+    "api_cost": 0,
+    "margin_pct": 99,
+    "note": "self-hosted Remotion+Edge-TTS = ~$0 marginal cost"
+  },
+  "tags": [
+    "youtube shorts",
+    "faceless video",
+    "reels",
+    "tiktok video",
+    "ai voiceover"
+  ],
+  "render_manifest": {
+    "job": "video-faceless-short",
+    "engine": "remotion",
+    "tts": "edge-tts",
+    "resolution": "1920x1080",
+    "vertical_cut": "1080x1920",
+    "duration": "30-45s",
+    "stock_source": "pexels/pixabay (free tier)",
+    "captions": true,
+    "repo": "itsPremkumar/Automated-Video-Generator",
+    "note": "Feed this manifest to the video generator's render entrypoint."
+  },
+  "delivery_steps": [
+    "1. Client submits input via order form",
+    "2. Auto-generate script (if URL) via Hermes",
+    "3. Render with Automated-Video-Generator (9:16 MP4 x3 variations + auto-captions)",
+    "4. QA pass + captions",
+    "5. Deliver MP4 + Loom review link"
+  ]
+}

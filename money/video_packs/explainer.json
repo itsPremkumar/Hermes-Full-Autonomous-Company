@@ -1,0 +1,41 @@
+{
+  "format": "explainer",
+  "gig_title": "I will produce an animated explainer video for your SaaS",
+  "duration": "60-90s",
+  "input_required": "product description + key features",
+  "deliverable": "1080p MP4 + script + thumbnail",
+  "use_case": "SaaS onboarding, demo pages, investor decks",
+  "pricing": {
+    "price": 400,
+    "premium": 800,
+    "api_cost": 0,
+    "margin_pct": 99,
+    "note": "self-hosted Remotion+Edge-TTS = ~$0 marginal cost"
+  },
+  "tags": [
+    "explainer video",
+    "saas video",
+    "animated video",
+    "demo video",
+    "onboarding"
+  ],
+  "render_manifest": {
+    "job": "video-explainer",
+    "engine": "remotion",
+    "tts": "edge-tts",
+    "resolution": "1920x1080",
+    "vertical_cut": "1080x1920",
+    "duration": "60-90s",
+    "stock_source": "pexels/pixabay (free tier)",
+    "captions": true,
+    "repo": "itsPremkumar/Automated-Video-Generator",
+    "note": "Feed this manifest to the video generator's render entrypoint."
+  },
+  "delivery_steps": [
+    "1. Client submits input via order form",
+    "2. Auto-generate script (if URL) via Hermes",
+    "3. Render with Automated-Video-Generator (1080p MP4 + script + thumbnail)",
+    "4. QA pass + captions",
+    "5. Deliver MP4 + Loom review link"
+  ]
+}

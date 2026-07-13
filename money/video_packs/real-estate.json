@@ -1,0 +1,40 @@
+{
+  "format": "real-estate",
+  "gig_title": "I will create AI listing videos for real estate agents",
+  "duration": "45-60s",
+  "input_required": "property photos + details",
+  "deliverable": "1080p MP4 + vertical cut + voiceover",
+  "use_case": "realtor listing marketing, Instagram/YouTube tours",
+  "pricing": {
+    "price": 200,
+    "premium": 400,
+    "api_cost": 0,
+    "margin_pct": 99,
+    "note": "self-hosted Remotion+Edge-TTS = ~$0 marginal cost"
+  },
+  "tags": [
+    "real estate video",
+    "listing video",
+    "property tour",
+    "realtor marketing"
+  ],
+  "render_manifest": {
+    "job": "video-real-estate",
+    "engine": "remotion",
+    "tts": "edge-tts",
+    "resolution": "1920x1080",
+    "vertical_cut": "1080x1920",
+    "duration": "45-60s",
+    "stock_source": "pexels/pixabay (free tier)",
+    "captions": true,
+    "repo": "itsPremkumar/Automated-Video-Generator",
+    "note": "Feed this manifest to the video generator's render entrypoint."
+  },
+  "delivery_steps": [
+    "1. Client submits input via order form",
+    "2. Auto-generate script (if URL) via Hermes",
+    "3. Render with Automated-Video-Generator (1080p MP4 + vertical cut + voiceover)",
+    "4. QA pass + captions",
+    "5. Deliver MP4 + Loom review link"
+  ]
+}

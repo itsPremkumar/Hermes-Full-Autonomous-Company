@@ -1,0 +1,41 @@
+{
+  "format": "social-batch",
+  "gig_title": "I will batch-produce 30 short videos for your content calendar",
+  "duration": "30s x30",
+  "input_required": "content topics list",
+  "deliverable": "30x 9:16 MP4 + captions, scheduled-ready",
+  "use_case": "agencies, creators needing daily content volume",
+  "pricing": {
+    "price": 500,
+    "premium": 1000,
+    "api_cost": 0,
+    "margin_pct": 99,
+    "note": "self-hosted Remotion+Edge-TTS = ~$0 marginal cost"
+  },
+  "tags": [
+    "content batch",
+    "social video",
+    "video calendar",
+    "bulk video",
+    "ugc"
+  ],
+  "render_manifest": {
+    "job": "video-social-batch",
+    "engine": "remotion",
+    "tts": "edge-tts",
+    "resolution": "1920x1080",
+    "vertical_cut": "1080x1920",
+    "duration": "30s x30",
+    "stock_source": "pexels/pixabay (free tier)",
+    "captions": true,
+    "repo": "itsPremkumar/Automated-Video-Generator",
+    "note": "Feed this manifest to the video generator's render entrypoint."
+  },
+  "delivery_steps": [
+    "1. Client submits input via order form",
+    "2. Auto-generate script (if URL) via Hermes",
+    "3. Render with Automated-Video-Generator (30x 9:16 MP4 + captions, scheduled-ready)",
+    "4. QA pass + captions",
+    "5. Deliver MP4 + Loom review link"
+  ]
+}

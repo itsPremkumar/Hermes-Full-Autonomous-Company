@@ -16,6 +16,14 @@ Part of the autonomous money system. Each pipeline turns free OSS tools from the
 - Validated 2026 pricing: $450–$700 setup + $99–$149/mo management, 95% margin
 - Tools: n8n + Listmonk + Postal + Stirling-PDF (all free/self-hosted)
 
+## Pipeline #3 — Video Generation Service ✅ (YOUR EDGE)
+`pipeline3_video_service.py` → turns your `Automated-Video-Generator` into a service.
+Generates per-format packages (gig copy, render manifest, delivery steps, pricing).
+- **Packages generated:** `video_packs/*.json` (5 formats)
+- Validated 2026 pricing: $150–$500/video, **99% margin ($0 API cost, self-hosted)**
+- Tools: Remotion + Edge-TTS + free stock (Pexels/Pixabay)
+- Formats: product-promo, faceless-short, explainer, social-batch, real-estate
+
 ## Usage
 ```bash
 python pipeline1_fiverr_gig_factory.py --list

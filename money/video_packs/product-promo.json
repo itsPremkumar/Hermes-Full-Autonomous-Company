@@ -1,0 +1,41 @@
+{
+  "format": "product-promo",
+  "gig_title": "I will create an AI product promo video from your URL",
+  "duration": "30-60s",
+  "input_required": "product URL or 5-bullet script",
+  "deliverable": "1080p MP4 + captions + 9:16 vertical cut",
+  "use_case": "Shopify/DTC product ads, landing-page hero video",
+  "pricing": {
+    "price": 250,
+    "premium": 500,
+    "api_cost": 0,
+    "margin_pct": 99,
+    "note": "self-hosted Remotion+Edge-TTS = ~$0 marginal cost"
+  },
+  "tags": [
+    "product video",
+    "promo video",
+    "shopify video",
+    "ai video",
+    "video ad"
+  ],
+  "render_manifest": {
+    "job": "video-product-promo",
+    "engine": "remotion",
+    "tts": "edge-tts",
+    "resolution": "1920x1080",
+    "vertical_cut": "1080x1920",
+    "duration": "30-60s",
+    "stock_source": "pexels/pixabay (free tier)",
+    "captions": true,
+    "repo": "itsPremkumar/Automated-Video-Generator",
+    "note": "Feed this manifest to the video generator's render entrypoint."
+  },
+  "delivery_steps": [
+    "1. Client submits input via order form",
+    "2. Auto-generate script (if URL) via Hermes",
+    "3. Render with Automated-Video-Generator (1080p MP4 + captions + 9:16 vertical cut)",
+    "4. QA pass + captions",
+    "5. Deliver MP4 + Loom review link"
+  ]
+}
