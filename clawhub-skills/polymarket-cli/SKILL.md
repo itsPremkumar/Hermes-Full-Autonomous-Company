@@ -39,3 +39,5 @@ Check prediction markets from your terminal. No wallet or API key needed.
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+test: python polymarket_cli.py --help   # install first: curl -O https://raw.githubusercontent.com/itsPremkumar/polymarket-cli/main/polymarket_cli.py

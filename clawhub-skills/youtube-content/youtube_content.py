@@ -151,7 +151,31 @@ def cmd_search(topic, limit=5):
         print(f"Search failed: {e}", file=sys.stderr)
         sys.exit(1)
 
+def _self_test():
+    """Real test of the video-id extraction core (no network). Returns 0/1."""
+    cases = [
+        ("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+        ("https://youtu.be/dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+        ("https://www.youtube.com/embed/dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+        ("https://www.youtube.com/shorts/abcdefghijk", "abcdefghijk"),
+        ("dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ]
+    for url, expected in cases:
+        got = extract_video_id(url)
+        if got != expected:
+            print(f"self-test: FAIL (extract_video_id({url!r}) = {got!r}, want {expected!r})")
+            return 1
+    # Invalid input yields None.
+    if extract_video_id("this is definitely not a url") is not None:
+        print("self-test: FAIL (invalid input should yield None)")
+        return 1
+    print("self-test: PASS")
+    return 0
+
+
 def main():
+    if len(sys.argv) >= 2 and sys.argv[1] == "self-test":
+        sys.exit(_self_test())
     if len(sys.argv) < 3:
         print(__doc__.strip())
         sys.exit(1)

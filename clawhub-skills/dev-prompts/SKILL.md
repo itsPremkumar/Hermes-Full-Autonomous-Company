@@ -30,3 +30,5 @@ core; an expanded bundle (500+ prompts + a prompt-linter) is on Gumroad.
 Free + MIT. Sponsor the builder if it helps:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar  *(add your link)*
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar      *(add your link)*
+
+test: test -f PROMPTS.md && echo "dev-prompts pack present"   # proves the prompt pack file exists

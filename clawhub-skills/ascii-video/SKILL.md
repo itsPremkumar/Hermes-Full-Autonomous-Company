@@ -49,3 +49,5 @@ Create unique terminal-art videos. Great for demos, READMEs, and social media.
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+test: python -c "import PIL; print('Pillow ok')"   # proves the required Pillow dependency is installed

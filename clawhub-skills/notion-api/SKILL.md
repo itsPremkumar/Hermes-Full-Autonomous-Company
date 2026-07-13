@@ -40,3 +40,5 @@ Automate your Notion workspace from the terminal. Great for agent workflows.
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+test: python notion_cli.py --help   # install first: curl -O https://raw.githubusercontent.com/itsPremkumar/notion-api/main/notion_cli.py

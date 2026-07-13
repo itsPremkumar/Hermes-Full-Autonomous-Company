@@ -311,12 +311,52 @@ def build_parser():
     p.add_argument("path", help="Markdown file path")
     p.add_argument("--write", "-w", action="store_true", help="Write changes to file")
 
+    sub.add_parser("self-test", help="Run built-in self tests")
+
     return parser
+
+
+def _self_test():
+    """Real test of split_frontmatter + lint_file core. Returns 0/1."""
+    import tempfile, os
+
+    # 1. split_frontmatter on a file with frontmatter.
+    fm_md = "---\nname: x\nversion: 1.0.0\n---\n# Heading\n\nbody text\n"
+    fm, body = split_frontmatter(fm_md)
+    if fm is None or "name: x" not in fm:
+        print("self-test: FAIL (split_frontmatter frontmatter)")
+        return 1
+    if "# Heading" not in body:
+        print("self-test: FAIL (split_frontmatter body)")
+        return 1
+
+    # 2. lint_file detects trailing whitespace + heading space issue.
+    d = tempfile.mkdtemp(prefix="md_selftest_")
+    try:
+        p = os.path.join(d, "bad.md")
+        with open(p, "w", encoding="utf-8") as f:
+            f.write("#Heading-no-space   \n\nnormal line\n")
+        issues = lint_file(p)
+        messages = " ".join(i["message"] for i in issues)
+        if "Trailing whitespace" not in messages:
+            print("self-test: FAIL (trailing whitespace not detected)")
+            return 1
+        if "space after heading" not in messages:
+            print("self-test: FAIL (heading spacing not detected)")
+            return 1
+    finally:
+        import shutil
+        shutil.rmtree(d, ignore_errors=True)
+
+    print("self-test: PASS")
+    return 0
 
 
 def main():
     parser = build_parser()
     args = parser.parse_args()
+    if args.command == "self-test":
+        sys.exit(_self_test())
     cmds = {
         "check": cmd_check,
         "toc": cmd_toc,

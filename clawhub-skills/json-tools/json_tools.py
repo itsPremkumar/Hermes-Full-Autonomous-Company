@@ -275,6 +275,51 @@ def build_parser():
     return parser
 
 
+def _self_test():
+    """Real test of deep_diff, deep_merge, and compute_stats. Returns 0/1."""
+    import io
+    import contextlib
+
+    # 1. deep_diff: a changed + added field.
+    diffs = deep_diff({"a": 1, "b": 2}, {"a": 1, "b": 3, "c": 4})
+    kinds = {d["kind"] for d in diffs}
+    if "changed" not in kinds or "added" not in kinds:
+        print(f"self-test: FAIL (deep_diff kinds: {kinds})")
+        return 1
+
+    # 2. deep_merge: nested dicts merge, lists concatenate.
+    merged = deep_merge({"x": {"y": 1}}, {"x": {"z": 2}, "w": [1]})
+    if merged.get("x", {}).get("y") != 1 or merged.get("x", {}).get("z") != 2:
+        print("self-test: FAIL (deep_merge dict merge)")
+        return 1
+    if merged.get("w") != [1]:
+        print("self-test: FAIL (deep_merge base list)")
+        return 1
+    merged2 = deep_merge({"w": [1]}, {"w": [2]})
+    if merged2["w"] != [1, 2]:
+        print("self-test: FAIL (deep_merge list concat)")
+        return 1
+
+    # 3. compute_stats on nested structure.
+    stats = compute_stats({"k": [1, {"n": 2}]})
+    if stats.get("type") != "object" or stats.get("key_count") != 1:
+        print("self-test: FAIL (compute_stats object)")
+        return 1
+    if stats.get("max_depth") < 2:
+        print("self-test: FAIL (compute_stats depth)")
+        return 1
+
+    # 4. do_flatten produces dotted keys.
+    flat = {}
+    do_flatten({"a": {"b": 1}}, "", flat, ".")
+    if flat.get("a.b") != 1:
+        print(f"self-test: FAIL (do_flatten: {flat})")
+        return 1
+
+    print("self-test: PASS")
+    return 0
+
+
 def main():
     parser = build_parser()
     args = parser.parse_args()
@@ -288,6 +333,8 @@ def main():
         "flatten": cmd_flatten,
         "merge": cmd_merge,
     }
+    if args.command == "self-test":
+        sys.exit(_self_test())
     cmds[args.command](args)
 
 

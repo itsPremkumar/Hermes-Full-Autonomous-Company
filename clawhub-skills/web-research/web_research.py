@@ -244,6 +244,25 @@ def cmd_fetch(args: argparse.Namespace) -> None:
 # ── CLI ─────────────────────────────────────────────────────────────────────
 
 
+def _self_test():
+    """Real test of the HTML-stripping core (_strip_html). Returns 0/1."""
+    html_in = "<html><head><title>T</title></head><body><p>Hello &amp; world</p><script>bad()</script></body></html>"
+    text = _strip_html(html_in)
+    if "Hello" not in text or "&amp;" in text:
+        print(f"self-test: FAIL (strip_html entities/content: {text!r})")
+        return 1
+    if "bad()" in text:
+        print("self-test: FAIL (script content leaked)")
+        return 1
+    # Script/style content must be dropped.
+    js = "<div>keep</div><script>var x = 1;</script>"
+    if "var x" in _strip_html(js):
+        print("self-test: FAIL (script tag not stripped)")
+        return 1
+    print("self-test: PASS")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Web Research Toolkit — search, Wikipedia, and URL fetch",
@@ -275,6 +294,9 @@ def main():
     p_fetch.add_argument("url", help="URL to fetch")
     p_fetch.add_argument("--output", "-o", help="Save output to file")
 
+    # self-test
+    sub.add_parser("self-test", help="Run built-in self tests")
+
     args = parser.parse_args()
 
     if args.command == "search":
@@ -283,6 +305,8 @@ def main():
         cmd_wiki(args)
     elif args.command == "fetch":
         cmd_fetch(args)
+    elif args.command == "self-test":
+        sys.exit(_self_test())
     else:
         parser.print_help()
         sys.exit(1)

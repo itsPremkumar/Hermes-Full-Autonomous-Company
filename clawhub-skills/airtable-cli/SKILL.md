@@ -42,3 +42,5 @@ Manage your no-code database from the CLI. Automate Airtable workflows.
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+test: python airtable_cli.py --help   # install first: curl -O https://raw.githubusercontent.com/itsPremkumar/airtable-cli/main/airtable_cli.py

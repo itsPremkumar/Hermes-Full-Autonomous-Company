@@ -261,6 +261,8 @@ def build_parser():
     p.add_argument("snapshot_a", metavar="SNAPSHOT_A", help="First snapshot JSON")
     p.add_argument("snapshot_b", metavar="SNAPSHOT_B", help="Second snapshot JSON")
 
+    sub.add_parser("self-test", help="Run built-in self tests")
+
     return parser
 
 

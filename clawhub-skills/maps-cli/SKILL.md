@@ -37,3 +37,5 @@ Quick location lookups from the terminal. No Google Maps API bills.
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+test: python maps_cli.py --help   # install first: curl -O https://raw.githubusercontent.com/itsPremkumar/maps-cli/main/maps_cli.py

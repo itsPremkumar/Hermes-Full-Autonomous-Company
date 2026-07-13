@@ -41,3 +41,5 @@ Quick architecture and flow diagrams from the terminal. No drag-and-drop needed.
 Free + MIT. Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+test: python excalidraw_cli.py --help   # install first: curl -O https://raw.githubusercontent.com/itsPremkumar/excalidraw-cli/main/excalidraw_cli.py

@@ -131,7 +131,7 @@ def _self_test():
         '<entry xmlns="http://www.w3.org/2005/Atom" '
         'xmlns:arxiv="http://arxiv.org/schemas/atom">'
         '<id>http://arxiv.org/abs/1234.5678v2</id>'
-        '<title>Hello  World</title>'
+        '<title>Hello World</title>'
         '<summary>An  example  abstract.</summary>'
         '<published>2021-01-02</published>'
         '<author><name>Jane Doe</name></author>'

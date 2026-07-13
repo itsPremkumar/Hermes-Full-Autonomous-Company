@@ -627,6 +627,52 @@ def cmd_check(args: List[str]) -> None:
         sys.exit(2)
 
 
+def _self_test():
+    """Real test of entropy + pattern scanning core. Returns 0/1."""
+    import tempfile, os
+
+    # 1. Shannon entropy: uniform string has high entropy; repeated low.
+    uniform = "abcdefghijklmnopqrstuvwxyz0123456789"
+    repeated = "aaaaaaaaaaaaaaaaaaaaaaaa"
+    if not (shannon_entropy(uniform) > shannon_entropy(repeated)):
+        print("self-test: FAIL (entropy ordering)")
+        return 1
+    if not is_high_entropy(uniform):
+        print("self-test: FAIL (uniform string should be high entropy)")
+        return 1
+    if is_high_entropy(repeated):
+        print("self-test: FAIL (repeated string should not be high entropy)")
+        return 1
+
+    # 2. Pattern scan on a temp file containing a known-fake AWS access key.
+    d = tempfile.mkdtemp(prefix="ss_selftest_")
+    try:
+        p = os.path.join(d, "secrets.txt")
+        with open(p, "w", encoding="utf-8") as f:
+            f.write("# token for selftest only\n")
+            f.write("aws_key = AKIAAB12CD34EF56GH78\n")
+        findings = scan_file(p, use_entropy=False)
+        ids = {fl.pattern_id for fl in findings}
+        if "aws-access-key" not in ids:
+            print(f"self-test: FAIL (aws key not detected: {ids})")
+            return 1
+
+        # 3. A clean file yields no findings (entropy off).
+        p2 = os.path.join(d, "clean.txt")
+        with open(p2, "w", encoding="utf-8") as f:
+            f.write("name = demo\ncount = 42\n")
+        clean = scan_file(p2, use_entropy=False)
+        if clean:
+            print(f"self-test: FAIL (clean file reported findings: {[f.pattern_id for f in clean]})")
+            return 1
+    finally:
+        import shutil
+        shutil.rmtree(d, ignore_errors=True)
+
+    print("self-test: PASS")
+    return 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Secret Scanner — detect leaked secrets, keys, and tokens in files.",
@@ -645,8 +691,12 @@ def main() -> None:
     check_p.add_argument("file", nargs="?", help="File to check")
 
     sub.add_parser("list-patterns", help="List all detection patterns")
+    sub.add_parser("self-test", help="Run built-in self tests")
 
     parsed, rest = parser.parse_known_args()
+
+    if parsed.command == "self-test":
+        sys.exit(_self_test())
 
     if parsed.command == "list-patterns":
         cmd_list_patterns()
