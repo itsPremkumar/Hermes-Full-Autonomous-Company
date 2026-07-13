@@ -16,3 +16,22 @@ Keep integration status current. Add new repos via the §4 validation gate.
 Before depending on a NEW repo: search GitHub, compare ≥3 mature solutions (§"Never
 Reinvent"), validate (§4), then add a row here with integration status. Deprecated repos
 stay listed (struck-through) for traceability — never silently dropped.
+
+---
+
+## Our Product Repositories (split from this OS for distribution)
+
+Each product ships in its own public repo so it can be installed, forked, and sold
+independently of the company OS. Source of truth for the OS remains this repo; these are
+the publishable slices.
+
+| Repo | What it is | Key files | Live / Status |
+|---|---|---|---|
+| [prem-agent-caps](https://github.com/itsPremkumar/prem-agent-caps) | AI Agent Capability Manifest Toolkit — validate/scaffold/check-deps agent manifests (Python stdlib, zero deps) | `agent_caps.py`, `test_agent_caps.py`, `README.md` | Published on ClawHub as `agent-caps` |
+| [clawhub-agent-caps-skill](https://github.com/itsPremkumar/clawhub-agent-caps-skill) | ClawHub skill packaging for agent-caps (the published skill source) | `SKILL.md`, `agent_caps.py`, `examples/` | Live on ClawHub: clawhub.ai/skills/skills/agent-caps |
+| [moltbook-poster](https://github.com/itsPremkumar/moltbook-poster) | Post agent-native announcements to Moltbook via REST API (stdlib, no deps) | `moltbook.py`, `post-agent-caps.json` | Agent claimed + first post live (201) |
+| [ai-affiliate-engine](https://github.com/itsPremkumar/ai-affiliate-engine) | Zero-cost SEO/affiliate content engine for AI-native products | `affiliate-engine.py`, `topics.json` | Draft generator working; affiliate IDs human-gated |
+| [ai-product-packs](https://github.com/itsPremkumar/ai-product-packs) | Curated AI/agent digital product packs (Gumroad-ready, $14–$47) | 7 product packs w/ `PRODUCT.md` + `LISTING.txt` | Ready to publish on Gumroad (human-gated) |
+
+> None of these repos contain secrets. The Moltbook API key lives only in the OS repo's
+> gitignored `.moltbook_key` and is never exported to product repos.
