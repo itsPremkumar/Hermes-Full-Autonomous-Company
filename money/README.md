@@ -51,6 +51,7 @@ Current: **50 packages, 12 pipelines, $26,000+ combined one-time value.** Run `p
 - `generate_listings.py` → turns all 50 packages into Fiverr/Upwork-ready `.md` copy under `listings/`
 - `generate_moltbook_drafts.py` → seeds 12 promo drafts into `revenue/moltbook/` for the acquisition funnel
 - `../GO_LIVE_CHECKLIST.md` → the 3 human gates, step-by-step, to go live in ~15 min
+- `PAYMENT.md` → your payment destinations (UPI `premkumar016555@oksbi` + marketplace payouts)
 
 ## Usage
 ```bash

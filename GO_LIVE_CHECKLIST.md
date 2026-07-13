@@ -12,9 +12,16 @@ these 3 gates itself (legal/UI gated to a human). Your total manual effort: ~15 
 - [ ] Complete profile (use `money/listings/` copy as bio)
 
 ## Gate 2 — Payment linkage (~5 min)
+- [ ] **Direct Indian payments (UPI):** your receiving address is
+      **`premkumar016555@oksbi`** (Google Pay / any UPI app). Share this with
+      Indian clients who pay directly instead of through a marketplace.
 - [ ] Fiverr: Profile → Earnings → Payout method → link PayPal or bank
 - [ ] Upwork: Settings → Get Paid → add PayPal/bank + tax form (W-8BEN for non-US)
 - [ ] Confirm a test payout method is "Active"
+
+> Payment destinations are documented centrally in `money/PAYMENT.md`.
+> Do NOT paste your UPI ID into the 50 `listings/*.md` files — those are
+> marketplace gigs (Fiverr/Upwork handle payment internally).
 
 ## Gate 3 — First gig live (~5 min)
 Pick the highest-margin, fastest-deliverable package:
