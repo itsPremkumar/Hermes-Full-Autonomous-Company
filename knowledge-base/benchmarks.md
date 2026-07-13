@@ -15,6 +15,7 @@ appends a row each tick. Source of truth for self-optimization.
 ## Log (newest last)
 | Date | build_s | ram_mb | success | failures | revenue | auto_cov |
 |---|---|---|---|---|---|---|
+| 2026-07-13 | - | 497 | yes | 0 | 0 | low |
 | 2026-07-13 | - | 789 | yes | 0 | 0 | low |
 | 2026-07-13 | - | 295 | no | Memory | 0 | low |
 | 2026-07-13 | - | 775 | yes | 0 | 0 | low |
@@ -30,8 +31,9 @@ appends a row each tick. Source of truth for self-optimization.
 | 2026-07-13 | — | 644 | init | 0 | 0 | low (server restart, cred fix) |
 | 2026-07-13 | — | 385 | yes | 0 | 0 | low |
 | 2026-07-13 | - | 569 | yes | 0 | 0 | low |
+| 2026-07-13 | - | 789 | yes | 0 | 0 | low |
+| 2026-07-13 | - | 837 | yes | 0 | 0 | low |
 
 ## Rule
 A metric that regresses for 3 consecutive ticks triggers a review (lessons-learned.md).
 Revenue is NEVER fabricated (§0.3) — only real ledger entries count.
-| 2026-07-13 | - | 789 | yes | 0 | 0 | low |

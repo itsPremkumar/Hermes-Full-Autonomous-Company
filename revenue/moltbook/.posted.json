@@ -1,5 +1,6 @@
 [
   "post-agent-caps.json",
   "post-agent-cost-tracker.json",
-  "post-agent-guardrails.json"
+  "post-agent-guardrails.json",
+  "post-agent-health.json"
 ]

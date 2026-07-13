@@ -26,3 +26,16 @@ The autonomy loop reads `tasks.md` (repo root) and `data/paperclip/issues/*.md`.
 ### Lesson
 - To guarantee real work each tick, publish an explicit `tasks.md` with `- [ ]` agent-actionable (non-human-gated) items. Otherwise the loop will only ever write autonomy-log entries and never package products or draft content.
 - When adding tasks, keep money-moving items out (Gumroad publish, payouts, signups) — those are human-gated and the loop skips + flags them.
+
+## The content funnel is the sales engine, not the products
+A digital product (prompt pack, playbook, template) does not sell on autopilot. It sells because a
+top-of-funnel SEO article + community posts point qualified readers at a $0-cost asset that does a
+job they hate. The agent's highest-leverage non-human-gated work is *producing that funnel content*
+(`revenue/blog/*.md`, Medium drafts, Moltbook posts) consistently, then packaging existing internal
+assets into priced products.
+
+### Lesson
+- When no `tasks.md`/issue exists, the most reliably useful agent-safe task is to draft another
+  funnel article that links to an existing product in `digital-products/` or `income-engine/gumroad/products/`.
+- Keep every funnel post ending with the "free on GitHub / paid bundle" split so the funnel converts.
+- Never write the listing or move money — those stay human-gated.
