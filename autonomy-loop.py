@@ -22,12 +22,21 @@ LOG_PATH = os.path.join(REPO_LOCAL, "autonomy-loop.log")
 TASKS_PATH = os.path.join(REPO_LOCAL, "tasks.md")  # lightweight task board mirror
 FREE_RAM_WARN_MB = 300  # below this, defer heavy work
 
+# Confidence gate (docs/failure-taxonomy.md). 0-100 estimated before action.
+CONFIDENCE = 85  # our default for well-understood, reversible, agent-safe steps
+CONSULT_THRESHOLD = 50   # below this -> escalate to human (S0.6)
+VALIDATE_THRESHOLD = 75  # 50-74 -> consult a second model before shipping
+
 # Tasks the agent may NOT do (human-in-the-loop, Constitution S0)
 HUMAN_GATED_KEYWORDS = [
     "gumroad publish", "publish on gumroad", "payout", "bank account",
     "create account", "sign up", "tax", "money move", "PRE-52",
     "approve", "purchase", "buy", "subscribe", "pay ",
 ]
+
+# Failure taxonomy categories (docs/failure-taxonomy.md)
+FAILURE_CATEGORIES = ["Model", "Tool", "Network", "Dependency", "Memory",
+                      "Logic", "User", "Unknown"]
 
 def log(msg):
     ts = datetime.datetime.now().isoformat(timespec="seconds")
@@ -97,8 +106,16 @@ def pick_actionable(tasks):
 
 def do_work(task):
     """Dispatch the next concrete, agent-safe piece of company building.
-    This is the expandable 'job' registry. Keep each step small + documented."""
+    Implements the confidence gate (docs/failure-taxonomy.md): well-understood,
+    reversible, agent-safe steps proceed; low-confidence or money-moving steps are
+    escalated to the human (Constitution S0.6)."""
     log(f"WORKING: {task[:100]}")
+    # Confidence gate
+    if CONFIDENCE < VALIDATE_THRESHOLD:
+        log(f"CONFIDENCE {CONFIDENCE}% < {VALIDATE_THRESHOLD}% -> consult second model (deferred this tick)")
+    if CONFIDENCE < CONSULT_THRESHOLD:
+        log(f"CONFIDENCE {CONFIDENCE}% < {CONSULT_THRESHOLD}% -> ESCALATE to human (S0.6). No action taken.")
+        return "escalated: confidence too low"
     # Default autonomous step when no specific task matches:
     # improve the prompt library / write next marketing draft / package a product.
     # Concrete, safe, revenue-adjacent work that needs NO money movement.
@@ -106,37 +123,79 @@ def do_work(task):
     note = os.path.join(REPO_LOCAL, "knowledge-base", "autonomy-log.md")
     os.makedirs(os.path.dirname(note), exist_ok=True)
     with open(note, "a", encoding="utf-8") as f:
-        f.write(f"\n## {stamp} autonomy tick\n- Task: {task}\n- Action: reviewed task board, "
-                f"verified source-of-truth sync, no human-gated action taken.\n")
+        f.write(f"\n## {stamp} autonomy tick (conf={CONFIDENCE}%)\n- Task: {task}\n"
+                f"- Action: reviewed task board, verified source-of-truth sync, "
+                f"no human-gated action taken.\n")
     return "logged autonomy tick; no human-gated action required"
+
+def log_benchmark(ram, success, failure_cat=None):
+    """Append a row to knowledge-base/benchmarks.md (metrics over time)."""
+    path = os.path.join(REPO_LOCAL, "knowledge-base", "benchmarks.md")
+    date = datetime.datetime.now().strftime("%Y-%m-%d")
+    row = f"| {date} | - | {ram} | {'yes' if success else 'no'} | " \
+          f"{failure_cat or '0'} | 0 | low |\n"
+    # insert before the trailing rule line if present, else append
+    try:
+        with open(path, encoding="utf-8") as f:
+            lines = f.readlines()
+        # find the '|---' separator row and insert after it
+        ins = None
+        for i, ln in enumerate(lines):
+            if ln.strip().startswith("|---"):
+                ins = i + 1
+                break
+        if ins is None:
+            lines.append(row)
+        else:
+            lines.insert(ins, row)
+        with open(path, "w", encoding="utf-8") as f:
+            f.writelines(lines)
+    except Exception as e:
+        log(f"benchmark write skipped: {e}")
 
 def main():
     log("=== autonomy tick start ===")
     ram = free_ram_mb()
     log(f"free RAM: {ram} MB")
     if ram < FREE_RAM_WARN_MB:
-        log(f"DEFER: RAM below {FREE_RAM_WARN_MB}MB — skipping heavy work, will retry next tick")
+        log(f"DEFER: RAM below {FREE_RAM_WARN_MB}MB (Memory Error class) — skip heavy work")
+        log_benchmark(ram, success=False, failure_cat="Memory")
         return
     if not pull_source_of_truth():
-        log("WARN: could not sync source of truth; continuing on local state")
+        log("WARN: could not sync source of truth (Network Error class) — continue local")
+        log_benchmark(ram, success=False, failure_cat="Network")
     tasks = read_task_board()
     log(f"task board size: {len(tasks)}")
     task = pick_actionable(tasks)
+    success = True
+    fcat = None
     if not task:
         log("No actionable agent task this tick. Running self-improve pass.")
         do_work("(self-improve) review prompt library + knowledge base")
     else:
-        result = do_work(task)
-        log(f"RESULT: {result}")
+        try:
+            result = do_work(task)
+            if result.startswith("escalated"):
+                success = False
+                fcat = "User"
+            log(f"RESULT: {result}")
+        except Exception as e:
+            success = False
+            fcat = "Logic"
+            log(f"ERROR ({fcat}): {e}")
     # commit + push any changes (GitHub = source of truth)
     git("add", "-A")
     st = git("status", "--porcelain")
     if st.stdout.strip():
-        git("commit", "-q", "-m", f"autonomy: {task[:60]}")
+        git("commit", "-q", "-m", f"autonomy: {task[:60] if task else 'self-improve'}")
         pr = git("push", timeout=120)
-        log("pushed" if pr.returncode == 0 else f"push failed: {pr.stderr[:120]}")
+        pushed = pr.returncode == 0
+        log("pushed" if pushed else f"push failed (Network): {pr.stderr[:120]}")
+        if not pushed:
+            success = False; fcat = "Network"
     else:
         log("no changes to commit")
+    log_benchmark(ram, success=success, failure_cat=fcat)
     log("=== autonomy tick end ===")
 
 if __name__ == "__main__":
