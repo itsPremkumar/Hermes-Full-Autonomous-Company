@@ -12,6 +12,9 @@
     "ascii-video",
     "clawhub-studio",
     "codebase-inspection",
-    "company-ops"
+    "company-ops",
+    "cron-doctor",
+    "dev-prompts",
+    "doc-extractor"
   ]
 }
