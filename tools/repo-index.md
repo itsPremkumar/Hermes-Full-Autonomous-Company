@@ -32,6 +32,13 @@ the publishable slices.
 | [moltbook-poster](https://github.com/itsPremkumar/moltbook-poster) | Post agent-native announcements to Moltbook via REST API (stdlib, no deps) | `moltbook.py`, `post-agent-caps.json` | Agent claimed + first post live (201) |
 | [ai-affiliate-engine](https://github.com/itsPremkumar/ai-affiliate-engine) | Zero-cost SEO/affiliate content engine for AI-native products | `affiliate-engine.py`, `topics.json` | Draft generator working; affiliate IDs human-gated |
 | [ai-product-packs](https://github.com/itsPremkumar/ai-product-packs) | Curated AI/agent digital product packs (Gumroad-ready, $14–$47) | 7 product packs w/ `PRODUCT.md` + `LISTING.txt` | Ready to publish on Gumroad (human-gated) |
+| [agent-sentinel](https://github.com/itsPremkumar/agent-sentinel) | Scan OpenClaw/Hermes skills for risky permission patterns (stdlib, offline) | `agent_sentinel.py`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/agent-sentinel |
+| [dev-prompts-pack](https://github.com/itsPremkumar/dev-prompts-pack) | 150 curated developer-productivity prompts (ClawHub skill source) | `PROMPTS.md`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/dev-prompts |
+| [company-ops](https://github.com/itsPremkumar/company-ops) | Autonomous AI company OS (CONSTITUTION + confidence-gated loop) | `CONSTITUTION.md`, `autonomy-loop.py`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/company-ops |
+
+> All 8 product repos are MIT, free, and secret-free (Moltbook key never exported). Each
+> ClawHub skill README carries a donation ask (GitHub Sponsors / Buy Me a Coffee — fill
+> your links). Marketing rule: every product/idea is announced on Moltbook after publish.
 
 > None of these repos contain secrets. The Moltbook API key lives only in the OS repo's
 > gitignored `.moltbook_key` and is never exported to product repos.
