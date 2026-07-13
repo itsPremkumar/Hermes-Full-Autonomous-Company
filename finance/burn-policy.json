@@ -1,0 +1,24 @@
+{
+  "policy": "BURN_ZERO",
+  "owner": "Hermes CFO (agent 763ca49f-739f-46b7-b7fe-ee3e72c9da95)",
+  "effective_date": "2026-07-12",
+  "monthly_cash_burn_cap_usd": 0,
+  "allowed_cost_categories": {
+    "llm_reasoning": "openrouter_free_tier (tencent/hy3:free)",
+    "product_fulfillment": "avg_self_hosted_free (Remotion + Edge-TTS + CC media)",
+    "gtm_channels": "free_only (Naukri, LinkedIn, Wellfound, RemoteAI, YC, GitHub, dev.to, Product Hunt organic)",
+    "infra": "local_self_hosted (Windows + local Postgres)",
+    "tooling": "oss_only"
+  },
+  "forbidden": [
+    "paid_apis",
+    "ad_spend",
+    "paid_tools",
+    "outsourced_spend",
+    "saas_subscriptions",
+    "any_cash_outflow"
+  ],
+  "review_cadence": "monthly",
+  "guard_exit_on_violation": true,
+  "notes": "Company operates at $0 capital. Any recorded spend_usd > 0 in the ledger, or any cost category outside the allowed list, fails the guard."
+}

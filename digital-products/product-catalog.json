@@ -1,0 +1,116 @@
+{
+  "store": {
+    "name": "Prem Autonomous Co — Digital Products",
+    "tagline": "Build tools that make founders and creators money",
+    "platform": "Gumroad",
+    "currency": "USD",
+    "payment_methods": ["Credit Card", "PayPal", "Apple Pay", "Google Pay"],
+    "worldwide_shipping": true,
+    "instant_delivery": true
+  },
+  "products": [
+    {
+      "id": "prem-50-viral-scripts",
+      "title": "50 Viral Short-Form Video Scripts",
+      "tagline": "Done-for-You YouTube Shorts / Reels / TikTok Scripts — 5 Niches, Ready to Film",
+      "price_usd": 12,
+      "category": "Content / Templates",
+      "file_formats": ["PDF", "Markdown", "CSV", "JSON"],
+      "sample_script": "Space is stranger than you think. A day on Venus is longer than its whole year...",
+      "status": "ready",
+      "product_dir": "product-1-video-scripts"
+    },
+    {
+      "id": "prem-agent-playbook",
+      "title": "Autonomous AI Agent Operations Playbook",
+      "tagline": "Run an Entire Company with AI Agents — Zero Headcount, Zero Burn",
+      "price_usd": 29,
+      "category": "Business / Operations",
+      "file_formats": ["PDF", "Markdown"],
+      "includes_templates": ["AGENTS.md", ".env.example", "issue-template.json", "heartbeat-config.yaml"],
+      "status": "ready",
+      "product_dir": "product-2-playbook"
+    },
+    {
+      "id": "prem-remotion-templates",
+      "title": "Remotion Short-Form Video Template Pack",
+      "tagline": "Production-Ready Video Generation Templates for AVG — 12 Templates",
+      "price_usd": 19,
+      "category": "Templates / Development",
+      "file_formats": ["JSON", "Markdown", "Configuration"],
+      "templates_count": 12,
+      "status": "ready",
+      "product_dir": "product-3-remotion-templates"
+    },
+    {
+      "id": "prem-monetization-kit",
+      "title": "AI-Powered Business Monetization Kit",
+      "tagline": "8 Complete Assets to Launch Your AI-Native Business at $0 Cost",
+      "price_usd": 29,
+      "category": "Business / Strategy",
+      "file_formats": ["Markdown"],
+      "assets_count": 8,
+      "status": "ready",
+      "product_dir": "product-4-monetization-kit"
+    },
+    {
+      "id": "prem-cold-outreach",
+      "title": "Cold Outreach & Lead Generation Pack",
+      "tagline": "Done-for-You Sequences That Get Replies (Not Ignored)",
+      "price_usd": 15,
+      "category": "Marketing / Sales",
+      "file_formats": ["Markdown", "CSV"],
+      "templates_count": 13,
+      "status": "ready",
+      "product_dir": "product-5-outreach"
+    },
+    {
+      "id": "prem-job-board-guide",
+      "title": "Free Job Board Outreach Mastery Guide",
+      "tagline": "Land Clients on Naukri, LinkedIn, Wellfound, YC & More — $0 Spent",
+      "price_usd": 12,
+      "category": "Career / Freelance",
+      "file_formats": ["Markdown", "PDF"],
+      "platforms_covered": 10,
+      "status": "ready",
+      "product_dir": "product-6-job-board"
+    },
+    {
+      "id": "prem-pricing-templates",
+      "title": "AI Agent Service Catalog + Pricing Templates",
+      "tagline": "Customizable Tiered Pricing for AI-Native Services",
+      "price_usd": 19,
+      "category": "Templates / Business",
+      "file_formats": ["Markdown", "CSV", "JSON"],
+      "tier_templates": 6,
+      "status": "ready",
+      "product_dir": "product-7-pricing-templates"
+    },
+    {
+      "id": "prem-30-day-launch",
+      "title": "30-Day Zero-Cost Business Launch Plan",
+      "tagline": "From Zero to First Paying Customer in 30 Days — $0 Spent",
+      "price_usd": 9,
+      "category": "Business / Strategy",
+      "file_formats": ["Markdown", "PDF", "CSV"],
+      "days_covered": 30,
+      "target_mrr": 245,
+      "status": "ready",
+      "product_dir": "product-8-launch-plan"
+    }
+  ],
+  "pricing_summary": {
+    "lowest_price": 9,
+    "highest_price": 29,
+    "median_price": 17,
+    "bundle_price": 99,
+    "bundle_savings_percent": 40,
+    "total_if_bought_separately": 144
+  },
+  "stats": {
+    "total_products": 8,
+    "total_product_categories": 7,
+    "ready_to_list": 8,
+    "file_formats_used": ["PDF", "Markdown", "CSV", "JSON", "YAML"]
+  }
+}

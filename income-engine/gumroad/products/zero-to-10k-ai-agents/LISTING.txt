@@ -1,0 +1,11 @@
+Title: Zero to $10k/mo — Build Your AI Agent Empire with Zero Investment
+Price: $19
+Description: The exact playbook for launching a fully-autonomous AI company and generating $10k/month using free AI agents — no startup capital. 14 chapters from setup to scaling, written for founders earning in USD from anywhere.
+Category: Technology & Business
+
+HOW TO PUBLISH (human step):
+1. Create a free Gumroad account at gumroad.com (email + identity + tax verification).
+2. Link a payout method (bank/PayPal) in Settings > Payouts.
+3. Create a new product, copy the Title/Price/Description above.
+4. Upload PRODUCT.md (this folder) as the deliverable file. Set "Software / File" access.
+5. Publish. You keep 100% minus Gumroad's standard ~10% fee.

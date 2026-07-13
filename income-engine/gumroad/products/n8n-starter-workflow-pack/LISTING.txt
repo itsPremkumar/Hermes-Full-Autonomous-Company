@@ -1,0 +1,6 @@
+Title: 5 n8n Starter Workflows for Small Business
+Price: $29
+Description: Import-ready n8n workflows: lead capture, invoice sort, support triage, content repurpose, weekly report.
+
+Upload this folder's PRODUCT.md as the product file on Gumroad (free).
+Set the price above. You keep 100% minus Gumroad's standard fee.

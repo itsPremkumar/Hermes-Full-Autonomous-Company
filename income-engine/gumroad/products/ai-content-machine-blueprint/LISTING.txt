@@ -1,0 +1,11 @@
+Title: AI Content Machine Blueprint — Build a Zero-Touch Content Engine
+Price: $47
+Description: A complete, copy-paste system to deploy three autonomous AI agents (Strategist, Writer, Editor/Publisher) that research, write, and publish your content on autopilot. Includes agent configs, 20 prompts, and a 7-day calendar.
+Category: Business & Productivity
+
+HOW TO PUBLISH (human step):
+1. Create a free Gumroad account at gumroad.com (email + identity + tax verification).
+2. Link a payout method (bank/PayPal) in Settings > Payouts.
+3. Create a new product, copy the Title/Price/Description above.
+4. Upload PRODUCT.md (this folder) as the deliverable file. Set "Software / File" access.
+5. Publish. You keep 100% minus Gumroad's standard ~10% fee.

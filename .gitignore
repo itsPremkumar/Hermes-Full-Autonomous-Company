@@ -1,0 +1,17 @@
+# Ignore heavy / secret artifacts — keep the repo lean on this low-RAM machine
+node_modules/
+dist/
+*.log
+.env
+.env.*
+*.key
+secrets/
+*.pem
+# Large binary products are referenced, not committed; keep repo text-only
+*.zip
+*.mp4
+*.png
+*.jpg
+.DS_Store
+cj.txt
+build.log

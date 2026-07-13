@@ -1,0 +1,208 @@
+{
+  "generatedAt": "2026-07-12T14:51:16.500748+00:00",
+  "server": "ok",
+  "agentsTotal": 7,
+  "agentsRunning": 7,
+  "agentsHeartbeatOn": 7,
+  "worker": "Hermes Engineer",
+  "workerStatus": "running",
+  "openIssues": 14,
+  "nudgedThisCycle": false,
+  "critical": null,
+  "agents": [
+    {
+      "name": "Hermes QA",
+      "role": "qa",
+      "status": "running",
+      "heartbeat": true
+    },
+    {
+      "name": "Hermes CMO",
+      "role": "cmo",
+      "status": "running",
+      "heartbeat": true
+    },
+    {
+      "name": "Hermes Head of Product",
+      "role": "pm",
+      "status": "running",
+      "heartbeat": true
+    },
+    {
+      "name": "Hermes COO",
+      "role": "devops",
+      "status": "running",
+      "heartbeat": true
+    },
+    {
+      "name": "Hermes CEO",
+      "role": "ceo",
+      "status": "running",
+      "heartbeat": true
+    },
+    {
+      "name": "Hermes CFO",
+      "role": "cfo",
+      "status": "running",
+      "heartbeat": true
+    },
+    {
+      "name": "Hermes Engineer",
+      "role": "cto",
+      "status": "running",
+      "heartbeat": true
+    }
+  ],
+  "issues": [
+    {
+      "id": "PRE-19",
+      "status": "in_progress",
+      "title": "Finance: revenue ledger + burn=/usr/bin/bash guard",
+      "assignee": "763ca49f-739f-46b7-b7fe-ee3e72c9da95"
+    },
+    {
+      "id": "PRE-18",
+      "status": "in_progress",
+      "title": "Ops: client intake + delivery SLA playbook",
+      "assignee": "f202dd71-d758-4cfc-a01b-f18fac8f9eff"
+    },
+    {
+      "id": "PRE-17",
+      "status": "in_progress",
+      "title": "GTM: publish pricing + launch-plan execution",
+      "assignee": "1ca47b10-b2c7-4bb9-b73e-d2428f1c6fd8"
+    },
+    {
+      "id": "PRE-16",
+      "status": "in_progress",
+      "title": "AVG release gate: test plan + smoke check",
+      "assignee": "efa914be-f13d-419f-b41a-d8a356237955"
+    },
+    {
+      "id": "PRE-15",
+      "status": "in_progress",
+      "title": "AVG features: subtitle burn-in + batch queue spec",
+      "assignee": "a3482c7c-c9bd-42dd-b52f-d2ed8ceed920"
+    },
+    {
+      "id": "PRE-14",
+      "status": "in_progress",
+      "title": "AVG foundation: green CI + clean typecheck + run docs",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-13",
+      "status": "in_progress",
+      "title": "COMPANY_PLAN is the living master plan",
+      "assignee": "b717f92b-5d4a-4ed3-942a-4127eb9a6b89"
+    },
+    {
+      "id": "PRE-20",
+      "status": "todo",
+      "title": "TEST epic wire",
+      "assignee": null
+    },
+    {
+      "id": "PRE-9",
+      "status": "done",
+      "title": "Revenue engine: build zero-cost, publishable monetization assets",
+      "assignee": "1ca47b10-b2c7-4bb9-b73e-d2428f1c6fd8"
+    },
+    {
+      "id": "PRE-4",
+      "status": "done",
+      "title": "Company kickoff: scaffold autonomous operations",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-2",
+      "status": "cancelled",
+      "title": "Review productivity for PRE-1",
+      "assignee": null
+    },
+    {
+      "id": "PRE-12",
+      "status": "in_progress",
+      "title": "Implement and publish monetization assets from revenue engine plan",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-25",
+      "status": "in_progress",
+      "title": "CEO temp probe",
+      "assignee": "b717f92b-5d4a-4ed3-942a-4127eb9a6b89"
+    },
+    {
+      "id": "PRE-11",
+      "status": "in_progress",
+      "title": "Monitor job board outreach responses and follow up with leads",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-24",
+      "status": "in_progress",
+      "title": "assign2",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-23",
+      "status": "todo",
+      "title": "assign-test",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-22",
+      "status": "backlog",
+      "title": "TEST no-project",
+      "assignee": null
+    },
+    {
+      "id": "PRE-21",
+      "status": "backlog",
+      "title": "TEST epic wire2",
+      "assignee": null
+    },
+    {
+      "id": "PRE-7",
+      "status": "in_progress",
+      "title": "Produce & publish 3 sample videos",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-8",
+      "status": "done",
+      "title": "Direct outreach on free job boards",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-5",
+      "status": "in_review",
+      "title": "Showcase repo / LinkedIn page for agent offerings",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-6",
+      "status": "in_review",
+      "title": "Define agent-labor service + pricing tiers",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-3",
+      "status": "done",
+      "title": "Product analysis and zero-investment monetization plan",
+      "assignee": "9eed5712-96c2-4f3c-9fea-1cef0e6b7f2f"
+    },
+    {
+      "id": "PRE-1",
+      "status": "cancelled",
+      "title": "Write a hello-world test note",
+      "assignee": null
+    },
+    {
+      "id": "PRE-10",
+      "status": "cancelled",
+      "title": "Test issue creation",
+      "assignee": null
+    }
+  ]
+}

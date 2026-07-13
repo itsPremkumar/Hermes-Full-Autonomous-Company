@@ -1,0 +1,4 @@
+period,month_index,target_mrr_usd,target_onetime_usd,actual_mrr_usd,actual_onetime_usd,new_subscribers,builds_closed,resellers,spend_usd,notes
+2026-07,1,245,0,0,0,0,0,0,0,Launch month. Zero-cost GTM live (Naukri/LinkedIn/GitHub organic). No revenue booked yet; burn must stay $0.
+2026-08,2,1240,990,0,0,0,0,0,0,Target: 15 subscribers + 1 one-time build ($990). All organic/free channels.
+2026-09,3,3200,4900,0,0,0,0,0,0,Target: 35 subscribers + 2 builds + 1 reseller (20-30% recurring). Conservative one-time at $990 each.

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Tools — AI Agent Income Lab</title>
+<style>
+body{font:16px/1.6 system-ui,Segoe UI,Arial,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
+header{background:#111;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.brand{color:#fff;font-weight:700;text-decoration:none;font-size:18px}
+nav a{color:#ddd;margin-left:16px;text-decoration:none}
+main{max-width:820px;margin:30px auto;padding:0 18px}
+footer{max-width:820px;margin:40px auto;padding:18px;color:#777;font-size:14px;border-top:1px solid #eee}
+label{display:block;margin:10px 0 4px;font-weight:600}
+input{width:100%;padding:8px;box-sizing:border-box;font-size:15px}
+.card{background:#fff;border:1px solid #eee;border-radius:10px;padding:20px;margin:16px 0}
+.result{background:#eef7ee;border:1px solid #bfe3bf;padding:14px;border-radius:8px;margin-top:14px;font-size:17px}
+button{background:#0a66c2;color:#fff;border:0;padding:10px 16px;border-radius:6px;font-size:15px;cursor:pointer}
+</style></head>
+<body>
+<header><a href="index.html" class="brand">Prem Autonomous Co</a>
+<nav><a href="index.html">Home</a><a href="tools.html">Tools</a><a href="gumroad.html">Products</a><a href="disclosure.html">Disclosure</a></nav></header>
+<main>
+<h1>Free Tools</h1>
+<div class="card">
+<h2>AI Agent ROI Calculator</h2>
+<p>Show a client exactly what they save by automating a workflow. Lead with this
+before you pitch.</p>
+<label>Hourly rate of the work being automated ($)</label>
+<input id="rate" type="number" value="25">
+<label>Hours spent per week on that work</label>
+<input id="hours" type="number" value="20">
+<label>% of the work the agent can automate (0-100)</label>
+<input id="pct" type="number" value="80">
+<label>One-time build fee you charge ($)</label>
+<input id="fee" type="number" value="1500">
+<label>Monthly retainer ($)</label>
+<input id="ret" type="number" value="500">
+<button onclick="calc()">Calculate</button>
+<div class="result" id="out">Fill the fields and click Calculate.</div>
+</div>
+</main>
+<footer><p>Prem Autonomous Co — zero-cost autonomous income systems. Contact premkumar016555@gmail.com.</p>
+<p><a href="disclosure.html">Affiliate disclosure</a></p></footer>
+<script>
+function calc(){
+  var rate=+document.getElementById('rate').value||0;
+  var hours=+document.getElementById('hours').value||0;
+  var pct=(+document.getElementById('pct').value||0)/100;
+  var fee=+document.getElementById('fee').value||0;
+  var ret=+document.getElementById('ret').value||0;
+  var monthlySaved=rate*hours*pct;
+  var monthlyNet=monthlySaved-ret;
+  var payback=(monthlyNet>0)?(fee/monthlyNet):Infinity;
+  var yearNet=monthlyNet*12-fee;
+  var msg="Monthly labor saved: $"+monthlySaved.toFixed(0)+
+          "<br>Monthly net (after retainer): $"+monthlyNet.toFixed(0)+
+          "<br>Build fee payback: "+(isFinite(payback)?payback.toFixed(1)+" months":"never (raise retainer)")+
+          "<br>First-year net profit: $"+yearNet.toFixed(0);
+  document.getElementById('out').innerHTML=msg;
+}
+</script>
+</body></html>

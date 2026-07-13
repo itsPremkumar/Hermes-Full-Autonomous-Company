@@ -1,0 +1,6 @@
+Title: AI Agent ROI Calculator (Google Sheets)
+Price: $19
+Description: A ready-to-use spreadsheet that shows clients exactly how much they save by automating a workflow.
+
+Upload this folder's PRODUCT.md as the product file on Gumroad (free).
+Set the price above. You keep 100% minus Gumroad's standard fee.

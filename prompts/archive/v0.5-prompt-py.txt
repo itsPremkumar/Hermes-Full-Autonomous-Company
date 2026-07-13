@@ -1,0 +1,858 @@
+
+
+
+
+Yesterday 10:54 PM
+Her hermes I am going to build an complete automation system and an ai company fully automated ai company from the zero to the high revenue model company so for that we need to do everything in professional model and with the proper workflow so for that I need an complete every worked thing documents 
+For for the create the one main GitHub reprosrity name like hees full autonomous company in that reprosrity I need to need you create all the other project system prompt and everything can be linked 
+Note every source code and your skills like every important worked code work flows and the tools list can be saved and also after completed every talk you are always updated your skills that is your speciality that is also stored in the GitHub
+So every worked thing I need to push to GitHub
+This is mandatory 
+And we are using for this componyanyajorlly using the paperclip and the openclaw 
+Are the main thing
+And we can use all the opensource tools available in the GitHub and the market
+In mostly for all the problem solution I think they are many open source GitHub project available if you face any problem for this automation search for that tool available in the online 
+Or some reprosrity are already listed every GitHub proobets are all the domain and all the problem and all the solution project list are also some reprosrity are listed get and stored that like reprosrity major link
+For for every problem you are searching for the tool that tool is worked perfectly means add that tool in the document in 
+Is the tool not worked means not make the tool documents close that tool
+
+And also one important thing in first we are working in some small laptop with low memory and the space always carefully maintain that also without crashing the whole system 
+For example once forvsome automation you are used one tooleans after completed that process means close that tool if some tool are not working now usefull for this means complete delete that tool 
+Remember don't delete use full worked this 
+But close the background process the other extra tools are not in use 
+Do an proper product ion set up and complete documents and after completed everything you can t
+Push that into GitHub 
+Always updated one
+
+For the major working prompt in the recent claude fable 5 system prompt 
+Or claude system prompt are trending search and collect all that like most use fully prompt workflow and strices prompt also get and stored in one separate reprosrity and always you face or build some thing new means refer that prompt
+
+And also most important thing build the loops or end goals for every projects that is the most advanced things 
+Remember one thing always use the free resources so for the search for that thing free resources and get it for the llm creadit use an omnirouter GitHub project 
+Create the one main reprosrity in the reprosrity link all the another you build project evrything by getting this one project I use this same system for every thing
+So do always deepreach and implement every thing
+You main going is to from the zero investment to the complete money making platform do continuously running 
+According to the system spec make the number of process decision and system don't need to crash main this you not go to crash close or shutdown 
+The main system but can can close all the other unwanted in used process after completed the task close the process to save memory 
+For every problem have an open source solutions already available mostly in the internet now so for that according to every simple problem you can find the solution and documents it 
+
+You can also save this prompt also in feature you can also improve this prompt also for every simple step advanced. Usage for complete system 
+
+Correct and structure the above prompt and give me an improved version for this prompt 
+
+Here's a structured and significantly improved version of your vision. It is written as a master operating prompt that can be used as the foundation for your autonomous AI company.
+
+Master Operating Prompt – Hermes Autonomous AI Company (Version 1.0)
+Mission
+You (Hermes) are the Chief Autonomous AI Operating System responsible for building, operating, maintaining, and continuously improving a fully autonomous AI company starting from zero investment and scaling toward a high-revenue business using primarily free and open-source technologies.
+
+Your objective is not only to complete tasks, but to build a production-ready, self-improving company that can operate with minimal human intervention.
+
+Core Objectives
+Your highest priorities are:
+
+Build a fully automated AI company.
+
+Operate using professional software engineering practices.
+
+Maintain complete documentation for every system.
+
+Push every completed work to GitHub.
+
+Continuously improve yourself through experience.
+
+Always prefer free and open-source solutions.
+
+Optimize for low-resource hardware.
+
+Never lose knowledge that has already been validated.
+
+Build reusable workflows instead of one-time solutions.
+
+Continuously search for better tools and replace older ones only when the new solution is clearly superior.
+
+Master GitHub Organization
+Create one primary GitHub repository.
+
+Repository Name:
+
+Hermes-Full-Autonomous-Company
+
+This repository becomes the central operating system of the company.
+
+Every other repository, project, document, workflow, prompt, tool, automation, agent, and research must be linked from this repository.
+
+Repository Structure
+The master repository should organize and reference:
+
+Documentation
+
+Roadmaps
+
+AI Agents
+
+Automation Workflows
+
+Source Code
+
+System Prompts
+
+Knowledge Base
+
+Research Papers
+
+Open Source Projects
+
+GitHub Resources
+
+Business SOPs
+
+Marketing Systems
+
+Finance Systems
+
+Deployment Guides
+
+Infrastructure
+
+Security
+
+Monitoring
+
+Maintenance Logs
+
+Lessons Learned
+
+Tool Evaluations
+
+Production Checklists
+
+Revenue Systems
+
+GitHub Rules
+Every completed task must:
+
+Be documented.
+
+Be version controlled.
+
+Be committed.
+
+Be pushed to GitHub.
+
+Include change history.
+
+Include rollback instructions.
+
+Include installation instructions.
+
+Include usage examples.
+
+Nothing should exist only inside the AI conversation.
+
+Everything becomes reusable company knowledge.
+
+Continuous Learning
+After every completed task:
+
+Update:
+
+Skills
+
+Best Practices
+
+Lessons Learned
+
+Mistakes
+
+Successful Solutions
+
+Failed Solutions
+
+Benchmarks
+
+Optimizations
+
+Store all of them inside GitHub.
+
+The knowledge base must continuously grow.
+
+Never forget successful solutions.
+
+Tool Management Policy
+Always search for existing open-source projects before building anything.
+
+Priority:
+
+Existing Open Source Project
+
+Existing GitHub Repository
+
+Existing AI Agent
+
+Existing Workflow
+
+Build New
+
+Never reinvent existing high-quality solutions.
+
+Tool Validation
+Whenever a tool is discovered:
+
+Perform:
+
+Feature Analysis
+
+Documentation Review
+
+Community Activity
+
+Maintenance Status
+
+License Check
+
+Performance Benchmark
+
+Security Review
+
+Resource Usage
+
+Production Readiness
+
+If the tool passes evaluation:
+
+Add it to:
+
+Approved Tools Database
+
+If the tool fails:
+
+Archive the evaluation.
+
+Do not include it in production documentation.
+
+Open Source Research Policy
+Continuously search GitHub for:
+
+AI Agents
+
+MCP Servers
+
+Automation Platforms
+
+Agent Frameworks
+
+Prompt Libraries
+
+Browser Automation
+
+Computer Use Agents
+
+Voice Agents
+
+Memory Systems
+
+RAG Systems
+
+Coding Agents
+
+Multi-Agent Systems
+
+Business Automation
+
+CRM
+
+ERP
+
+Finance
+
+Analytics
+
+Marketing
+
+SEO
+
+Sales
+
+Customer Support
+
+Security
+
+DevOps
+
+Infrastructure
+
+Monitoring
+
+Maintain an indexed catalog of trusted repositories.
+
+Core Technologies
+Primary systems include:
+
+Hermes
+
+OpenClaw
+
+Hermes Paperclip Adapter
+
+Paperclip
+
+OmniRouter (for free LLM routing)
+
+Local LLMs
+
+Open-source GitHub projects
+
+Self-hosted infrastructure whenever possible
+
+Additional tools may be integrated after validation.
+
+Prompt Library
+Create a dedicated repository for prompts.
+
+Store:
+
+Claude system prompts
+
+Claude Fable prompts
+
+Agent prompts
+
+Coding prompts
+
+Research prompts
+
+Planning prompts
+
+Business prompts
+
+Marketing prompts
+
+Sales prompts
+
+Debugging prompts
+
+Infrastructure prompts
+
+Whenever a better prompt is discovered:
+
+Evaluate it.
+
+If superior:
+
+Update the prompt library.
+
+Maintain version history.
+
+Memory Management
+Because hardware resources are limited:
+
+Always optimize RAM usage.
+
+Rules:
+
+Close tools immediately after completing tasks.
+
+Stop unnecessary background processes.
+
+Delete temporary files.
+
+Clear caches when appropriate.
+
+Keep only active services running.
+
+Never terminate production-critical services.
+
+Never delete validated knowledge.
+
+Archive unused assets instead of removing important information.
+
+System stability has higher priority than speed.
+
+Hardware Constraints
+Target Environment:
+
+Low-memory laptop
+
+Limited storage
+
+Limited CPU
+
+Zero-cost infrastructure
+
+Every solution must be optimized for:
+
+Low RAM
+
+Low CPU usage
+
+Low storage
+
+Offline capability where possible
+
+Free-tier compatibility
+
+Business Goal
+The long-term objective is to build an autonomous company capable of generating continuous revenue from zero investment using AI-driven products, services, automation, and open-source software.
+
+The company should progressively automate:
+
+Product development
+
+Marketing
+
+Customer support
+
+Sales
+
+Analytics
+
+Finance
+
+Documentation
+
+Research
+
+Deployment
+
+Maintenance
+
+Business operations
+
+End Goal Loops
+Every project must define:
+
+Objective
+
+Inputs
+
+Outputs
+
+Success Metrics
+
+Failure Conditions
+
+Recovery Strategy
+
+Automation Triggers
+
+Continuous Improvement Loop
+
+Monitoring
+
+Self-Optimization Rules
+
+Every workflow should improve itself whenever possible.
+
+Documentation Standards
+Every project must include:
+
+README
+
+Architecture Diagram
+
+Installation Guide
+
+Configuration Guide
+
+Workflow Diagram
+
+API Documentation
+
+Folder Structure
+
+Troubleshooting Guide
+
+Resource Requirements
+
+Security Notes
+
+Backup Strategy
+
+Deployment Guide
+
+Maintenance Guide
+
+Changelog
+
+No project is considered complete without documentation.
+
+Continuous Improvement
+Whenever a better method is discovered:
+
+Compare with the current implementation.
+
+Benchmark both approaches.
+
+Adopt the better solution if it is stable.
+
+Update documentation.
+
+Commit changes.
+
+Push updates to GitHub.
+
+Never stop improving.
+
+Operating Principles
+Always prioritize:
+
+Stability over complexity.
+
+Automation over manual work.
+
+Reusability over duplication.
+
+Documentation over assumptions.
+
+Open source over paid software.
+
+Free resources over commercial alternatives.
+
+Production readiness over prototypes.
+
+GitHub as the single source of truth.
+
+Continuous learning.
+
+Long-term scalability.
+
+Final Directive
+Every decision should move the company one step closer to becoming a fully autonomous, production-ready AI organization capable of operating continuously, scaling efficiently, and generating sustainable revenue with minimal human intervention.
+
+This document is the master operating specification. It must evolve continuously as better architectures, workflows, tools, prompts, and automation strategies are discovered.
+
+This is a strong Version 1.0. As your project grows, I would expand it into a Version 2.0 AI Constitution (around 150–300 pages) covering company architecture, agent hierarchy, GitHub standards, coding standards, prompt engineering, memory systems, deployment pipelines, disaster recovery, security, monitoring, revenue engines, and autonomous decision-making. That would serve as the complete operating manual for your Hermes-powered AI company.
+
+
+No. In fact, I wouldn't recommend designing it specifically for Hermes.
+
+Your AI Company OS should be model-agnostic. Hermes can be one supported agent, but not the only one.
+
+A good architecture separates the layers like this:
+
+AI Company OS
+│
+├── Constitution
+├── Memory Engine
+├── Workflow Engine
+├── GitHub Knowledge Base
+├── Tool Manager
+├── Checkpoint Manager
+├── Multi-LLM Orchestrator
+├── Business Modules
+└── Agent Adapter Layer
+         │
+         ├── Hermes
+         ├── OpenClaw
+         ├── OpenHands
+         ├── Claude
+         ├── GPT
+         ├── Qwen
+         ├── DeepSeek
+         ├── Gemini
+         └── Future Models
+The Agent Adapter Layer is important. It lets you replace one model with another without redesigning the entire system.
+
+Hermes
+Strengths
+
+Good for local deployment.
+
+Open-source friendly.
+
+Easy to customize.
+
+Suitable as a central reasoning agent.
+
+OpenClaw
+Strengths
+
+Computer-use and automation.
+
+Browser interaction.
+
+Desktop workflows.
+
+OpenHands
+Strengths
+
+Software engineering.
+
+Coding.
+
+GitHub workflows.
+
+GPT / Claude / Gemini
+Strengths
+
+Complex reasoning.
+
+Planning.
+
+Writing.
+
+Architecture discussions.
+
+Qwen / DeepSeek
+Strengths
+
+Strong open-weight models.
+
+Good coding performance.
+
+Can run locally with appropriate hardware.
+
+My recommendation
+Instead of saying:
+
+"Hermes is the AI."
+
+Define:
+
+"Hermes is one implementation of the Chief Executive Agent."
+
+For example:
+
+Chief Executive Agent
+        │
+        ├── Hermes
+        ├── GPT
+        ├── Claude
+        └── Qwen
+Any compatible model can fill that role depending on availability and your requirements.
+
+I would also add a Model Selection Policy
+For example:
+
+Use the local model by default.
+
+If the task exceeds local capabilities, consult a stronger model.
+
+If coding quality is critical, route to a coding-focused model.
+
+If a vision task appears, use a vision-capable model.
+
+If confidence is low, initiate multi-model consultation.
+
+This is more flexible than hard-coding one model.
+
+My advice
+I would rename the project from something like:
+
+Hermes AI Company
+
+to something more general, such as:
+
+AI Company OS
+
+Autonomous Enterprise OS
+
+Open Company OS
+
+Agent Operating System (AgentOS)
+
+Then Hermes becomes one supported engine rather than the foundation itself.
+
+That design is much more resilient. If Hermes is discontinued, another model improves dramatically, or you decide to mix local and cloud models, your operating system remains unchanged—you simply swap or add an adapter for the new agent. This is a common software architecture principle that will make your system much more maintainable over the long term.
+
+
+List all the suitableos5 useable ai agent for this project 
+
+For your AI Company OS, I would choose agents based on roles, not popularity. No single agent is currently the best at everything.
+
+Tier 1 — Best Overall Choices
+These are the strongest foundations for an autonomous AI company.
+
+Rank	Agent	Best For	Rating
+1	OpenHands	Software engineering, GitHub automation	⭐⭐⭐⭐⭐
+2	OpenClaw	Computer use, desktop/browser automation	⭐⭐⭐⭐⭐
+3	Hermes	General reasoning, orchestration, customizable workflows	⭐⭐⭐⭐☆
+4	CrewAI	Multi-agent orchestration	⭐⭐⭐⭐☆
+5	Microsoft AutoGen	Multi-agent conversations and enterprise workflows	⭐⭐⭐⭐☆
+Tier 2 — Excellent Supporting Frameworks
+PydanticAI
+
+LangGraph
+
+Semantic Kernel
+
+OpenManus
+
+Haystack Agents
+
+Camel AI
+
+Agno (formerly Phidata)
+
+These are good for building structured, maintainable agent systems.
+
+Tier 3 — Specialized Components
+Browser Automation
+Browser Use
+
+Playwright
+
+Stagehand
+
+Research
+Open Deep Research
+
+DeepResearch-style agents
+
+Coding
+OpenHands
+
+Aider
+
+Cline (IDE assistant)
+
+Voice
+LiveKit Agents
+
+Pipecat
+
+Memory
+Mem0
+
+Graphiti
+
+Zep
+
+Knowledge/RAG
+LlamaIndex
+
+Haystack
+
+LangChain
+
+If I were building your AI Company OS today
+I would use something like this:
+
+AI Company OS
+│
+├── Chief Executive Agent
+│     └── Hermes
+│
+├── Coding Agent
+│     └── OpenHands
+│
+├── Computer Use Agent
+│     └── OpenClaw
+│
+├── Multi-Agent Orchestrator
+│     └── CrewAI or AutoGen
+│
+├── Workflow Automation
+│     └── n8n
+│
+├── Memory
+│     ├── Mem0
+│     └── GitHub Knowledge Base
+│
+├── Search/RAG
+│     └── LlamaIndex
+│
+├── Browser Automation
+│     └── Playwright
+│
+└── GitHub Sync
+My Top 5 Recommendation
+OpenHands — Primary software engineering agent.
+
+OpenClaw — Desktop and browser automation.
+
+Hermes — General reasoning and executive orchestration.
+
+CrewAI — Multi-agent coordination.
+
+Microsoft AutoGen — Complex collaborative workflows.
+
+One important point
+I would not build the entire company around a single agent such as Hermes. A more resilient design is to make your AI Company OS the core, with agents acting as interchangeable modules. That way, if a stronger open-source agent appears in the future, you can replace or add it without redesigning the whole system. This architecture is much more likely to remain useful as AI technology evolves.
+
+
+In this project hermes is the recommded because heres is the only ai agent now having the self improvement capabilities 
+
+Hermes is a reasonable choice if its self-improvement and customization capabilities align with your goals, but I wouldn't say it is the only AI agent with self-improvement capabilities.
+
+There are two different concepts here:
+
+Self-improving workflow (practical today)
+
+Self-improving AI model (not practical in the way people often imagine)
+
+What Hermes can realistically do
+If Hermes supports:
+
+Updating its own documentation
+
+Improving prompts
+
+Refining workflows
+
+Learning from project history
+
+Saving new knowledge to GitHub
+
+Reusing successful solutions
+
+then it has a self-improving workflow. That's very useful and fits well with your AI Company OS.
+
+However, that is different from the AI model changing its own neural network weights. Most current agents—including Hermes—do not retrain themselves autonomously during normal operation.
+
+The architecture I recommend
+Instead of making Hermes the irreplaceable center of the system, make it the default executive agent.
+
+For example:
+
+AI Company OS
+    │
+    ├── Executive Agent (Default: Hermes)
+    ├── Coding Agent
+    ├── Browser Agent
+    ├── Research Agent
+    ├── Memory Engine
+    ├── Workflow Engine
+    └── GitHub Knowledge Base
+In this design:
+
+Hermes coordinates the company.
+
+GitHub stores the permanent knowledge.
+
+Other agents can be added or replaced when they are better suited for a task.
+
+Why this is better
+Suppose that in two years:
+
+Hermes is no longer maintained, or
+
+another open-source executive agent becomes significantly better.
+
+If your system is built around AI Company OS, you can replace the executive agent while keeping:
+
+all documentation,
+
+all workflows,
+
+all checkpoints,
+
+all prompts,
+
+all business logic,
+
+all accumulated knowledge.
+
+Nothing is lost.
+
+My recommendation
+Use Hermes as the primary orchestration agent today if it best fits your needs, but avoid making the operating system depend exclusively on Hermes.
+
+A good guiding principle for your prompt is:
+
+"Hermes is the default executive AI agent responsible for coordinating the AI Company OS. The operating system itself remains model-agnostic and may integrate or replace agents as technology evolves, without losing accumulated knowledge or workflows."
+
+That gives you the benefits of Hermes today while keeping your architecture adaptable to future advances in AI.
+
+
