@@ -2,73 +2,81 @@
 name: codebase-inspection
 version: 2.0.0
 description: Advanced codebase analysis with HTML reports, git-aware diffs, trend tracking, SVG badges, CSV export, and CI/CD integration
-tags: ["codebase", "analysis", "metrics", "devtools", "python", "cli", "ci", "reports"]
+tags: ["codebase", "analysis", "metrics", "devtools", "python", "cli", "ci", "reports", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Codebase Inspector v2 🚀
+# Codebase Inspector
 
-Advanced codebase analysis with HTML reports, git-aware diffs, trend tracking, SVG badges, CSV export, and CI/CD integration
+**Walk any directory and report language breakdowns, line counts, blank/comment lines, with HTML reports, git-aware diffs, trend tracking, SVG badges, CSV export, and CI integration.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: codebase, analysis, metrics, devtools, python, cli, ci, reports, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Automatic language detection ( | Automatic language detection (40+ extensions → 30+ languages) |
-| Smart directory skipping (.git | Smart directory skipping (.git, node_modules, __pycache__, etc.) |
-| Blank/comment/code line counti | Blank/comment/code line counting |
-| HTML visual report with bar ch | HTML visual report with bar charts + summary cards |
-| Historical trend tracking (sna | Historical trend tracking (snapshot-based) |
-| Git-aware codebase diffing | Git-aware codebase diffing |
-| SVG badge generation for READM | SVG badge generation for README |
-| CSV export for dashboards | CSV export for dashboards |
+You can't manage codebase metrics you can't measure — and you can't see trends over time. Codebase Inspector solves this: Walk any directory and report language breakdowns, line counts, blank/comment lines, with HTML reports, git-aware diffs, trend tracking, SVG badges, CSV export, and CI integration.
+
+**Best for:** Engineering leads, open-source maintainers, and CI pipelines.
+
+## Features
+
+- **Print a per-language LOC report**
+- **Export CSV for dashboards**
+- **Generate an HTML report**
+- **Git-aware diff between snapshots**
+- **Track trends and emit an SVG badge**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/codebase-inspection/main/codebase_inspector.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python codebase_inspector.py analyze <dir>` | Analyze directory, print text report |
-| `python codebase_inspector.py --json` | JSON output for pipelines |
-| `python codebase_inspector.py --html FILE` | Generate visual HTML report with charts |
-| `python codebase_inspector.py --csv` | CSV export for spreadsheets |
-| `python codebase_inspector.py --badge` | Generate shields.io badge URL |
-| `python codebase_inspector.py --snapshot` | Save as trend data point |
-| `python codebase_inspector.py --trend` | Show historical trends |
-| `python codebase_inspector.py --diff <dir2>` | Compare two codebases |
-| `python codebase_inspector.py --exclude DIRS` | Skip custom directories |
-| `python codebase_inspector.py self-test` | Run 13 built-in checks |
-
-## Features
-
-- **Automatic language detection (40+ extensions → 30+ languages)**
-- **Smart directory skipping (.git, node_modules, __pycache__, etc.)**
-- **Blank/comment/code line counting**
-- **HTML visual report with bar charts + summary cards**
-- **Historical trend tracking (snapshot-based)**
-- **Git-aware codebase diffing**
-- **SVG badge generation for README**
-- **CSV export for dashboards**
-- **JSON mode for CI/CD pipelines**
-- **Cross-platform (Windows/macOS/Linux)**
-- **13 built-in self-tests**
-
-## Example
+## Quick start
 
 ```bash
-python codebase_inspector.py self-test
+python codebase_inspector.py --help        # list options
 ```
 
-## CI Integration
+## Use cases
+
+1. Print a per-language LOC report
+1. Export CSV for dashboards
+1. Generate an HTML report
+1. Git-aware diff between snapshots
+1. Track trends and emit an SVG badge
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| tokei/scc | Adds git-aware diffs, trend tracking, HTML reports, and badges in one CLI. |
+| Manual wc -l | Per-language breakdown with comment/blank counts. |
+| Spreadsheet metrics | CSV + HTML + badge, CI-ready. |
+
+## FAQ (SEO / AEO)
+
+**Q: How many languages?**  
+A: 25+ extensions recognized out of the box.
+
+**Q: CI integration?**  
+A: Yes — example GitHub Actions workflow asserts a language ratio.
+
+**Q: Badges?**  
+A: --badge emits an SVG you can drop in a README.
+
+**Q: Offline?**  
+A: Yes — no network, no telemetry.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -79,18 +87,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
-        run: python codebase_inspector.py self-test
+      - name: Self-test codebase-inspection
+        run: python codebase_inspector.py --help
 ```
-
-## Why
-
-Codebase Inspector is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
 
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

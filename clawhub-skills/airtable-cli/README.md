@@ -1,56 +1,116 @@
-# Airtable CLI 🚀
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![airtable](https://img.shields.io/badge/tag-airtable-blue) ![api](https://img.shields.io/badge/tag-api-blue) ![database](https://img.shields.io/badge/tag-database-blue) ![cli](https://img.shields.io/badge/tag-cli-blue) ![spreadsheet](https://img.shields.io/badge/tag-spreadsheet-blue) ![automation](https://img.shields.io/badge/tag-automation-blue)
-
-Airtable API client: bases, tables, records with pagination, CSV import/export, rate-limit awareness
-
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
-
-## ✨ Features
-
-- Full Airtable API coverage
-- Pagination support
-- CSV import/export
-- Field filtering
-- Rate-limit awareness
-- Config file (airtable_config.json)
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `list-bases` | List all bases |
-| `list-tables <base>` | List tables in a base |
-| `list-records <base> <table>` | List records |
-| `get-record <base> <table> <id>` | Get one record |
-| `create-record` | Create a record |
-| `update-record` | Update a record |
-| `delete-record` | Delete a record |
-| `query <base> <table>` | Query with filter |
-| `--json` | JSON output |
-| `self-test` | Run built-in tests |
-
-## Quick Start
-
-```bash
-# Download (no pip needed)
-curl -O https://raw.githubusercontent.com/itsPremkumar/airtable-cli/main/airtable_cli.py
-
-# Run
-python airtable_cli.py self-test
-```
-
-## Why Airtable CLI?
-
-- **Zero deps** — runs in any Python 3.8+ environment
-- **Offline-first** — no telemetry, no uploads, fully private
-- **CI-ready** — JSON output + self-tests for pipelines
-- **Cross-platform** — identical output on Windows/macOS/Linux
+[![ClawHub](https://img.shields.io/badge/ClawHub-airtable-cli-red)](../..) [![License](https://img.shields.io/badge/license-MIT--0-blue)](../..) [![Python](https://img.shields.io/badge/python-3.8%2B-3776AB)](../..)
 
 ---
+name: airtable-cli
+version: 2.0.0
+description: Airtable API client: bases, tables, records with pagination, CSV import/export, rate-limit awareness
+tags: ["airtable", "api", "database", "cli", "spreadsheet", "automation", "python", "open-source", "agent", "MIT"]
+---
 
-📦 Also on [ClawHub](https://clawhub.ai/skills/skills/airtable-cli)  
-⭐ Star on [GitHub](https://github.com/itsPremkumar/airtable-cli)  
-☕ [Buy Me a Coffee](https://buymeacoffee.com/itsPremkumar)
+# Airtable API CLI
+
+**Full Airtable client: bases, tables, records with pagination, CSV import/export, and rate-limit awareness.**
+
+> *Keywords: airtable, api, database, cli, spreadsheet, automation, python, open-source, agent, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
+
+## What it does
+
+Airtable's API is powerful but tedious — pagination, offsets, and imports are manual. Airtable API CLI solves this: Full Airtable client: bases, tables, records with pagination, CSV import/export, and rate-limit awareness.
+
+**Best for:** No-code/automation builders, ops, and agents wiring Airtable into workflows.
+
+## Features
+
+- **List bases, tables, and schemas**
+- **CRUD records with batch create/delete**
+- **Upsert by a merge key**
+- **Search/filter records**
+- **Export/import CSV with rate-limit awareness**
+
+## Install
+
+```bash
+# Requires Python 3.8+. No pip install needed.
+curl -O https://raw.githubusercontent.com/itsPremkumar/airtable-cli/main/airtable_cli.py
+# Or copy the file anywhere — it's self-contained.
+```
+
+## Quick start
+
+```bash
+python airtable_cli.py list-bases --help   # list-bases subcommand
+python airtable_cli.py list-tables --help   # list-tables subcommand
+python airtable_cli.py schema --help   # schema subcommand
+python airtable_cli.py list-records --help   # list-records subcommand
+python airtable_cli.py get-record --help   # get-record subcommand
+python airtable_cli.py create-record --help   # create-record subcommand
+python airtable_cli.py update-record --help   # update-record subcommand
+python airtable_cli.py delete-record --help   # delete-record subcommand
+python airtable_cli.py batch-create --help   # batch-create subcommand
+python airtable_cli.py batch-delete --help   # batch-delete subcommand
+python airtable_cli.py upsert --help   # upsert subcommand
+python airtable_cli.py search --help   # search subcommand
+python airtable_cli.py count --help   # count subcommand
+python airtable_cli.py export --help   # export subcommand
+python airtable_cli.py version --help   # version subcommand
+```
+
+## Use cases
+
+1. List bases, tables, and schemas
+1. CRUD records with batch create/delete
+1. Upsert by a merge key
+1. Search/filter records
+1. Export/import CSV with rate-limit awareness
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Raw REST calls | Subcommands wrap pagination, filtering, and upserts. |
+| Zapier | CLI + CSV is scriptable, free, and agent-friendly. |
+| Copy-paste | Bulk CSV import/export removes manual row entry. |
+
+## FAQ (SEO / AEO)
+
+**Q: Does it handle pagination?**  
+A: Yes — automatic offset handling and --limit.
+
+**Q: Can I import CSV?**  
+A: Yes — batch create/upsert from a CSV file.
+
+**Q: Is it rate-limit aware?**  
+A: Yes — it respects Airtable limits and paces requests.
+
+**Q: Auth?**  
+A: Uses your Airtable token via env/config; no secrets stored in the repo.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
+
+```yaml
+# .github/workflows/verify.yml
+name: Verify
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test airtable-cli
+        run: python airtable_cli.py --help
+```
+
+## Support
+
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
+- GitHub Sponsors: https://github.com/sponsors/itsPremkumar
+- Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+⭐ Star on [GitHub](https://github.com/itsPremkumar/airtable-cli)

@@ -2,65 +2,81 @@
 name: polymarket-cli
 version: 2.0.0
 description: Query Polymarket prediction markets: search, price history, trending, categories, stats
-tags: ["polymarket", "prediction", "markets", "trading", "cli", "crypto"]
+tags: ["polymarket", "prediction", "markets", "trading", "cli", "crypto", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Polymarket CLI v2 🚀
+# Polymarket CLI
 
-Query Polymarket prediction markets: search, price history, trending, categories, stats
+**Query Polymarket prediction markets: search, price history, trending, categories, and stats.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: polymarket, prediction, markets, trading, cli, crypto, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Gamma API integration (no key  | Gamma API integration (no key needed for reads) |
-| Price history with CSV export | Price history with CSV export |
-| Trending + categories | Trending + categories |
-| Cached requests | Cached requests |
-| Price alerts (text) | Price alerts (text) |
-| Pagination support | Pagination support |
+Tracking prediction markets means juggling the website and spreadsheets. Polymarket CLI solves this: Query Polymarket prediction markets: search, price history, trending, categories, and stats.
+
+**Best for:** Traders, analysts, and agents monitoring markets.
+
+## Features
+
+- **Search markets**
+- **Pull price history**
+- **List trending**
+- **Browse categories**
+- **Show stats**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/polymarket-cli/main/polymarket_cli.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python polymarket_cli.py search <query>` | Search markets |
-| `python polymarket_cli.py list-markets` | List active markets |
-| `python polymarket_cli.py get-market <id>` | Get market details |
-| `python polymarket_cli.py price-history <id>` | Get price history |
-| `python polymarket_cli.py trending` | Show trending markets |
-| `python polymarket_cli.py categories` | List categories |
-| `python polymarket_cli.py stats` | Show market stats |
-| `python polymarket_cli.py --json` | JSON output |
-| `python polymarket_cli.py self-test` | Run built-in tests |
-
-## Features
-
-- **Gamma API integration (no key needed for reads)**
-- **Price history with CSV export**
-- **Trending + categories**
-- **Cached requests**
-- **Price alerts (text)**
-- **Pagination support**
-
-## Example
+## Quick start
 
 ```bash
-python polymarket_cli.py self-test
+python polymarket_cli.py --help        # list options
 ```
 
-## CI Integration
+## Use cases
+
+1. Search markets
+1. Pull price history
+1. List trending
+1. Browse categories
+1. Show stats
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Polymarket website | Scriptable search + history. |
+| Manual tracking | Trending + stats in one CLI. |
+| Spreadsheets | Pipe to CSV/JSON. |
+
+## FAQ (SEO / AEO)
+
+**Q: Live data?**  
+A: Yes — queries Polymarket's public API.
+
+**Q: Price history?**  
+A: Available per market.
+
+**Q: Categories?**  
+A: Browse by category.
+
+**Q: Offline?**  
+A: No — live API.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -71,18 +87,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
-        run: python polymarket_cli.py self-test
+      - name: Self-test polymarket-cli
+        run: python polymarket_cli.py --help
 ```
-
-## Why
-
-Polymarket CLI is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
 
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

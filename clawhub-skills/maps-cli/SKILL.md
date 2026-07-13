@@ -2,64 +2,87 @@
 name: maps-cli
 version: 2.0.0
 description: Advanced OpenStreetMap CLI: geocode, reverse geocode, route, POI search, timezone, CSV export
-tags: ["maps", "osm", "geocode", "routing", "poi", "cli", "location"]
+tags: ["maps", "osm", "geocode", "routing", "poi", "cli", "location", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Maps CLI v2 🚀
+# Maps CLI (OpenStreetMap)
 
-Advanced OpenStreetMap CLI: geocode, reverse geocode, route, POI search, timezone, CSV export
+**Geocode, reverse-geocode, route, POI search, and timezone lookup — all via OpenStreetMap, with CSV export.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: maps, osm, geocode, routing, poi, cli, location, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| OpenStreetMap Nominatim geocod | OpenStreetMap Nominatim geocoding |
-| OSRM routing engine | OSRM routing engine |
-| Overpass API for POI search | Overpass API for POI search |
-| Timezone lookup | Timezone lookup |
-| CSV export | CSV export |
-| Zero external dependencies | Zero external dependencies |
+Maps need an API key and a SaaS for even basic geocoding/routing. Maps CLI (OpenStreetMap) solves this: Geocode, reverse-geocode, route, POI search, and timezone lookup — all via OpenStreetMap, with CSV export.
+
+**Best for:** Developers, field/ops apps, and agents needing location data.
+
+## Features
+
+- **Geocode an address**
+- **Reverse-geocode coordinates**
+- **Route between two points**
+- **Search POIs by category/radius**
+- **CSV export + timezone**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/maps-cli/main/maps_cli.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python maps_cli.py geocode <query>` | Geocode a place name |
-| `python maps_cli.py reverse <lat> <lon>` | Reverse geocode coordinates |
-| `python maps_cli.py route <s> <d>` | Driving route between points |
-| `python maps_cli.py poi <lat> <lon>` | Find points of interest |
-| `python maps_cli.py timezone <lat> <lon>` | Lookup timezone |
-| `python maps_cli.py export <lat> <lon>` | Export POIs as CSV |
-| `python maps_cli.py --json` | JSON output |
-| `python maps_cli.py self-test` | Run built-in tests |
-
-## Features
-
-- **OpenStreetMap Nominatim geocoding**
-- **OSRM routing engine**
-- **Overpass API for POI search**
-- **Timezone lookup**
-- **CSV export**
-- **Zero external dependencies**
-
-## Example
+## Quick start
 
 ```bash
-python maps_cli.py self-test
+python maps_cli.py self-test     # prove it works end-to-end
+python maps_cli.py geocode --help   # geocode subcommand
+python maps_cli.py reverse --help   # reverse subcommand
+python maps_cli.py route --help   # route subcommand
+python maps_cli.py poi --help   # poi subcommand
+python maps_cli.py timezone --help   # timezone subcommand
+python maps_cli.py export --help   # export subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Geocode an address
+1. Reverse-geocode coordinates
+1. Route between two points
+1. Search POIs by category/radius
+1. CSV export + timezone
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Google Maps API | No key, OSM-backed, free tier friendly. |
+| Manual geocoding | One CLI for geocode/reverse/route/POI. |
+| Spreadsheet maps | CSV export drops into BI. |
+
+## FAQ (SEO / AEO)
+
+**Q: Provider?**  
+A: OpenStreetMap (Nominatim/OSRM) — no key for basic use.
+
+**Q: Routing?**  
+A: Yes — route between lat/lon.
+
+**Q: POI?**  
+A: Search by category within a radius.
+
+**Q: Offline?**  
+A: No — queries OSM live.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -70,18 +93,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test maps-cli
         run: python maps_cli.py self-test
 ```
 
-## Why
-
-Maps CLI is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

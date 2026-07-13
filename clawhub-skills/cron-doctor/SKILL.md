@@ -2,61 +2,82 @@
 name: cron-doctor
 version: 2.0.0
 description: Diagnose and fix cron job issues: missed runs, overlapping jobs, silent failures
-tags: ["cron", "doctor", "diagnostics", "cli", "scheduler", "debug"]
+tags: ["cron", "doctor", "diagnostics", "cli", "scheduler", "debug", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Cron Doctor v2 🚀
+# Cron Doctor
 
-Diagnose and fix cron job issues: missed runs, overlapping jobs, silent failures
+**Validate and diagnose a scheduled-task file for an agent: parse errors, unsafe commands, collisions, missed/overlapping runs.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: cron, doctor, diagnostics, cli, scheduler, debug, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Missed-run detection | Missed-run detection |
-| Overlap detection | Overlap detection |
-| Silent-failure alerts | Silent-failure alerts |
-| Auto-fix suggestions | Auto-fix suggestions |
-| Run history | Run history |
-| JSON output | JSON output |
+A bad cron line fails silently at 3am and you find out from users. Cron Doctor solves this: Validate and diagnose a scheduled-task file for an agent: parse errors, unsafe commands, collisions, missed/overlapping runs.
+
+**Best for:** Agent operators, SREs, and anyone with scheduled jobs.
+
+## Features
+
+- **Check a crontab-style file for errors**
+- **Flag unsafe commands (rm -rf, sudo)**
+- **Detect overlapping jobs**
+- **Suggest auto-fixes**
+- **JSON output for CI**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/cron-doctor/main/cron_doctor.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python cron_doctor.py diagnose` | Diagnose cron issues |
-| `python cron_doctor.py list` | List cron jobs |
-| `python cron_doctor.py fix <job>` | Attempt auto-fix |
-| `python cron_doctor.py history <job>` | Show run history |
-| `python cron_doctor.py self-test` | Run built-in tests |
-
-## Features
-
-- **Missed-run detection**
-- **Overlap detection**
-- **Silent-failure alerts**
-- **Auto-fix suggestions**
-- **Run history**
-- **JSON output**
-
-## Example
+## Quick start
 
 ```bash
-python cron_doctor.py self-test
+python cron_doctor.py self-test     # prove it works end-to-end
+python cron_doctor.py check --help   # check subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Check a crontab-style file for errors
+1. Flag unsafe commands (rm -rf, sudo)
+1. Detect overlapping jobs
+1. Suggest auto-fixes
+1. JSON output for CI
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| crontab -l and hope | Parses, validates, and explains failures. |
+| Cron lint gists | Adds unsafe-command detection and collisions. |
+| Debugging at 3am | Catch it before the run, not after. |
+
+## FAQ (SEO / AEO)
+
+**Q: What schedules does it parse?**  
+A: 30m, every 2h, '0 9 * * *', and standard crontab forms.
+
+**Q: What is unsafe?**  
+A: Destructive/gated commands like rm -rf, sudo, etc. are flagged.
+
+**Q: CI?**  
+A: Yes — --json + non-zero exit on failure.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -67,18 +88,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test cron-doctor
         run: python cron_doctor.py self-test
 ```
 
-## Why
-
-Cron Doctor is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

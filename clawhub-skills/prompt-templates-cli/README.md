@@ -1,51 +1,104 @@
-# Prompt Templates CLI 🚀
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![prompts](https://img.shields.io/badge/tag-prompts-blue) ![templates](https://img.shields.io/badge/tag-templates-blue) ![cli](https://img.shields.io/badge/tag-cli-blue) ![ai](https://img.shields.io/badge/tag-ai-blue) ![automation](https://img.shields.io/badge/tag-automation-blue) ![render](https://img.shields.io/badge/tag-render-blue)
-
-Manage reusable prompt templates: create, render, validate with variables
-
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
-
-## ✨ Features
-
-- Template library
-- Variable substitution
-- Validation
-- Import/export
-- JSON output
-- Versioning
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `list` | List templates |
-| `render <name> --vars x=y` | Render a template |
-| `create <name>` | Create template |
-| `validate <name>` | Validate syntax |
-| `self-test` | Run built-in tests |
-
-## Quick Start
-
-```bash
-# Download (no pip needed)
-curl -O https://raw.githubusercontent.com/itsPremkumar/prompt-templates-cli/main/prompt_templates_cli.py
-
-# Run
-python prompt_templates_cli.py self-test
-```
-
-## Why Prompt Templates CLI?
-
-- **Zero deps** — runs in any Python 3.8+ environment
-- **Offline-first** — no telemetry, no uploads, fully private
-- **CI-ready** — JSON output + self-tests for pipelines
-- **Cross-platform** — identical output on Windows/macOS/Linux
+[![ClawHub](https://img.shields.io/badge/ClawHub-prompt-templates-cli-red)](../..) [![License](https://img.shields.io/badge/license-MIT--0-blue)](../..) [![Python](https://img.shields.io/badge/python-3.8%2B-3776AB)](../..)
 
 ---
+name: prompt-templates-cli
+version: 2.0.0
+description: Manage reusable prompt templates: create, render, validate with variables
+tags: ["prompts", "templates", "cli", "ai", "automation", "render", "python", "open-source", "agent", "MIT"]
+---
 
-📦 Also on [ClawHub](https://clawhub.ai/skills/skills/prompt-templates-cli)  
-⭐ Star on [GitHub](https://github.com/itsPremkumar/prompt-templates-cli)  
-☕ [Buy Me a Coffee](https://buymeacoffee.com/itsPremkumar)
+# Prompt Templates CLI
+
+**Manage reusable prompt templates: create, render, and validate with {{variables}}.**
+
+> *Keywords: prompts, templates, cli, ai, automation, render, python, open-source, agent, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
+
+## What it does
+
+Hard-coded prompts can't be reused or tested across agents. Prompt Templates CLI solves this: Manage reusable prompt templates: create, render, and validate with {{variables}}.
+
+**Best for:** Prompt engineers and agent platforms standardizing prompts.
+
+## Features
+
+- **List catalog templates**
+- **Render with variables**
+- **Validate template syntax**
+- **Set catalog path**
+- **Version prompts**
+
+## Install
+
+```bash
+# Requires Python 3.8+. No pip install needed.
+curl -O https://raw.githubusercontent.com/itsPremkumar/prompt-templates-cli/main/prompt_templates_cli.py
+# Or copy the file anywhere — it's self-contained.
+```
+
+## Quick start
+
+```bash
+python prompt_templates_cli.py self-test     # prove it works end-to-end
+python prompt_templates_cli.py list --help   # list subcommand
+python prompt_templates_cli.py render --help   # render subcommand
+```
+
+## Use cases
+
+1. List catalog templates
+1. Render with variables
+1. Validate template syntax
+1. Set catalog path
+1. Version prompts
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| String formatting | Structured, validated templates. |
+| Copy-paste | Catalog + render. |
+| No reuse | One source of truth. |
+
+## FAQ (SEO / AEO)
+
+**Q: Variables?**  
+A: {{var}} fill style.
+
+**Q: Catalog?**  
+A: --catalog points at your template set.
+
+**Q: Validate?**  
+A: Catches undefined/missing vars.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
+
+```yaml
+# .github/workflows/verify.yml
+name: Verify
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test prompt-templates-cli
+        run: python prompt_templates_cli.py self-test
+```
+
+## Support
+
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
+- GitHub Sponsors: https://github.com/sponsors/itsPremkumar
+- Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+⭐ Star on [GitHub](https://github.com/itsPremkumar/prompt-templates-cli)

@@ -2,61 +2,83 @@
 name: prompt-templates-cli
 version: 2.0.0
 description: Manage reusable prompt templates: create, render, validate with variables
-tags: ["prompts", "templates", "cli", "ai", "automation", "render"]
+tags: ["prompts", "templates", "cli", "ai", "automation", "render", "python", "open-source", "agent", "MIT"]
 ---
 
-# Prompt Templates CLI v2 🚀
+# Prompt Templates CLI
 
-Manage reusable prompt templates: create, render, validate with variables
+**Manage reusable prompt templates: create, render, and validate with {{variables}}.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: prompts, templates, cli, ai, automation, render, python, open-source, agent, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Template library | Template library |
-| Variable substitution | Variable substitution |
-| Validation | Validation |
-| Import/export | Import/export |
-| JSON output | JSON output |
-| Versioning | Versioning |
+Hard-coded prompts can't be reused or tested across agents. Prompt Templates CLI solves this: Manage reusable prompt templates: create, render, and validate with {{variables}}.
+
+**Best for:** Prompt engineers and agent platforms standardizing prompts.
+
+## Features
+
+- **List catalog templates**
+- **Render with variables**
+- **Validate template syntax**
+- **Set catalog path**
+- **Version prompts**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/prompt-templates-cli/main/prompt_templates_cli.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python prompt_templates_cli.py list` | List templates |
-| `python prompt_templates_cli.py render <name> --vars x=y` | Render a template |
-| `python prompt_templates_cli.py create <name>` | Create template |
-| `python prompt_templates_cli.py validate <name>` | Validate syntax |
-| `python prompt_templates_cli.py self-test` | Run built-in tests |
-
-## Features
-
-- **Template library**
-- **Variable substitution**
-- **Validation**
-- **Import/export**
-- **JSON output**
-- **Versioning**
-
-## Example
+## Quick start
 
 ```bash
-python prompt_templates_cli.py self-test
+python prompt_templates_cli.py self-test     # prove it works end-to-end
+python prompt_templates_cli.py list --help   # list subcommand
+python prompt_templates_cli.py render --help   # render subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. List catalog templates
+1. Render with variables
+1. Validate template syntax
+1. Set catalog path
+1. Version prompts
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| String formatting | Structured, validated templates. |
+| Copy-paste | Catalog + render. |
+| No reuse | One source of truth. |
+
+## FAQ (SEO / AEO)
+
+**Q: Variables?**  
+A: {{var}} fill style.
+
+**Q: Catalog?**  
+A: --catalog points at your template set.
+
+**Q: Validate?**  
+A: Catches undefined/missing vars.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -67,18 +89,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test prompt-templates-cli
         run: python prompt_templates_cli.py self-test
 ```
 
-## Why
-
-Prompt Templates CLI is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

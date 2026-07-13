@@ -1,52 +1,105 @@
-# Document Text Extractor 🚀
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![pdf](https://img.shields.io/badge/tag-pdf-blue) ![docx](https://img.shields.io/badge/tag-docx-blue) ![extract](https://img.shields.io/badge/tag-extract-blue) ![text](https://img.shields.io/badge/tag-text-blue) ![cli](https://img.shields.io/badge/tag-cli-blue) ![documents](https://img.shields.io/badge/tag-documents-blue)
-
-Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure
-
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
-
-## ✨ Features
-
-- PDF extraction (pymupdf optional)
-- DOCX via zipfile + xml
-- TXT with encoding detection
-- Page/paragraph structure
-- Metadata extraction
-- Batch processing
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `extract <file>` | Extract text from document |
-| `pages <file>` | List pages (PDF) |
-| `metadata <file>` | Extract metadata |
-| `--format txt|md|json` | Output format |
-| `--json` | JSON output |
-| `self-test` | Run built-in tests |
-
-## Quick Start
-
-```bash
-# Download (no pip needed)
-curl -O https://raw.githubusercontent.com/itsPremkumar/doc-extractor/main/doc_extractor.py
-
-# Run
-python doc_extractor.py self-test
-```
-
-## Why Document Text Extractor?
-
-- **Zero deps** — runs in any Python 3.8+ environment
-- **Offline-first** — no telemetry, no uploads, fully private
-- **CI-ready** — JSON output + self-tests for pipelines
-- **Cross-platform** — identical output on Windows/macOS/Linux
+[![ClawHub](https://img.shields.io/badge/ClawHub-doc-extractor-red)](../..) [![License](https://img.shields.io/badge/license-MIT--0-blue)](../..) [![Python](https://img.shields.io/badge/python-3.8%2B-3776AB)](../..)
 
 ---
+name: doc-extractor
+version: 2.0.0
+description: Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure
+tags: ["pdf", "docx", "extract", "text", "cli", "documents", "python", "open-source", "agent", "automation", "MIT"]
+---
 
-📦 Also on [ClawHub](https://clawhub.ai/skills/skills/doc-extractor)  
-⭐ Star on [GitHub](https://github.com/itsPremkumar/doc-extractor)  
-☕ [Buy Me a Coffee](https://buymeacoffee.com/itsPremkumar)
+# Document Text Extractor
+
+**Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure.**
+
+> *Keywords: pdf, docx, extract, text, cli, documents, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
+
+## What it does
+
+Getting clean text out of PDFs/DOCX for RAG or search is fiddly. Document Text Extractor solves this: Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure.
+
+**Best for:** RAG builders, researchers, and data engineers.
+
+## Features
+
+- **Extract text from a PDF**
+- **Pull DOCX content**
+- **Batch a folder**
+- **List supported formats**
+- **Preserve structure (pages/paragraphs)**
+
+## Install
+
+```bash
+# Requires Python 3.8+. No pip install needed.
+curl -O https://raw.githubusercontent.com/itsPremkumar/doc-extractor/main/doc_extractor.py
+# Or copy the file anywhere — it's self-contained.
+```
+
+## Quick start
+
+```bash
+python doc_extractor.py self-test     # prove it works end-to-end
+python doc_extractor.py extract --help   # extract subcommand
+python doc_extractor.py list-formats --help   # list-formats subcommand
+python doc_extractor.py batch --help   # batch subcommand
+```
+
+## Use cases
+
+1. Extract text from a PDF
+1. Pull DOCX content
+1. Batch a folder
+1. List supported formats
+1. Preserve structure (pages/paragraphs)
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Copy-paste from a viewer | Scriptable batch extraction. |
+| One-format tools | PDF + DOCX + TXT in one CLI. |
+| Lost structure | Structured output for RAG. |
+
+## FAQ (SEO / AEO)
+
+**Q: Formats?**  
+A: PDF, DOCX, TXT (list with list-formats).
+
+**Q: Encoding?**  
+A: Auto-detected.
+
+**Q: Structure?**  
+A: Page/paragraph boundaries are preserved where available.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
+
+```yaml
+# .github/workflows/verify.yml
+name: Verify
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test doc-extractor
+        run: python doc_extractor.py self-test
+```
+
+## Support
+
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
+- GitHub Sponsors: https://github.com/sponsors/itsPremkumar
+- Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+⭐ Star on [GitHub](https://github.com/itsPremkumar/doc-extractor)

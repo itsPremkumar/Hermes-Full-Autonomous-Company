@@ -2,60 +2,82 @@
 name: manifest-diff
 version: 2.0.0
 description: Diff agent/skill manifests: capabilities, permissions, versions
-tags: ["diff", "manifest", "agent", "cli", "audit", "security"]
+tags: ["diff", "manifest", "agent", "cli", "audit", "security", "python", "open-source", "automation", "MIT"]
 ---
 
-# Manifest Diff v2 🚀
+# Manifest Diff
 
-Diff agent/skill manifests: capabilities, permissions, versions
+**Diff two agent/skill manifests and report capability, permission, and version changes.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: diff, manifest, agent, cli, audit, security, python, open-source, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Capability diffing | Capability diffing |
-| Permission comparison | Permission comparison |
-| Version tracking | Version tracking |
-| JSON output | JSON output |
-| CI integration | CI integration |
-| Risk highlighting | Risk highlighting |
+Spotting what changed between two agent manifests by eye is error-prone. Manifest Diff solves this: Diff two agent/skill manifests and report capability, permission, and version changes.
+
+**Best for:** Agent reviewers and platform teams managing versions.
+
+## Features
+
+- **Diff two manifests**
+- **See capability changes**
+- **Flag permission deltas**
+- **Catch version downgrades**
+- **JSON output for CI**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/manifest-diff/main/manifest_diff.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python manifest_diff.py diff <a> <b>` | Diff two manifests |
-| `python manifest_diff.py capabilities <m>` | Show capabilities |
-| `python manifest_diff.py permissions <m>` | Show permissions |
-| `python manifest_diff.py self-test` | Run built-in tests |
-
-## Features
-
-- **Capability diffing**
-- **Permission comparison**
-- **Version tracking**
-- **JSON output**
-- **CI integration**
-- **Risk highlighting**
-
-## Example
+## Quick start
 
 ```bash
-python manifest_diff.py self-test
+python manifest_diff.py self-test     # prove it works end-to-end
+python manifest_diff.py diff --help   # diff subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Diff two manifests
+1. See capability changes
+1. Flag permission deltas
+1. Catch version downgrades
+1. JSON output for CI
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Reading both files | Automatic delta report. |
+| diff on raw JSON | Semantic, not textual. |
+| Guessing risk | Permission deltas surfaced explicitly. |
+
+## FAQ (SEO / AEO)
+
+**Q: Input?**  
+A: Two manifest files (a/b).
+
+**Q: What changes?**  
+A: Capabilities, permissions, versions.
+
+**Q: CI?**  
+A: Yes — --json.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -66,18 +88,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test manifest-diff
         run: python manifest_diff.py self-test
 ```
 
-## Why
-
-Manifest Diff is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

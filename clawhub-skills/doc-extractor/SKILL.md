@@ -2,62 +2,84 @@
 name: doc-extractor
 version: 2.0.0
 description: Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure
-tags: ["pdf", "docx", "extract", "text", "cli", "documents"]
+tags: ["pdf", "docx", "extract", "text", "cli", "documents", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Document Text Extractor v2 🚀
+# Document Text Extractor
 
-Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure
+**Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: pdf, docx, extract, text, cli, documents, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| PDF extraction (pymupdf option | PDF extraction (pymupdf optional) |
-| DOCX via zipfile + xml | DOCX via zipfile + xml |
-| TXT with encoding detection | TXT with encoding detection |
-| Page/paragraph structure | Page/paragraph structure |
-| Metadata extraction | Metadata extraction |
-| Batch processing | Batch processing |
+Getting clean text out of PDFs/DOCX for RAG or search is fiddly. Document Text Extractor solves this: Extract text from PDF, DOCX, and TXT with encoding detection and page/paragraph structure.
+
+**Best for:** RAG builders, researchers, and data engineers.
+
+## Features
+
+- **Extract text from a PDF**
+- **Pull DOCX content**
+- **Batch a folder**
+- **List supported formats**
+- **Preserve structure (pages/paragraphs)**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/doc-extractor/main/doc_extractor.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python doc_extractor.py extract <file>` | Extract text from document |
-| `python doc_extractor.py pages <file>` | List pages (PDF) |
-| `python doc_extractor.py metadata <file>` | Extract metadata |
-| `python doc_extractor.py --format txt|md|json` | Output format |
-| `python doc_extractor.py --json` | JSON output |
-| `python doc_extractor.py self-test` | Run built-in tests |
-
-## Features
-
-- **PDF extraction (pymupdf optional)**
-- **DOCX via zipfile + xml**
-- **TXT with encoding detection**
-- **Page/paragraph structure**
-- **Metadata extraction**
-- **Batch processing**
-
-## Example
+## Quick start
 
 ```bash
-python doc_extractor.py self-test
+python doc_extractor.py self-test     # prove it works end-to-end
+python doc_extractor.py extract --help   # extract subcommand
+python doc_extractor.py list-formats --help   # list-formats subcommand
+python doc_extractor.py batch --help   # batch subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Extract text from a PDF
+1. Pull DOCX content
+1. Batch a folder
+1. List supported formats
+1. Preserve structure (pages/paragraphs)
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Copy-paste from a viewer | Scriptable batch extraction. |
+| One-format tools | PDF + DOCX + TXT in one CLI. |
+| Lost structure | Structured output for RAG. |
+
+## FAQ (SEO / AEO)
+
+**Q: Formats?**  
+A: PDF, DOCX, TXT (list with list-formats).
+
+**Q: Encoding?**  
+A: Auto-detected.
+
+**Q: Structure?**  
+A: Page/paragraph boundaries are preserved where available.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -68,18 +90,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test doc-extractor
         run: python doc_extractor.py self-test
 ```
 
-## Why
-
-Document Text Extractor is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

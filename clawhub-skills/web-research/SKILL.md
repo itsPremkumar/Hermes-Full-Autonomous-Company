@@ -2,63 +2,84 @@
 name: web-research
 version: 2.0.0
 description: DuckDuckGo + Wikipedia research CLI with URL fetching, content extraction, and citation export
-tags: ["web", "research", "search", "duckduckgo", "wikipedia", "cli"]
+tags: ["web", "research", "search", "duckduckgo", "wikipedia", "cli", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Web Research Toolkit v2 🚀
+# Web Research Toolkit
 
-DuckDuckGo + Wikipedia research CLI with URL fetching, content extraction, and citation export
+**Route search, research, and lookups through one CLI — DuckDuckGo, Wikipedia, and URL fetch — zero dependencies.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: web, research, search, duckduckgo, wikipedia, cli, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| DuckDuckGo Lite scraping | DuckDuckGo Lite scraping |
-| Wikipedia API integration | Wikipedia API integration |
-| URL content extraction (HTMLPa | URL content extraction (HTMLParser) |
-| Auto-summarization | Auto-summarization |
-| Citation export | Citation export |
-| Rate-limit aware | Rate-limit aware |
+Web research is scattered across sites and needs API keys for most tools. Web Research Toolkit solves this: Route search, research, and lookups through one CLI — DuckDuckGo, Wikipedia, and URL fetch — zero dependencies.
+
+**Best for:** Researchers, agents, and CI fact-checkers.
+
+## Features
+
+- **DuckDuckGo search**
+- **Wikipedia lookups**
+- **Fetch + extract a URL**
+- **Export citations**
+- **Batch research in CI**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/web-research/main/web_research.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python web_research.py search <query>` | Search DuckDuckGo Lite |
-| `python web_research.py wiki <topic>` | Search Wikipedia |
-| `python web_research.py fetch <url>` | Fetch and extract text from URL |
-| `python web_research.py summarize <url>` | Summarize a page |
-| `python web_research.py --limit N` | Limit results |
-| `python web_research.py --json` | JSON output |
-| `python web_research.py self-test` | Run built-in tests |
-
-## Features
-
-- **DuckDuckGo Lite scraping**
-- **Wikipedia API integration**
-- **URL content extraction (HTMLParser)**
-- **Auto-summarization**
-- **Citation export**
-- **Rate-limit aware**
-
-## Example
+## Quick start
 
 ```bash
-python web_research.py self-test
+python web_research.py self-test     # prove it works end-to-end
+python web_research.py search --help   # search subcommand
+python web_research.py wiki --help   # wiki subcommand
+python web_research.py fetch --help   # fetch subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. DuckDuckGo search
+1. Wikipedia lookups
+1. Fetch + extract a URL
+1. Export citations
+1. Batch research in CI
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Per-site research | One CLI, three backends. |
+| API-key tools | Zero-dependency, keyless. |
+| Copy-paste | Citations + extraction built in. |
+
+## FAQ (SEO / AEO)
+
+**Q: Backends?**  
+A: DuckDuckGo, Wikipedia, raw URL fetch.
+
+**Q: API key?**  
+A: No — stdlib only.
+
+**Q: Citations?**  
+A: Exportable.
+
+**Q: Offline?**  
+A: No — live web.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -69,18 +90,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test web-research
         run: python web_research.py self-test
 ```
 
-## Why
-
-Web Research Toolkit is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

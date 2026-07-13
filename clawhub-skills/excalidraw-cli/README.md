@@ -1,55 +1,106 @@
-# Excalidraw CLI 🚀
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![excalidraw](https://img.shields.io/badge/tag-excalidraw-blue) ![diagrams](https://img.shields.io/badge/tag-diagrams-blue) ![flowchart](https://img.shields.io/badge/tag-flowchart-blue) ![architecture](https://img.shields.io/badge/tag-architecture-blue) ![cli](https://img.shields.io/badge/tag-cli-blue) ![drawing](https://img.shields.io/badge/tag-drawing-blue)
-
-Generate Excalidraw diagrams (flowcharts, sequences, architecture) as valid .excalidraw JSON
-
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
-
-## ✨ Features
-
-- Valid Excalidraw JSON output
-- Multiple diagram types (flowchart, sequence, arch, gantt)
-- Colored elements
-- Text labels
-- Compatible with excalidraw.com
-- Zero dependencies
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `create flowchart` | Generate a flowchart |
-| `create sequence` | Generate a sequence diagram |
-| `create arch` | Generate architecture diagram |
-| `create gantt` | Generate a Gantt chart |
-| `render <file>` | Render to SVG/PNG |
-| `export <file>` | Export diagram |
-| `list` | List templates |
-| `show <file>` | Show diagram JSON |
-| `self-test` | Run built-in tests |
-
-## Quick Start
-
-```bash
-# Download (no pip needed)
-curl -O https://raw.githubusercontent.com/itsPremkumar/excalidraw-cli/main/excalidraw_cli.py
-
-# Run
-python excalidraw_cli.py self-test
-```
-
-## Why Excalidraw CLI?
-
-- **Zero deps** — runs in any Python 3.8+ environment
-- **Offline-first** — no telemetry, no uploads, fully private
-- **CI-ready** — JSON output + self-tests for pipelines
-- **Cross-platform** — identical output on Windows/macOS/Linux
+[![ClawHub](https://img.shields.io/badge/ClawHub-excalidraw-cli-red)](../..) [![License](https://img.shields.io/badge/license-MIT--0-blue)](../..) [![Python](https://img.shields.io/badge/python-3.8%2B-3776AB)](../..)
 
 ---
+name: excalidraw-cli
+version: 2.0.0
+description: Generate Excalidraw diagrams (flowcharts, sequences, architecture) as valid .excalidraw JSON
+tags: ["excalidraw", "diagrams", "flowchart", "architecture", "cli", "drawing", "python", "open-source", "agent", "automation", "MIT"]
+---
 
-📦 Also on [ClawHub](https://clawhub.ai/skills/skills/excalidraw-cli)  
-⭐ Star on [GitHub](https://github.com/itsPremkumar/excalidraw-cli)  
-☕ [Buy Me a Coffee](https://buymeacoffee.com/itsPremkumar)
+# Excalidraw Diagram CLI
+
+**Generate Excalidraw diagrams — flowcharts, sequences, architecture — as valid .excalidraw JSON.**
+
+> *Keywords: excalidraw, diagrams, flowchart, architecture, cli, drawing, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
+
+## What it does
+
+Drawing diagrams by hand is slow and not version-controllable. Excalidraw Diagram CLI solves this: Generate Excalidraw diagrams — flowcharts, sequences, architecture — as valid .excalidraw JSON.
+
+**Best for:** Engineers documenting architecture, agents generating diagrams, and tech writers.
+
+## Features
+
+- **Generate a flowchart**
+- **Build a sequence diagram**
+- **Compose an architecture map**
+- **Merge/overlay diagrams**
+- **Export valid Excalidraw JSON**
+
+## Install
+
+```bash
+# Requires Python 3.8+. No pip install needed.
+curl -O https://raw.githubusercontent.com/itsPremkumar/excalidraw-cli/main/excalidraw_cli.py
+# Or copy the file anywhere — it's self-contained.
+```
+
+## Quick start
+
+```bash
+python excalidraw_cli.py self-test     # prove it works end-to-end
+python excalidraw_cli.py diagram --help   # diagram subcommand
+python excalidraw_cli.py merge --help   # merge subcommand
+python excalidraw_cli.py info --help   # info subcommand
+python excalidraw_cli.py export --help   # export subcommand
+```
+
+## Use cases
+
+1. Generate a flowchart
+1. Build a sequence diagram
+1. Compose an architecture map
+1. Merge/overlay diagrams
+1. Export valid Excalidraw JSON
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Drag-drop in Excalidraw | Diagrams as code, diff-able in git. |
+| Mermaid only | Native Excalidraw JSON, hand-drawn style. |
+| Screenshots | Regenerate from text anytime. |
+
+## FAQ (SEO / AEO)
+
+**Q: Diagram types?**  
+A: flow, sequence, architecture (--type).
+
+**Q: Valid output?**  
+A: Emits Excalidraw-compatible JSON you can open in the app.
+
+**Q: Compose?**  
+A: merge/overlay combine diagrams.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
+
+```yaml
+# .github/workflows/verify.yml
+name: Verify
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test excalidraw-cli
+        run: python excalidraw_cli.py self-test
+```
+
+## Support
+
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
+- GitHub Sponsors: https://github.com/sponsors/itsPremkumar
+- Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+⭐ Star on [GitHub](https://github.com/itsPremkumar/excalidraw-cli)

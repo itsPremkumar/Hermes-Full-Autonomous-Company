@@ -2,62 +2,84 @@
 name: file-watcher
 version: 2.0.0
 description: Monitor directories for changes: snapshots, diffs, glob filtering, event detection
-tags: ["file", "watch", "monitor", "diff", "cli", "automation"]
+tags: ["file", "watch", "monitor", "diff", "cli", "automation", "python", "open-source", "agent", "MIT"]
 ---
 
-# File Watcher v2 🚀
+# File Watcher
 
-Monitor directories for changes: snapshots, diffs, glob filtering, event detection
+**Monitor directories for changes: snapshots, diffs, glob filtering, and event detection.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: file, watch, monitor, diff, cli, automation, python, open-source, agent, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Snapshot capture | Snapshot capture |
-| Hash/MD5 tracking | Hash/MD5 tracking |
-| Glob filtering | Glob filtering |
-| Create/delete/modify detection | Create/delete/modify detection |
-| Diff between snapshots | Diff between snapshots |
-| Watch mode | Watch mode |
+Knowing what changed on disk — and when — is manual without a tool. File Watcher solves this: Monitor directories for changes: snapshots, diffs, glob filtering, and event detection.
+
+**Best for:** Automation builders, agents, and ops monitoring config/data.
+
+## Features
+
+- **Watch a dir for changes**
+- **Snapshot and diff two states**
+- **Filter by glob/ignore**
+- **Detect specific events**
+- **Emit JSON for pipelines**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/file-watcher/main/file_watcher.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python file_watcher.py once <dir>` | Take a snapshot |
-| `python file_watcher.py once <dir> --output FILE` | Save snapshot to file |
-| `python file_watcher.py diff <a> <b>` | Diff two snapshots |
-| `python file_watcher.py watch <dir>` | Watch for changes (long-running) |
-| `python file_watcher.py --glob PATTERN` | Filter by glob |
-| `python file_watcher.py self-test` | Run built-in tests |
-
-## Features
-
-- **Snapshot capture**
-- **Hash/MD5 tracking**
-- **Glob filtering**
-- **Create/delete/modify detection**
-- **Diff between snapshots**
-- **Watch mode**
-
-## Example
+## Quick start
 
 ```bash
-python file_watcher.py self-test
+python file_watcher.py self-test     # prove it works end-to-end
+python file_watcher.py watch --help   # watch subcommand
+python file_watcher.py once --help   # once subcommand
+python file_watcher.py diff --help   # diff subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Watch a dir for changes
+1. Snapshot and diff two states
+1. Filter by glob/ignore
+1. Detect specific events
+1. Emit JSON for pipelines
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| inotify scripts | Cross-platform polling + glob filtering. |
+| diff two trees by hand | Snapshots make it one command. |
+| Guessing what changed | Event-level detection. |
+
+## FAQ (SEO / AEO)
+
+**Q: Polling?**  
+A: Yes — --poll-interval for non-inotify platforms.
+
+**Q: Filters?**  
+A: --glob and --ignore.
+
+**Q: Diff?**  
+A: snapshot_a/snapshot_b diff mode.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -68,18 +90,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test file-watcher
         run: python file_watcher.py self-test
 ```
 
-## Why
-
-File Watcher is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

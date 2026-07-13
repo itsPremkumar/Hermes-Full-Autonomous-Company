@@ -2,65 +2,89 @@
 name: json-tools
 version: 2.0.0
 description: Validate, format, query, diff, filter, flatten, merge JSON files with dot-notation paths
-tags: ["json", "tools", "validate", "query", "diff", "cli", "data"]
+tags: ["json", "tools", "validate", "query", "diff", "cli", "data", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# JSON Tools v2 🚀
+# JSON Toolkit
 
-Validate, format, query, diff, filter, flatten, merge JSON files with dot-notation paths
+**Validate, format, query, diff, filter, flatten, and merge JSON with dot-notation paths.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: json, tools, validate, query, diff, cli, data, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| 8 commands (validate/format/qu | 8 commands (validate/format/query/diff/filter/stats/flatten/merge) |
-| Dot-notation querying | Dot-notation querying |
-| JSON diff with structural comp | JSON diff with structural comparison |
-| Array filtering | Array filtering |
-| Flatten nested structures | Flatten nested structures |
-| Deep merge | Deep merge |
+JSON wrangling across many small tasks needs many one-off tools. JSON Toolkit solves this: Validate, format, query, diff, filter, flatten, and merge JSON with dot-notation paths.
+
+**Best for:** Developers, data engineers, and agents processing JSON.
+
+## Features
+
+- **Validate JSON**
+- **Format/pretty-print**
+- **Query by dot path**
+- **Diff two files**
+- **Flatten/merge**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/json-tools/main/json_tools.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python json_tools.py validate <file>` | Validate JSON syntax |
-| `python json_tools.py format <file>` | Pretty-print JSON |
-| `python json_tools.py query <file> <path>` | Query with dot-notation |
-| `python json_tools.py diff <a> <b>` | Diff two JSON files |
-| `python json_tools.py filter <file> <expr>` | Filter array elements |
-| `python json_tools.py flatten <file>` | Flatten nested JSON |
-| `python json_tools.py merge <a> <b>` | Deep-merge JSON |
-| `python json_tools.py stats <file>` | Show statistics |
-| `python json_tools.py self-test` | Run built-in tests |
-
-## Features
-
-- **8 commands (validate/format/query/diff/filter/stats/flatten/merge)**
-- **Dot-notation querying**
-- **JSON diff with structural comparison**
-- **Array filtering**
-- **Flatten nested structures**
-- **Deep merge**
-
-## Example
+## Quick start
 
 ```bash
-python json_tools.py self-test
+python json_tools.py self-test     # prove it works end-to-end
+python json_tools.py validate --help   # validate subcommand
+python json_tools.py format --help   # format subcommand
+python json_tools.py query --help   # query subcommand
+python json_tools.py diff --help   # diff subcommand
+python json_tools.py filter --help   # filter subcommand
+python json_tools.py stats --help   # stats subcommand
+python json_tools.py flatten --help   # flatten subcommand
+python json_tools.py merge --help   # merge subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Validate JSON
+1. Format/pretty-print
+1. Query by dot path
+1. Diff two files
+1. Flatten/merge
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| jq | Familiar dot-path query plus diff/flatten/merge. |
+| Online JSON formatters | Local, no upload. |
+| Multiple tools | One CLI for the whole lifecycle. |
+
+## FAQ (SEO / AEO)
+
+**Q: Query syntax?**  
+A: Dot-notation paths (e.g. a.b.c).
+
+**Q: Diff?**  
+A: Semantic diff of two JSON files.
+
+**Q: Merge?**  
+A: Deep merge with conflict handling.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -71,18 +95,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test json-tools
         run: python json_tools.py self-test
 ```
 
-## Why
-
-JSON Tools is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

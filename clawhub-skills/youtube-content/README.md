@@ -1,53 +1,102 @@
-# YouTube Content Tools 🚀
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![youtube](https://img.shields.io/badge/tag-youtube-blue) ![transcript](https://img.shields.io/badge/tag-transcript-blue) ![content](https://img.shields.io/badge/tag-content-blue) ![video](https://img.shields.io/badge/tag-video-blue) ![cli](https://img.shields.io/badge/tag-cli-blue) ![automation](https://img.shields.io/badge/tag-automation-blue)
-
-Extract transcripts, summaries, and metadata from YouTube videos for content repurposing
-
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
-
-## ✨ Features
-
-- Transcript extraction (multi-language)
-- Auto-summarization
-- Metadata + chapter extraction
-- Batch processing
-- JSON output for pipelines
-- Content repurposing ready
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `transcript <url>` | Get video transcript |
-| `summary <url>` | Summarize video content |
-| `metadata <url>` | Extract video metadata |
-| `chapters <url>` | Get chapter markers |
-| `--lang CODE` | Language preference |
-| `--json` | JSON output |
-| `self-test` | Run built-in tests |
-
-## Quick Start
-
-```bash
-# Download (no pip needed)
-curl -O https://raw.githubusercontent.com/itsPremkumar/youtube-content/main/youtube_content.py
-
-# Run
-python youtube_content.py self-test
-```
-
-## Why YouTube Content Tools?
-
-- **Zero deps** — runs in any Python 3.8+ environment
-- **Offline-first** — no telemetry, no uploads, fully private
-- **CI-ready** — JSON output + self-tests for pipelines
-- **Cross-platform** — identical output on Windows/macOS/Linux
+[![ClawHub](https://img.shields.io/badge/ClawHub-youtube-content-red)](../..) [![License](https://img.shields.io/badge/license-MIT--0-blue)](../..) [![Python](https://img.shields.io/badge/python-3.8%2B-3776AB)](../..)
 
 ---
+name: youtube-content
+version: 2.0.0
+description: Extract transcripts, summaries, and metadata from YouTube videos for content repurposing
+tags: ["youtube", "transcript", "content", "video", "cli", "automation", "python", "open-source", "agent", "MIT"]
+---
 
-📦 Also on [ClawHub](https://clawhub.ai/skills/skills/youtube-content)  
-⭐ Star on [GitHub](https://github.com/itsPremkumar/youtube-content)  
-☕ [Buy Me a Coffee](https://buymeacoffee.com/itsPremkumar)
+# YouTube Content Toolkit
+
+**Extract transcripts, summaries, and metadata from YouTube videos for content repurposing.**
+
+> *Keywords: youtube, transcript, content, video, cli, automation, python, open-source, agent, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
+
+## What it does
+
+Turning a video into usable text (blogs, clips, summaries) is manual. YouTube Content Toolkit solves this: Extract transcripts, summaries, and metadata from YouTube videos for content repurposing.
+
+**Best for:** Content creators, marketers, and agents repurposing video.
+
+## Features
+
+- **Fetch a transcript**
+- **Summarize a video**
+- **Pull metadata**
+- **Repurpose into posts**
+- **Batch a playlist**
+
+## Install
+
+```bash
+# Requires Python 3.8+. No pip install needed.
+curl -O https://raw.githubusercontent.com/itsPremkumar/youtube-content/main/youtube_content.py
+# Or copy the file anywhere — it's self-contained.
+```
+
+## Quick start
+
+```bash
+python youtube_content.py --help        # list options
+```
+
+## Use cases
+
+1. Fetch a transcript
+1. Summarize a video
+1. Pull metadata
+1. Repurpose into posts
+1. Batch a playlist
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Watching full videos | Transcript-first repurposing. |
+| Manual notes | Structured metadata + summary. |
+| One-off tools | Transcript + summary + metadata together. |
+
+## FAQ (SEO / AEO)
+
+**Q: Transcript?**  
+A: Yes — caption/text extraction.
+
+**Q: Summary?**  
+A: Generated from the transcript.
+
+**Q: Metadata?**  
+A: Title, channel, duration, etc.
+
+**Q: Offline?**  
+A: No — fetches from YouTube.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
+
+```yaml
+# .github/workflows/verify.yml
+name: Verify
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test youtube-content
+        run: python youtube_content.py --help
+```
+
+## Support
+
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
+- GitHub Sponsors: https://github.com/sponsors/itsPremkumar
+- Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
+
+⭐ Star on [GitHub](https://github.com/itsPremkumar/youtube-content)

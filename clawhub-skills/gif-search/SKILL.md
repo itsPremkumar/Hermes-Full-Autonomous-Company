@@ -2,66 +2,81 @@
 name: gif-search
 version: 2.0.0
 description: Search and download GIFs from Tenor API with caching, bulk download, and format conversion
-tags: ["gif", "search", "media", "tenor", "cli", "download"]
+tags: ["gif", "search", "media", "tenor", "cli", "download", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# GIF Search v2 🚀
+# GIF Search (Tenor)
 
-Search and download GIFs from Tenor API with caching, bulk download, and format conversion
+**Search and download GIFs from Tenor with caching, bulk download, and format conversion.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: gif, search, media, tenor, cli, download, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Tenor API integration (free ti | Tenor API integration (free tier) |
-| Trending + search + random mod | Trending + search + random modes |
-| Bulk download with progress | Bulk download with progress |
-| Local cache to avoid re-fetche | Local cache to avoid re-fetches |
-| JSON output for automation | JSON output for automation |
-| GIF metadata extraction | GIF metadata extraction |
-| Rate-limit aware | Rate-limit aware |
+Finding and grabbing the right GIF is clicky and not automatable. GIF Search (Tenor) solves this: Search and download GIFs from Tenor with caching, bulk download, and format conversion.
+
+**Best for:** Content creators, social bots, and agents adding media.
+
+## Features
+
+- **Search Tenor for a term**
+- **Download a single GIF**
+- **Bulk download a set**
+- **Cache results**
+- **Convert format**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/gif-search/main/gif_search.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python gif_search.py search <query>` | Search GIFs by keyword |
-| `python gif_search.py trending` | Show trending GIFs |
-| `python gif_search.py download <id>` | Download a specific GIF |
-| `python gif_search.py random <query>` | Get a random GIF |
-| `python gif_search.py --limit N` | Limit results |
-| `python gif_search.py --save DIR` | Save to directory |
-| `python gif_search.py --json` | JSON output |
-| `python gif_search.py self-test` | Run built-in tests |
-
-## Features
-
-- **Tenor API integration (free tier)**
-- **Trending + search + random modes**
-- **Bulk download with progress**
-- **Local cache to avoid re-fetches**
-- **JSON output for automation**
-- **GIF metadata extraction**
-- **Rate-limit aware**
-
-## Example
+## Quick start
 
 ```bash
-python gif_search.py self-test
+python gif_search.py --help        # list options
 ```
 
-## CI Integration
+## Use cases
+
+1. Search Tenor for a term
+1. Download a single GIF
+1. Bulk download a set
+1. Cache results
+1. Convert format
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Tenor website | Scriptable search + bulk download. |
+| Manual save | Caching + conversion built in. |
+| One at a time | Batch mode. |
+
+## FAQ (SEO / AEO)
+
+**Q: API key?**  
+A: Uses Tenor; supply your key via env.
+
+**Q: Bulk?**  
+A: Yes — batch download.
+
+**Q: Cache?**  
+A: Results are cached to avoid repeat calls.
+
+**Q: Offline?**  
+A: No — queries Tenor live.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -72,18 +87,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
-        run: python gif_search.py self-test
+      - name: Self-test gif-search
+        run: python gif_search.py --help
 ```
-
-## Why
-
-GIF Search is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
 
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

@@ -2,61 +2,82 @@
 name: agent-logger
 version: 2.0.0
 description: Structured logging for agents: JSON logs, rotation, query, and replay
-tags: ["logging", "agent", "cli", "observability", "json", "audit"]
+tags: ["logging", "agent", "cli", "observability", "json", "audit", "python", "open-source", "automation", "MIT"]
 ---
 
-# Agent Logger v2 🚀
+# Agent Run Log Analyzer
 
-Structured logging for agents: JSON logs, rotation, query, and replay
+**Analyze agent run logs for errors, token spikes, and failures with JSON output.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: logging, agent, cli, observability, json, audit, python, open-source, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Structured JSON logs | Structured JSON logs |
-| Log rotation | Log rotation |
-| Query/filter | Query/filter |
-| Session replay | Session replay |
-| Tail mode | Tail mode |
-| Audit trail | Audit trail |
+Agent failures hide in megabyte log files with no signal. Agent Run Log Analyzer solves this: Analyze agent run logs for errors, token spikes, and failures with JSON output.
+
+**Best for:** Agent operators debugging production agent runs.
+
+## Features
+
+- **Scan logs for errors and stack traces**
+- **Detect token/cost spikes**
+- **Replay a structured log**
+- **Query logs by field**
+- **Feed JSON into a dashboard**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/agent-logger/main/agent_logger.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python agent_logger.py log <msg>` | Write a log entry |
-| `python agent_logger.py query <filter>` | Query logs |
-| `python agent_logger.py replay <session>` | Replay a session |
-| `python agent_logger.py tail` | Follow live logs |
-| `python agent_logger.py self-test` | Run built-in tests |
-
-## Features
-
-- **Structured JSON logs**
-- **Log rotation**
-- **Query/filter**
-- **Session replay**
-- **Tail mode**
-- **Audit trail**
-
-## Example
+## Quick start
 
 ```bash
-python agent_logger.py self-test
+python agent_logger.py self-test     # prove it works end-to-end
+python agent_logger.py scan --help   # scan subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Scan logs for errors and stack traces
+1. Detect token/cost spikes
+1. Replay a structured log
+1. Query logs by field
+1. Feed JSON into a dashboard
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| grep through logs | Purpose-built anomaly detection, not raw text search. |
+| Log SaaS | No ingestion cost; runs on the files you already have. |
+| Eyeballing | Token-spike detection catches cost leaks automatically. |
+
+## FAQ (SEO / AEO)
+
+**Q: What does `scan` do?**  
+A: Walks log files and surfaces errors, failures, and anomalies.
+
+**Q: Is output machine-readable?**  
+A: Yes — --json for pipelines.
+
+**Q: Does it need a specific format?**  
+A: It parses common agent log shapes; structured JSON logs work best.
+
+**Q: Offline?**  
+A: Yes, fully local.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -67,18 +88,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test agent-logger
         run: python agent_logger.py self-test
 ```
 
-## Why
-
-Agent Logger is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

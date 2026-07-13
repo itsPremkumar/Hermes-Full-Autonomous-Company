@@ -2,60 +2,82 @@
 name: skill-lint
 version: 2.0.0
 description: Lint ClawHub SKILL.md files: frontmatter, structure, command docs, thin-content detection
-tags: ["lint", "skill", "clawhub", "cli", "docs", "quality"]
+tags: ["lint", "skill", "clawhub", "cli", "docs", "quality", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Skill Linter v2 🚀
+# Skill Linter
 
-Lint ClawHub SKILL.md files: frontmatter, structure, command docs, thin-content detection
+**Validate ClawHub/OpenClaw skill folders before publishing: frontmatter, structure, command docs, thin-content detection.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: lint, skill, clawhub, cli, docs, quality, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Frontmatter validation | Frontmatter validation |
-| Structure checks | Structure checks |
-| Command doc verification | Command doc verification |
-| Thin-content detection | Thin-content detection |
-| Auto-fix mode | Auto-fix mode |
-| JSON output | JSON output |
+Publishing a malformed skill wastes a version and hurts trust. Skill Linter solves this: Validate ClawHub/OpenClaw skill folders before publishing: frontmatter, structure, command docs, thin-content detection.
+
+**Best for:** Skill authors publishing to ClawHub.
+
+## Features
+
+- **Lint a skill folder**
+- **Check frontmatter**
+- **Detect thin content**
+- **Validate command docs**
+- **JSON output**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/skill-lint/main/skill_lint.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python skill_lint.py lint <skill>` | Lint a SKILL.md |
-| `python skill_lint.py fix <skill>` | Auto-fix issues |
-| `python skill_lint.py audit <dir>` | Audit a skill directory |
-| `python skill_lint.py self-test` | Run built-in tests |
-
-## Features
-
-- **Frontmatter validation**
-- **Structure checks**
-- **Command doc verification**
-- **Thin-content detection**
-- **Auto-fix mode**
-- **JSON output**
-
-## Example
+## Quick start
 
 ```bash
-python skill_lint.py self-test
+python skill_lint.py self-test     # prove it works end-to-end
+python skill_lint.py check --help   # check subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Lint a skill folder
+1. Check frontmatter
+1. Detect thin content
+1. Validate command docs
+1. JSON output
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Publish and pray | Catch issues pre-publish. |
+| Manual review | Automated structure checks. |
+| Thin skills | Detects low-value content. |
+
+## FAQ (SEO / AEO)
+
+**Q: What it checks**  
+A: Frontmatter, structure, command docs, thin content.
+
+**Q: CI?**  
+A: Yes — --json.
+
+**Q: Offline?**  
+A: Yes.
+
+**Q: Pair with?**  
+A: skill-benchmark for grading.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -66,18 +88,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test skill-lint
         run: python skill_lint.py self-test
 ```
 
-## Why
-
-Skill Linter is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

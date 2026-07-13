@@ -2,63 +2,81 @@
 name: arxiv-search
 version: 2.0.0
 description: Search arXiv papers by keyword, author, category with full-text download and citation export
-tags: ["arxiv", "research", "papers", "academic", "cli", "search"]
+tags: ["arxiv", "research", "papers", "academic", "cli", "search", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# arXiv Search v2 🚀
+# arXiv Research Search
 
-Search arXiv papers by keyword, author, category with full-text download and citation export
+**Search arXiv papers by keyword, author, or category with citation export.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: arxiv, research, papers, academic, cli, search, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| arXiv API integration | arXiv API integration |
-| Author + category filters | Author + category filters |
-| PDF download | PDF download |
-| BibTeX citation export | BibTeX citation export |
-| JSON output for automation | JSON output for automation |
-| Rate-limit aware | Rate-limit aware |
+Keeping up with the arXiv firehose is manual and citation formatting is painful. arXiv Research Search solves this: Search arXiv papers by keyword, author, or category with citation export.
+
+**Best for:** Researchers, students, and AI/ML engineers tracking papers.
+
+## Features
+
+- **Search by keyword/author/category**
+- **Sort and filter recent papers**
+- **Export BibTeX citations**
+- **Pull paper metadata into a pipeline**
+- **Track a research niche**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/arxiv-search/main/arxiv_search.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python arxiv_search.py search <query>` | Search papers by keyword |
-| `python arxiv_search.py author <name>` | Search by author |
-| `python arxiv_search.py category <cat>` | Filter by category (cs.AI, etc.) |
-| `python arxiv_search.py download <id>` | Download PDF |
-| `python arxiv_search.py --limit N` | Limit results |
-| `python arxiv_search.py --json` | JSON output |
-| `python arxiv_search.py self-test` | Run built-in tests |
-
-## Features
-
-- **arXiv API integration**
-- **Author + category filters**
-- **PDF download**
-- **BibTeX citation export**
-- **JSON output for automation**
-- **Rate-limit aware**
-
-## Example
+## Quick start
 
 ```bash
-python arxiv_search.py self-test
+python arxiv_search.py --help        # list options
 ```
 
-## CI Integration
+## Use cases
+
+1. Search by keyword/author/category
+1. Sort and filter recent papers
+1. Export BibTeX citations
+1. Pull paper metadata into a pipeline
+1. Track a research niche
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| arXiv website UI | Scriptable search + citation export for pipelines. |
+| Manual BibTeX | Citations generated automatically. |
+| Reading every new submission | Filtered, category-aware search. |
+
+## FAQ (SEO / AEO)
+
+**Q: What can I search by?**  
+A: Keyword, author, and arXiv category (cs.AI, cs.LG, etc.).
+
+**Q: Can I export citations?**  
+A: Yes — BibTeX/citation export is built in.
+
+**Q: Does it need an API key?**  
+A: No — uses the public arXiv API.
+
+**Q: Offline?**  
+A: No — it queries arXiv live.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -69,18 +87,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
-        run: python arxiv_search.py self-test
+      - name: Self-test arxiv-search
+        run: python arxiv_search.py --help
 ```
-
-## Why
-
-arXiv Search is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
 
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 

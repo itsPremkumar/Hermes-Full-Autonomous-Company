@@ -2,60 +2,82 @@
 name: prompt-lint
 version: 2.0.0
 description: Lint AI prompts: clarity, safety, injection risks, template validity
-tags: ["lint", "prompt", "ai", "cli", "safety", "quality"]
+tags: ["lint", "prompt", "ai", "cli", "safety", "quality", "python", "open-source", "agent", "automation", "MIT"]
 ---
 
-# Prompt Linter v2 🚀
+# Prompt Linter
 
-Lint AI prompts: clarity, safety, injection risks, template validity
+**Lint AI prompts for clarity, safety, injection risk, and template validity — scored 0-100.**
 
-Zero dependencies (Python stdlib only). Works on Windows, macOS, Linux.
+> *Keywords: lint, prompt, ai, cli, safety, quality, python, open-source, agent, automation, MIT*  
+>
+> Part of the [itsPremkumar](https://github.com/itsPremkumar) Hermes / OpenClaw / Paperclip agent stack — 31 free, MIT-licensed, CI-tested agent-native tools.
 
-## ✨ What's New in v2
+## What it does
 
-| Feature | Description |
-|---------|-------------|
-| Clarity scoring | Clarity scoring |
-| Safety checks | Safety checks |
-| Injection detection | Injection detection |
-| Template validation | Template validation |
-| Auto-suggestions | Auto-suggestions |
-| JSON output | JSON output |
+Bad prompts produce bad outputs; quality isn't measurable. Prompt Linter solves this: Lint AI prompts for clarity, safety, injection risk, and template validity — scored 0-100.
+
+**Best for:** Prompt engineers, agent builders, and AI product teams.
+
+## Features
+
+- **Lint a prompt file**
+- **Score quality 0-100**
+- **Detect injection risk**
+- **Validate template vars**
+- **JSON output for CI**
 
 ## Install
 
 ```bash
 # Requires Python 3.8+. No pip install needed.
 curl -O https://raw.githubusercontent.com/itsPremkumar/prompt-lint/main/prompt_lint.py
-
 # Or copy the file anywhere — it's self-contained.
 ```
 
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `python prompt_lint.py lint <prompt>` | Lint a prompt |
-| `python prompt_lint.py fix <prompt>` | Suggest fixes |
-| `python prompt_lint.py scan <dir>` | Scan prompt files |
-| `python prompt_lint.py self-test` | Run built-in tests |
-
-## Features
-
-- **Clarity scoring**
-- **Safety checks**
-- **Injection detection**
-- **Template validation**
-- **Auto-suggestions**
-- **JSON output**
-
-## Example
+## Quick start
 
 ```bash
-python prompt_lint.py self-test
+python prompt_lint.py self-test     # prove it works end-to-end
+python prompt_lint.py check --help   # check subcommand
 ```
 
-## CI Integration
+## Use cases
+
+1. Lint a prompt file
+1. Score quality 0-100
+1. Detect injection risk
+1. Validate template vars
+1. JSON output for CI
+
+## Why choose this over alternatives
+
+| Alternative | Why this skill is better |
+|---|---|
+| Eyeballing prompts | Measurable quality + safety. |
+| Partial linters | Adds injection + template checks. |
+| No gate | CI-ready scoring. |
+
+## FAQ (SEO / AEO)
+
+**Q: Score?**  
+A: 0-100 quality score with reasons.
+
+**Q: Injection?**  
+A: Flags prompt-injection patterns.
+
+**Q: CI?**  
+A: Yes — --json, non-zero on failure.
+
+**Q: Offline?**  
+A: Yes.
+
+## Geo / local reach
+
+Built and maintained by [@itsPremkumar](https://github.com/itsPremkumar) (Chennai, India · serving developers worldwide). 
+Free for individuals and teams everywhere. Documentation in English; tool output is locale-neutral.
+
+## CI integration
 
 ```yaml
 # .github/workflows/verify.yml
@@ -66,18 +88,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Self-test
+      - name: Self-test prompt-lint
         run: python prompt_lint.py self-test
 ```
 
-## Why
-
-Prompt Linter is built for agent-native workflows: zero dependencies, offline-first, CI-ready.
-Part of the Hermes autonomous product stack (31 agent-native tools, all CI-tested).
-
 ## Support
 
-Free + MIT. Sponsor if useful:
+Free + MIT-0 (free, modifiable, no attribution required). Sponsor if useful:
 - GitHub Sponsors: https://github.com/sponsors/itsPremkumar
 - Buy Me a Coffee: https://buymeacoffee.com/itsPremkumar
 
