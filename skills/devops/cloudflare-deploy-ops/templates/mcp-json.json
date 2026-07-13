@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "cloudflare": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cloudflare/mcp-server-cloudflare@latest",
+        "run",
+        "<accountId>"
+      ]
+    }
+  }
+}

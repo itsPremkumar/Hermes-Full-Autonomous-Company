@@ -1,0 +1,51 @@
+% TEMPLATE: Improved fresher resume (copy, fill [BRACKETS], compile with pdflatex/xelatex)
+% Keep the user's original LaTeX style/geometry; only content changed.
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\geometry{top=0.65in, left=0.75in, right=0.75in, bottom=0.65in}
+\pagestyle{fancy}\fancyhf{}\lhead{[Full Name]}\rhead{\thepage}\renewcommand{\headrulewidth}{0.4pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\begin{document}
+\begin{center}
+  {\LARGE \textbf{[Full Name]}}\\[3pt]
+  {\small [Lane], e.g. AI/ML \& Backend Engineer \quad | \quad [Degree] ([Grad Year])}\\[5pt]
+  \href{mailto:[email]}{[email]} \quad | \quad [phone] \quad | \quad
+  \href{https://github.com/[user]}{github.com/[user]} \quad | \quad
+  \href{https://www.linkedin.com/in/[id]}{linkedin.com/in/[id]}
+\end{center}
+\section*{Professional Summary}
+[B.Tech grad year] who builds production-grade AI and full-stack systems. Author of
+[flagship #1, stars] and [flagship #2]; [mentor/credential]. Hands-on in [langs].
+\section*{Education}
+\textbf{[College]}, [City] \hfill \textit{[years]}\\
+[Degree] \hfill % CGPA: X/10 (only if >=7.5)
+\section*{Projects} % lead with 2 mandatory flagships
+\textbf{[Flagship #1]} \hfill \textit{[stack]}
+\hfill \href{https://github.com/[user]/[repo]}{\textcolor{blue}{[GitHub star N]}}
+\begin{itemize}
+  \item [one-line what it does + real users]
+  \item [architecture / scale, e.g. 150+ commits, Electron+MCP]
+  \item [green CI: lint, typecheck, N tests, Docker build]
+\end{itemize}
+\textbf{[Flagship #2]} \hfill \textit{[stack]}
+\hfill \href{https://github.com/[user]/[repo]}{\textcolor{blue}{[GitHub]}}
+\begin{itemize}\item [live platform, N tests green, CI green]\end{itemize}
+\section*{Achievements}
+\begin{itemize}\item \textbf{[OSCG 2026 Mentor]} -- [detail]; [other awards]\end{itemize}
+\section*{Skills}
+\textbf{Languages:} [real langs]\\
+\textbf{AI/ML:} [real: TensorFlow, Stable Diffusion, LLM pipelines]\\
+\textbf{Backend/Web:} [real: Node, Next.js, Firebase]\\
+\textbf{DevOps:} [real: Docker, GitHub Actions]\\
+\textbf{Soft:} Leadership, Communication, Problem Solving
+\end{document}

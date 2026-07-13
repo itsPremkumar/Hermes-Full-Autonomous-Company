@@ -1,0 +1,21 @@
+{
+  "env": {
+    "OPENROUTER_API_KEY": "sk-or-PASTE_KEY_HERE"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openrouter/tencent/hy3:free"
+      },
+      "models": {
+        "openrouter/tencent/hy3:free": {}
+      },
+      "workspace": "C:\\Users\\PREM KUMAR\\.openclaw\\workspace"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback"
+  }
+}
