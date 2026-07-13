@@ -23,3 +23,4 @@ appends a row each tick. Source of truth for self-optimization.
 ## Rule
 A metric that regresses for 3 consecutive ticks triggers a review (lessons-learned.md).
 Revenue is NEVER fabricated (§0.3) — only real ledger entries count.
+| 2026-07-13 | - | 789 | yes | 0 | 0 | low |

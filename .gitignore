@@ -19,3 +19,5 @@ paperclip/
 _live_backup/
 .moltbook_key
 revenue/moltbook/.moltbook_key
+__pycache__/
+*.pyc
