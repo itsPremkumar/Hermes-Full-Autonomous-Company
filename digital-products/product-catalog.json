@@ -97,20 +97,33 @@
       "target_mrr": 245,
       "status": "ready",
       "product_dir": "product-8-launch-plan"
+    },
+    {
+      "id": "prem-agent-caps",
+      "title": "AI Agent Capability Manifest Toolkit",
+      "tagline": "Validate, scaffold & cross-check agent capability manifests — zero dependencies, agent-native",
+      "price_usd": 14,
+      "category": "Developer Tools / AI Agents",
+      "file_formats": ["Python", "JSON", "Markdown"],
+      "runnable": true,
+      "dependencies": "Python 3.8+ (stdlib only)",
+      "status": "ready",
+      "product_dir": "agent-caps-pack"
     }
   ],
   "pricing_summary": {
     "lowest_price": 9,
     "highest_price": 29,
     "median_price": 17,
-    "bundle_price": 99,
-    "bundle_savings_percent": 40,
-    "total_if_bought_separately": 144
+    "bundle_price": 109,
+    "bundle_savings_percent": 41,
+    "total_if_bought_separately": 158
   },
   "stats": {
-    "total_products": 8,
-    "total_product_categories": 7,
-    "ready_to_list": 8,
-    "file_formats_used": ["PDF", "Markdown", "CSV", "JSON", "YAML"]
+    "total_products": 9,
+    "total_product_categories": 8,
+    "ready_to_list": 9,
+    "runnable_tools": 1,
+    "file_formats_used": ["PDF", "Markdown", "CSV", "JSON", "YAML", "Python"]
   }
 }
