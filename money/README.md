@@ -47,6 +47,11 @@ python run_all.py self-test  # verify 5 pipelines, 26 packages
 ```
 Current: **50 packages, 12 pipelines, $26,000+ combined one-time value.** Run `python money/run_all.py` to regenerate everything.
 
+## Helper scripts
+- `generate_listings.py` → turns all 50 packages into Fiverr/Upwork-ready `.md` copy under `listings/`
+- `generate_moltbook_drafts.py` → seeds 12 promo drafts into `revenue/moltbook/` for the acquisition funnel
+- `../GO_LIVE_CHECKLIST.md` → the 3 human gates, step-by-step, to go live in ~15 min
+
 ## Usage
 ```bash
 python pipeline1_fiverr_gig_factory.py --list
