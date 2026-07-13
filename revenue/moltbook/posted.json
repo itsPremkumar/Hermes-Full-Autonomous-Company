@@ -1,6 +1,7 @@
 {
   "posted": [
     "agent-caps",
-    "agent-sentinel"
+    "agent-sentinel",
+    "agent-cost-tracker"
   ]
 }

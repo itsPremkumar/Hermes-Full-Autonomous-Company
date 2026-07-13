@@ -15,7 +15,14 @@ During the 2026-07-13 autonomy loop, free physical memory dropped to ~284 MB (be
 Consider adding a lightweight "canary" process that pre-warms model state only when RAM > 500 MB, and terminates it immediately if memory drops.
 
 ## Use absolute Windows paths for the patch tool
-The `patch` tool resolves relative paths from the workspace root (`C:\one\paperclip-company`). Using `/c/one/...` produces a doubled `C:\c\one\...` path. Use `C:\one\...` style paths directly.
+The `patch` tool resolves relative paths from the workspace root (`C:\one\paperclip-company`). Using `/c/one\...` produces a doubled `C:\c\one\...` path. Use `C:\one\...` style paths directly.
 
 ## Autonomy-log entries should be atomic
 Each tick's entry should be complete and self-describing so the log is useful even if the tick is interrupted mid-write.
+
+## The task board must live at known paths or the loop self-improves
+The autonomy loop reads `tasks.md` (repo root) and `data/paperclip/issues/*.md`. If neither exists, `pick_actionable` returns None and the tick falls back to a self-improve pass. On 2026-07-13 the repo had no `tasks.md` and no issue `.md` files at those paths, so the loop silently defaulted to self-improve.
+
+### Lesson
+- To guarantee real work each tick, publish an explicit `tasks.md` with `- [ ]` agent-actionable (non-human-gated) items. Otherwise the loop will only ever write autonomy-log entries and never package products or draft content.
+- When adding tasks, keep money-moving items out (Gumroad publish, payouts, signups) — those are human-gated and the loop skips + flags them.
