@@ -153,6 +153,44 @@ def log_benchmark(ram, success, failure_cat=None):
     except Exception as e:
         log(f"benchmark write skipped: {e}")
 
+MOLTBOOK_KEY = os.path.join(REPO_LOCAL, ".moltbook_key")
+MOLTBOOK_DIR = os.path.join(REPO_LOCAL, "revenue", "moltbook")
+MOLTBOOK_POSTED_LOG = os.path.join(MOLTBOOK_DIR, ".posted.json")
+# posts are spaced one-per-tick (30 min) to respect Moltbook's strict rate/trust limit.
+# burst posting returns 201 but drops the post; one-per-tick is what actually persists.
+
+def _moltbook_post_one():
+    """Post exactly ONE pending draft this tick (rate-limit safe). Returns note or None."""
+    if not os.path.isfile(MOLTBOOK_KEY):
+        return None
+    drafts = sorted(f for f in os.listdir(MOLTBOOK_DIR)
+                    if f.startswith("post-") and f.endswith(".json"))
+    if not drafts:
+        return None
+    done = set()
+    if os.path.isfile(MOLTBOOK_POSTED_LOG):
+        try:
+            done = set(json.load(open(MOLTBOOK_POSTED_LOG, encoding="utf-8")))
+        except Exception:
+            done = set()
+    pending = [d for d in drafts if d not in done]
+    if not pending:
+        return "moltbook: all drafts posted"
+    target = pending[0]
+    try:
+        d = json.load(open(os.path.join(MOLTBOOK_DIR, target), encoding="utf-8"))
+        out = subprocess.run([sys.executable, os.path.join(MOLTBOOK_DIR, "moltbook.py"), "post",
+                              "--title", d["title"], "--content", d["content"], "--submolt", d["submolt"]],
+                             capture_output=True, text=True, timeout=30).stdout
+        if "201" in out:
+            done.add(target)
+            json.dump(sorted(done), open(MOLTBOOK_POSTED_LOG, "w"), indent=2)
+            return f"moltbook: posted {target}"
+        # 429 or 201-drop: just log, try again next tick
+        return f"moltbook: {target} deferred ({out.strip()[:50]})"
+    except Exception as e:
+        return f"moltbook: {target} error ({e})"
+
 def main():
     log("=== autonomy tick start ===")
     ram = free_ram_mb()
@@ -195,6 +233,10 @@ def main():
             success = False; fcat = "Network"
     else:
         log("no changes to commit")
+    # Moltbook marketing: one pending draft per tick (rate-limit safe; never blocks)
+    mnote = _moltbook_post_one()
+    if mnote:
+        log(mnote)
     log_benchmark(ram, success=success, failure_cat=fcat)
     log("=== autonomy tick end ===")
 
