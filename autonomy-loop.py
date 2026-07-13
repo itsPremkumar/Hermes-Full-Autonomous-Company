@@ -24,8 +24,8 @@ FREE_RAM_WARN_MB = 300  # below this, defer heavy work
 
 # Confidence gate (docs/failure-taxonomy.md). 0-100 estimated before action.
 CONFIDENCE = 85  # our default for well-understood, reversible, agent-safe steps
-CONSULT_THRESHOLD = 50   # below this -> escalate to human (S0.6)
-VALIDATE_THRESHOLD = 75  # 50-74 -> consult a second model before shipping
+PROCEED_THRESHOLD = 75   # >= this: proceed + run a validation step
+ESCALATE_THRESHOLD = 50  # < this: escalate to human (S0.6); 50-74: consult second model
 
 # Tasks the agent may NOT do (human-in-the-loop, Constitution S0)
 HUMAN_GATED_KEYWORDS = [
@@ -111,10 +111,10 @@ def do_work(task):
     escalated to the human (Constitution S0.6)."""
     log(f"WORKING: {task[:100]}")
     # Confidence gate
-    if CONFIDENCE < VALIDATE_THRESHOLD:
-        log(f"CONFIDENCE {CONFIDENCE}% < {VALIDATE_THRESHOLD}% -> consult second model (deferred this tick)")
-    if CONFIDENCE < CONSULT_THRESHOLD:
-        log(f"CONFIDENCE {CONFIDENCE}% < {CONSULT_THRESHOLD}% -> ESCALATE to human (S0.6). No action taken.")
+    if CONFIDENCE < PROCEED_THRESHOLD:
+        log(f"CONFIDENCE {CONFIDENCE}% < {PROCEED_THRESHOLD}% -> consult second model (deferred this tick)")
+    if CONFIDENCE < ESCALATE_THRESHOLD:
+        log(f"CONFIDENCE {CONFIDENCE}% < {ESCALATE_THRESHOLD}% -> ESCALATE to human (S0.6). No action taken.")
         return "escalated: confidence too low"
     # Default autonomous step when no specific task matches:
     # improve the prompt library / write next marketing draft / package a product.
