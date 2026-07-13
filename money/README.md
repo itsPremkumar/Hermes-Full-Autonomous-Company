@@ -45,7 +45,7 @@ python run_all.py            # regenerate 26 packages + dashboard
 python run_all.py --dry-run  # income totals only
 python run_all.py self-test  # verify 5 pipelines, 26 packages
 ```
-Current: **26 packages, 5 pipelines, $13,016 combined one-time value.**
+Current: **50 packages, 12 pipelines, $26,000+ combined one-time value.** Run `python money/run_all.py` to regenerate everything.
 
 ## Usage
 ```bash

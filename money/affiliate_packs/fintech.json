@@ -1,0 +1,69 @@
+{
+  "niche": "fintech",
+  "gig_title": "I will launch a fintech affiliate site (cards, brokers, tools)",
+  "payout_model": "$20-150 per lead",
+  "posts_per_month": 20,
+  "pricing": {
+    "setup": 300,
+    "monthly": 99,
+    "margin_pct": 99,
+    "cost_note": "$0 product cost \u2014 rev-share only"
+  },
+  "n8n_workflow": {
+    "name": "affiliate-farm",
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "DailyPost",
+        "params": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GenContent",
+        "params": {
+          "url": "={{$env.BLOG_GEN}}/generate",
+          "httpMethod": "POST"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "PostWP",
+        "params": {
+          "url": "={{$env.WP}}/wp-json/wp/v2/posts",
+          "httpMethod": "POST"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "PostSocial",
+        "params": {
+          "url": "={{$env.SOCIAL_API}}/post",
+          "httpMethod": "POST"
+        }
+      }
+    ],
+    "connections": "DailyPost \u2192 GenContent \u2192 PostWP \u2192 PostSocial"
+  },
+  "delivery_steps": [
+    "1. Pick niche + affiliate programs",
+    "2. Generate 30 posts/mo (blog + social)",
+    "3. Auto-publish via n8n (WordPress + X/threads)",
+    "4. Insert affiliate links + track clicks",
+    "5. Monthly earnings report"
+  ],
+  "tags": [
+    "affiliate marketing",
+    "fintech affiliate",
+    "content farm",
+    "passive income",
+    "blog automation",
+    "seo"
+  ]
+}

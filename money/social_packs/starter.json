@@ -1,0 +1,72 @@
+{
+  "plan": "starter",
+  "gig_title": "I will auto-post daily social content for your brand",
+  "posts_per_month": 30,
+  "platforms": [
+    "X",
+    "LinkedIn"
+  ],
+  "pricing": {
+    "monthly": 99,
+    "annual": 990,
+    "margin_pct": 97,
+    "cost_note": "gif-search + excalidraw + video (free)"
+  },
+  "n8n_workflow": {
+    "name": "social-poster",
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "DailyPost",
+        "params": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * *"
+            }
+          ]
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "GenContent",
+        "params": {
+          "url": "={{$env.CONTENT_GEN}}/make",
+          "httpMethod": "POST"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "PostX",
+        "params": {
+          "url": "={{$env.X_API}}/tweet",
+          "httpMethod": "POST"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "PostIG",
+        "params": {
+          "url": "={{$env.IG_API}}/media",
+          "httpMethod": "POST"
+        }
+      }
+    ],
+    "connections": "DailyPost \u2192 GenContent \u2192 PostX \u2192 PostIG"
+  },
+  "delivery_steps": [
+    "1. Client sets brand + topics",
+    "2. n8n generates content (gif/diagram/video)",
+    "3. Schedule + auto-post across platforms",
+    "4. Track engagement, optimize",
+    "5. Monthly content calendar + report"
+  ],
+  "tags": [
+    "social media",
+    "content automation",
+    "starter social",
+    "auto posting",
+    "social media manager",
+    "growth"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "tier": "scale",
+  "gig_title": "I will deploy a white-label lead-enrichment engine at scale",
+  "leads_per_month": 50000,
+  "fields": [
+    "everything in Pro",
+    "real-time API",
+    "webhooks",
+    "custom sources"
+  ],
+  "pricing": {
+    "monthly": 299,
+    "annual": 2990,
+    "margin_pct": 95,
+    "cost_note": "runs on maps-cli + web-research (free); only compute"
+  },
+  "n8n_workflow": {
+    "name": "lead-enrich-scale",
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "DailyPull",
+        "params": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      },
+      {
+        "type": "n8n-nodes-base.function",
+        "name": "ParseLeads",
+        "code": "return items.map(i => ({json: {email: i.json.email, domain: (i.json.email||'').split('@')[1]}}));"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "MapsLookup",
+        "params": {
+          "url": "https://maps.googleapis.com/maps/api/geocode/json",
+          "qs": {
+            "address": "={{$json.domain}}",
+            "key": "={{$env.MAPS_KEY}}"
+          }
+        }
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Enrich",
+        "code": "for (const i of items) {\n  const d = i.json.domain || '';\n  i.json.firmographics = { domain: d, tld: d.split('.').pop() };\n  i.json.social = { linkedin: 'https://linkedin.com/company/' + d.split('.')[0] };\n}\nreturn items;"
+      },
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "PushToCRM",
+        "params": {
+          "httpMethod": "POST",
+          "path": "enriched"
+        }
+      }
+    ],
+    "connections": "DailyPull \u2192 ParseLeads \u2192 MapsLookup \u2192 Enrich \u2192 PushToCRM"
+  },
+  "delivery_steps": [
+    "1. Client connects CRM / uploads lead list",
+    "2. n8n cron pulls new leads",
+    "3. Enrich via maps-cli + web-research nodes",
+    "4. Push enriched rows back to CRM / webhook",
+    "5. Monthly quality report"
+  ],
+  "tags": [
+    "lead enrichment",
+    "b2b leads",
+    "lead generation",
+    "crm automation",
+    "scale leads",
+    "data enrichment"
+  ]
+}

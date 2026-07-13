@@ -1,0 +1,57 @@
+{
+  "type": "enterprise",
+  "gig_title": "I will build enterprise RFP response templates",
+  "sections": [
+    "compliance",
+    "architecture",
+    "SLA",
+    "cost"
+  ],
+  "pricing": {
+    "price": 600,
+    "margin_pct": 96,
+    "cost_note": "md-linter + templates (free)"
+  },
+  "n8n_workflow": {
+    "name": "proposal-gen",
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "BriefIn",
+        "params": {
+          "httpMethod": "POST",
+          "path": "brief"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "FillTemplate",
+        "code": "const b = items[0].json;\nconst md = `# Proposal for ${b.client}\\n\\n## Scope\\n${b.scope}\\n\\n## Price\\n$${b.price}`;\nreturn [{json: {md, email: b.email}}];"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "RenderPDF",
+        "params": {
+          "url": "={{$env.STIRLING}}/api/converter/file/pdf",
+          "httpMethod": "POST"
+        }
+      }
+    ],
+    "connections": "BriefIn \u2192 FillTemplate \u2192 RenderPDF"
+  },
+  "delivery_steps": [
+    "1. Client fills brief (form)",
+    "2. n8n pulls brief \u2192 template engine",
+    "3. Generate proposal MD (your templates)",
+    "4. Lint + render PDF (Stirling-PDF)",
+    "5. Deliver + reusable template saved"
+  ],
+  "tags": [
+    "proposal writer",
+    "business proposal",
+    "enterprise proposal",
+    "freelance",
+    "RFP",
+    "sales"
+  ]
+}

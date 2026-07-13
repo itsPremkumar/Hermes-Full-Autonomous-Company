@@ -1,0 +1,65 @@
+{
+  "plan": "pro",
+  "gig_title": "I will build a full invoicing + late-payment system",
+  "invoices_per_month": 300,
+  "pricing": {
+    "monthly": 99,
+    "annual": 990,
+    "margin_pct": 96,
+    "cost_note": "Listmonk + stdlib; no per-invoice SaaS fee"
+  },
+  "n8n_workflow": {
+    "name": "invoice-auto",
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.webhook",
+        "name": "InvoiceIn",
+        "params": {
+          "httpMethod": "POST",
+          "path": "invoice"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "GenPDF",
+        "code": "const d = items[0].json;\nconst pdf = `INVOICE\\nTo: ${d.client}\\nAmount: $${d.amount}\\nDue: ${d.due}`;\nreturn [{json: {pdf, email: d.email}}];"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "SendListmonk",
+        "params": {
+          "url": "={{$env.LISTMONK}}/api/tx",
+          "httpMethod": "POST"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "ReminderCron",
+        "params": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      }
+    ],
+    "connections": "InvoiceIn \u2192 GenPDF \u2192 SendListmonk; ReminderCron \u2192 SendListmonk"
+  },
+  "delivery_steps": [
+    "1. Client submits invoice data (form/CSV)",
+    "2. n8n generates PDF (stdlib) + sends via Listmonk",
+    "3. Schedule reminders at 7/14/30 days",
+    "4. Track paid/unpaid, escalate",
+    "5. Monthly AR report"
+  ],
+  "tags": [
+    "invoice automation",
+    "billing",
+    "accounts receivable",
+    "small business",
+    "pro invoicing",
+    "n8n"
+  ]
+}

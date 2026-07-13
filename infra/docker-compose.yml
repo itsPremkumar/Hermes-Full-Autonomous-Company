@@ -1,0 +1,76 @@
+# Autonomous Money System — Self-Hosted Infra
+# n8n + Chatwoot + Stirling-PDF + Listmonk
+# All free / open-source. Zero SaaS fees.
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASS}
+      - WEBHOOK_URL=https://your-domain.com/
+      - GENERIC_TIME_TRIGGER_INTERVAL=60
+    volumes:
+      - n8n_data:/home/node/.n8n
+    command: start
+
+  chatwoot:
+    image: chatwoot/chatwoot:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - FRONTEND_URL=https://your-domain.com
+      - POSTGRES_DB=chatwoot
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${PG_PASS}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - chatwoot_data:/app/storage
+
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=chatwoot
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${PG_PASS}
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+  stirling-pdf:
+    image: frooodle/stirling-pdf:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - SYSTEM_ENABLE_ANALYTICS=false
+
+  listmonk:
+    image: listmonk/listmonk:latest
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    command: ["./listmonk", "--install", "--config", "/listmonk/config.toml"]
+    volumes:
+      - listmonk_data:/listmonk
+
+volumes:
+  n8n_data:
+  chatwoot_data:
+  pg_data:
+  redis_data:
+  listmonk_data:

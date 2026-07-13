@@ -31,6 +31,20 @@ PIPELINES = [
      "data": "VERTICALS", "outdir": "bot_packs", "builder": "build_package", "keyname": None},
     {"module": "pipeline5_seo_reporter", "kind": "SEO/Audit Reporter",
      "data": "PLANS", "outdir": "audit_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline6_lead_enrichment", "kind": "Lead-Enrichment SaaS",
+     "data": "TIERS", "outdir": "lead_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline7_rag_kb", "kind": "RAG-KB Builder",
+     "data": "VERTICALS", "outdir": "rag_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline8_affiliate_farm", "kind": "Affiliate Farm",
+     "data": "NICHES", "outdir": "affiliate_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline9_invoice_automation", "kind": "Invoice Automation",
+     "data": "PLANS", "outdir": "invoice_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline10_security_scanner", "kind": "Security Scanner",
+     "data": "PLANS", "outdir": "security_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline11_proposal_generator", "kind": "Proposal Generator",
+     "data": "TYPES", "outdir": "proposal_packs", "builder": "build_package", "keyname": None},
+    {"module": "pipeline12_social_poster", "kind": "Social Auto-Poster",
+     "data": "PLANS", "outdir": "social_packs", "builder": "build_package", "keyname": None},
 ]
 
 
@@ -89,7 +103,10 @@ def build_dashboard(rows):
     lines.append("| Pipeline | Packages | Price range | Recurring? |")
     lines.append("|----------|:--------:|-------------|:----------:|")
     recur = {"Fiverr Gig Factory": "Hybrid", "Cold-Email Agency": "Yes", "Video Service": "Hybrid",
-             "Support Bot Deployer": "Yes", "SEO/Audit Reporter": "Yes"}
+             "Support Bot Deployer": "Yes", "SEO/Audit Reporter": "Yes",
+             "Lead-Enrichment SaaS": "Yes", "RAG-KB Builder": "Yes", "Affiliate Farm": "Yes",
+             "Invoice Automation": "Yes", "Security Scanner": "Yes",
+             "Proposal Generator": "Hybrid", "Social Auto-Poster": "Yes"}
     for pk, items in by_pipeline.items():
         prices = [i["price"] for i in items if i["price"]]
         rng = f"${min(prices)}–${max(prices)}" if prices else "—"
@@ -122,11 +139,11 @@ def main():
 
     if a.cmd == "self-test":
         rows = collect(dry_run=True)
-        assert len(rows) == 26, f"expected 26 packages, got {len(rows)}"
+        assert len(rows) == 50, f"expected 50 packages, got {len(rows)}"
         pls = {r["pipeline"] for r in rows}
-        assert len(pls) == 5, f"expected 5 pipelines, got {pls}"
+        assert len(pls) == 12, f"expected 12 pipelines, got {pls}"
         assert all(r["price"] > 0 for r in rows), "all packages must have a price"
-        print(f"self-test: OK — 5 pipelines, {len(rows)} packages, all priced")
+        print(f"self-test: OK — 12 pipelines, {len(rows)} packages, all priced")
         return
 
     dry = a.dry_run

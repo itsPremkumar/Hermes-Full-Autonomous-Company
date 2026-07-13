@@ -1,0 +1,65 @@
+{
+  "vertical": "enterprise",
+  "gig_title": "I will build an internal RAG assistant for your company wiki",
+  "sources": "wiki, SOPs, tickets",
+  "pricing": {
+    "setup": 1200,
+    "monthly": 399,
+    "margin_pct": 92,
+    "cost_note": "self-hosted Hermes/OpenClaw; only compute"
+  },
+  "n8n_workflow": {
+    "name": "rag-kb-build",
+    "nodes": [
+      {
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "name": "WeeklyIngest",
+        "params": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 4 * * 1"
+            }
+          ]
+        }
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "FetchDocs",
+        "params": {
+          "url": "={{$env.DOCS_URL}}",
+          "httpMethod": "GET"
+        }
+      },
+      {
+        "type": "n8n-nodes-base.code",
+        "name": "Chunk",
+        "code": "const txt = (items[0].json.body||'');\nconst chunks = txt.match(/[^.\\n]{80,500}[.\\n]/g)||[txt];\nreturn chunks.map(c => ({json: {text: c}}));"
+      },
+      {
+        "type": "n8n-nodes-base.httpRequest",
+        "name": "EmbedStore",
+        "params": {
+          "url": "={{$env.RAG_API}}/ingest",
+          "httpMethod": "POST"
+        }
+      }
+    ],
+    "connections": "WeeklyIngest \u2192 FetchDocs \u2192 Chunk \u2192 EmbedStore"
+  },
+  "delivery_steps": [
+    "1. Ingest wiki, SOPs, tickets",
+    "2. Chunk + embed (local model, free)",
+    "3. Deploy RAG on Hermes/OpenClaw + API",
+    "4. Wire to Slack/website widget",
+    "5. 14-day tuning + monthly refresh"
+  ],
+  "tags": [
+    "rag",
+    "knowledge base",
+    "ai assistant",
+    "enterprise rag",
+    "chatbot",
+    "llm"
+  ]
+}
