@@ -18,6 +18,12 @@ TOOLS = {
     "prompt-lint": "prompt_lint.py",
     "skill-lint": "skill_lint.py",
     "agent-sentinel": "agent_sentinel.py",
+    "agent-logger": "agent_logger.py",
+    "manifest-diff": "manifest_diff.py",
+    "cron-doctor": "cron_doctor.py",
+    "prompt-templates-cli": "prompt_templates_cli.py",
+    "agent-guardrails": "agent_guardrails.py",
+    "skill-benchmark": "skill_benchmark.py",
 }
 
 

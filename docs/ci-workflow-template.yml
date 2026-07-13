@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile all modules
+        run: python -m py_compile $(find . -name "*.py" -not -path "./.git/*")
+      - name: Run tests
+        run: |
+          if [ -f tools/test_all_skills.py ]; then python tools/test_all_skills.py; fi
+          for t in $(find . -name "test_*.py" -o -name "*_test.py" | grep -v ".git"); do
+            echo "::group:: $t"; python "$t"; echo "::endgroup::";
+          done
+
+  deploy-check:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Skill package deploy-check
+        run: python ci/ci_check.py

@@ -39,9 +39,20 @@ the publishable slices.
 | [skill-lint](https://github.com/itsPremkumar/skill-lint) | Validate ClawHub/OpenClaw skill folders before publishing | `skill_lint.py`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/skill-lint |
 | [prompt-lint](https://github.com/itsPremkumar/prompt-lint) | Lint prompts/SKILL.md for quality (score 0-100) | `prompt_lint.py`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/prompt-lint |
 | [agent-health](https://github.com/itsPremkumar/agent-health) | Probe agent dependency endpoints for up/down + latency | `agent_health.py`, `endpoints.txt`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/agent-health |
-|| [agent-sentinel-bundle](https://github.com/itsPremkumar/agent-sentinel-bundle) | Premium batch-scan + CI-gate bundle for agent-sentinel | `agent_sentinel.py`, `batch_scan.py`, `ci_gate.sh` | Gumroad-ready, $14, product #11 |
+| [agent-logger](https://github.com/itsPremkumar/agent-logger) | Analyze agent run logs for errors/token spikes | `agent_logger.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/skills/skills/agent-logger |
+| [manifest-diff](https://github.com/itsPremkumar/manifest-diff) | Diff two agent capability manifests | `manifest_diff.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/skills/skills/manifest-diff |
+| [cron-doctor](https://github.com/itsPremkumar/cron-doctor) | Validate/diagnose agent scheduled-task files | `cron_doctor.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/skills/skills/cron-doctor |
+| [prompt-templates-cli](https://github.com/itsPremkumar/prompt-templates-cli) | Render parameterized prompt templates from a catalog | `prompt_templates_cli.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/skills/skills/prompt-templates-cli |
+| [agent-guardrails](https://github.com/itsPremkumar/agent-guardrails) | Pre-flight safety check for planned agent actions | `agent_guardrails.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/skills/skills/agent-guardrails |
+| [skill-benchmark](https://github.com/itsPremkumar/skill-benchmark) | Composite quality score (A-F) for OpenClaw/Hermes skills | `skill_benchmark.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/skills/skills/skill-benchmark |
 
-> All 13 product repos are MIT, free, and secret-free (Moltbook key never exported). Each
+> All 19 product repos are MIT, free, and secret-free (Moltbook key never exported). Each
+> ClawHub skill README + per-repo `.github/workflows/ci.yml` carry a professional CI/CD
+> pipeline (compile + self-tests on Python 3.8/3.11, plus a deploy-check). Marketing rule:
+> every product announced on Moltbook (one per autonomy tick). Total live ClawHub skills: 14
+> (agent-caps, agent-sentinel, dev-prompts, company-ops, agent-cost-tracker, skill-lint,
+> prompt-lint, agent-health, agent-logger, manifest-diff, cron-doctor, prompt-templates-cli,
+> agent-guardrails, skill-benchmark).
 > ClawHub skill README carries a donation ask (GitHub Sponsors / Buy Me a Coffee — fill
 > your links). Marketing rule: every product/idea is announced on Moltbook after publish.
 > Total live ClawHub skills: 8 (agent-caps, agent-sentinel, dev-prompts, company-ops,
