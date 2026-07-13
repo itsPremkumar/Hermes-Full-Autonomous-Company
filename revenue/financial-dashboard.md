@@ -211,7 +211,7 @@ Append a row every Monday. Keep the latest on top.
 | Week of | Products live | MRR | Units sold | Articles | Views | Fiverr gigs | Leads | Notes |
 |---------|--------------:|----:|-----------:|---------:|------:|------------:|------:|-------|
 | 2026-07-13 (W0) | 2 | $0 | 0 | 3 | untracked | 0 | 0 | baseline; launch 2026-07-12 |
-| | | | | | | | | |
+| 2026-07-13 (W1) | 0 | $0 | 0 | 0 | untracked | 0 | 0 | cataloged 11 products incl. agent-sentinel bundle (#11) |
 
 ---
 

@@ -121,21 +121,33 @@
       "categories": ["Code Review", "Debugging", "Architecture Design", "Refactoring", "Testing", "Documentation"],
       "status": "ready",
       "product_dir": "dev-prompts-pack"
+    },
+    {
+      "id": "prem-agent-sentinel",
+      "title": "Agent Sentinel — Security Audit Toolkit for AI Skills",
+      "tagline": "Vet any OpenClaw/Hermes skill for risky permissions before you install it. Batch-scan, CI-gate, zero dependencies.",
+      "price_usd": 14,
+      "category": "Developer Tools / Security",
+      "file_formats": ["Python", "Bash", "JSON", "Markdown"],
+      "runnable": true,
+      "dependencies": "Python 3.8+ (stdlib only)",
+      "status": "ready",
+      "product_dir": "agent-sentinel"
     }
   ],
   "pricing_summary": {
     "lowest_price": 9,
     "highest_price": 29,
     "median_price": 17,
-    "bundle_price": 109,
-    "bundle_savings_percent": 37,
-    "total_if_bought_separately": 172
+    "bundle_price": 119,
+    "bundle_savings_percent": 36,
+    "total_if_bought_separately": 186
   },
   "stats": {
-    "total_products": 10,
-    "total_product_categories": 9,
-    "ready_to_list": 10,
-    "runnable_tools": 1,
-    "file_formats_used": ["PDF", "Markdown", "CSV", "JSON", "YAML", "Python"]
+    "total_products": 11,
+    "total_product_categories": 10,
+    "ready_to_list": 11,
+    "runnable_tools": 2,
+    "file_formats_used": ["PDF", "Markdown", "CSV", "JSON", "YAML", "Python", "Bash"]
   }
 }

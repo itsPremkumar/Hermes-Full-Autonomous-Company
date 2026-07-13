@@ -1,0 +1,42 @@
+TITLE:       Agent Sentinel — Security Audit Toolkit for AI Skills
+PRICE:       $14
+CATEGORY:    Developer Tools / Security
+FILE:        upload agent_sentinel.py + batch_scan.py as "Software / File"
+
+DESCRIPTION (copy everything below the line):
+------------------------------------------------------------------------
+The #1 OpenClaw risk is installing a third-party skill that asks for more
+access than it needs. A "weather" skill requesting shell execution? That's
+how agents go rogue. Agent Sentinel scans any skill folder and flags exactly
+that — before you give it machine access.
+
+What you get (premium bundle):
+- agent_sentinel.py — CLI scanner (Python 3.8+, zero deps, offline)
+- batch_scan.py — bulk-scan an entire skills directory in one pass
+- CI gate script — add to your pipeline: fails on HIGH risks
+- sample_skills/ — 5 test skills to practice on (safe, medium, rogue)
+- scan-report template — JSON output the CI can consume
+
+Scan modes:
+  python agent_sentinel.py scan <skill-folder>     # single skill
+  python agent_sentinel.py scan-all <skills-dir>    # batch scan
+  python agent_sentinel.py ci-check <skills-dir>    # exit code 1 on HIGH
+
+What it catches:
+- simple-named skill (weather/hello/joke) requesting shell/exec → HIGH
+- any shell/exec capability → MEDIUM
+- hardcoded secrets (api_key/token) in skill files → HIGH
+- no human approval gate for privileged actions → LOW
+- network egress without stated reason
+
+Free core on ClawHub: clawhub.ai/skills/skills/agent-sentinel
+This bundle adds batch scanning, CI integration, and sample test skills.
+MIT licensed. No tracking, no telemetry, runs fully offline.
+------------------------------------------------------------------------
+
+PUBLISH STEPS:
+1. Gumroad > Products > New product
+2. Name = TITLE above; Price = $14; Category = Developer Tools
+3. Add files: upload agent_sentinel.py, batch_scan.py, ci_gate.sh
+4. Paste DESCRIPTION above
+5. Publish

@@ -39,12 +39,14 @@ the publishable slices.
 | [skill-lint](https://github.com/itsPremkumar/skill-lint) | Validate ClawHub/OpenClaw skill folders before publishing | `skill_lint.py`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/skill-lint |
 | [prompt-lint](https://github.com/itsPremkumar/prompt-lint) | Lint prompts/SKILL.md for quality (score 0-100) | `prompt_lint.py`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/prompt-lint |
 | [agent-health](https://github.com/itsPremkumar/agent-health) | Probe agent dependency endpoints for up/down + latency | `agent_health.py`, `endpoints.txt`, `SKILL.md` | Live on ClawHub: clawhub.ai/skills/skills/agent-health |
+|| [agent-sentinel-bundle](https://github.com/itsPremkumar/agent-sentinel-bundle) | Premium batch-scan + CI-gate bundle for agent-sentinel | `agent_sentinel.py`, `batch_scan.py`, `ci_gate.sh` | Gumroad-ready, $14, product #11 |
 
-> All 12 product repos are MIT, free, and secret-free (Moltbook key never exported). Each
+> All 13 product repos are MIT, free, and secret-free (Moltbook key never exported). Each
 > ClawHub skill README carries a donation ask (GitHub Sponsors / Buy Me a Coffee — fill
 > your links). Marketing rule: every product/idea is announced on Moltbook after publish.
 > Total live ClawHub skills: 8 (agent-caps, agent-sentinel, dev-prompts, company-ops,
 > agent-cost-tracker, skill-lint, prompt-lint, agent-health).
+> Gumroad-ready products (cataloged): 11 (incl. agent-sentinel bundle).
 
 > None of these repos contain secrets. The Moltbook API key lives only in the OS repo's
 > gitignored `.moltbook_key` and is never exported to product repos.
