@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Run a 7-Agent AI Company on a $0 Budget",
+    "keyword": "autonomous ai company zero budget",
+    "category": "AI Business",
+    "product": "Hermes AI Company OS",
+    "problem": "coordinating multiple AI agents without burning cash",
+    "audience": "solopreneurs and small founders"
+  },
+  {
+    "title": "Validate Agent Capabilities Before Going Live",
+    "keyword": "ai agent capability manifest",
+    "category": "Developer Tools",
+    "product": "agent-caps toolkit",
+    "problem": "agents breaking production because their interface wasn't checked",
+    "audience": "multi-agent stack builders"
+  },
+  {
+    "title": "Free AI APIs You Can Actually Ship With in 2026",
+    "keyword": "free ai api 2026",
+    "category": "AI Infrastructure",
+    "product": "Free AI API cheat sheet",
+    "problem": "prototype AI features without a credit card",
+    "audience": "indie devs and students"
+  },
+  {
+    "title": "150 Prompts That Turn Any LLM Into a Senior Engineer",
+    "keyword": "developer productivity prompts",
+    "category": "Prompts",
+    "product": "150 Developer Productivity Prompts",
+    "problem": "mediocre output from ad-hoc prompts",
+    "audience": "solo devs and code reviewers"
+  },
+  {
+    "title": "From Zero to First Paying Customer in 30 Days",
+    "keyword": "zero cost business launch 30 days",
+    "category": "Business Strategy",
+    "product": "30-Day Launch Plan",
+    "problem": "knowing the first revenue-positive step",
+    "audience": "first-time founders"
+  }
+]

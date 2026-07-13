@@ -18,6 +18,7 @@ appends a row each tick. Source of truth for self-optimization.
 | 2026-07-13 | - | 284 | yes | 0 | 0 | low |
 | 2026-07-13 | - | 1331 | yes | 0 | 0 | low |
 | 2026-07-13 | — | 644 | init | 0 | 0 | low (server restart, cred fix) |
+| 2026-07-13 | — | 437 | yes | 0 | 0 | low |
 
 ## Rule
 A metric that regresses for 3 consecutive ticks triggers a review (lessons-learned.md).
