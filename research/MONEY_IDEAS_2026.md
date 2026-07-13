@@ -71,16 +71,16 @@ model training (GPU cost), paid ad-management (needs ad spend), crypto trading b
 
 | Rank | Idea | Price point (cited) | Demand signal (cited) | Free tool stack | Citation |
 |------|------|---------------------|-----------------------|-----------------|----------|
-| 1 | AI-agent retainer | $2,500–$6,000/mo | AI gigs +340% YoY; 84% enterprises raising agent spend | n8n + Hermes/OpenClaw + Crawl4AI + pgvector | betonai rate card; deantek stats |
-| 2 | Voice AI receptionist | $900–$2,000 setup + $299–$799/mo | Voice-agent mkt $2.4B→$47.5B; 27% calls lost; 78% hire first | Piper + Whisper + Chatwoot + n8n | deepresearch.ninja; deantek stats |
-| 3 | n8n workflow build | $1,800–$4,500 flat / $95–$235/hr | 58% SMBs use GenAI; n8n parity + open-source pull | n8n + your `n8n` knowledge | betonai rate card; deantek stats |
-| 4 | Cold-email agency | $2K–$8K/mo (recurring) | Automated email +320% revenue | n8n + Listmonk + Mautic | deantek stats; betonai playbook |
-| 5 | Document/PDF automation | $99–$399 setup + $49–$199/mo | fiverr.com/gigs/pdf-automation live category | Stirling-PDF + Docling + n8n | fiverr.com/gigs/pdf-automation; github.com/Stirling-Tools/Stirling-PDF |
-| 6 | RAG-KB build | $1,000–$3,000 + $99–$199/mo | 84% enterprises raising AI invest | Mem0 + pgvector + Docling + Open WebUI | deantek stats (Zapier State of Agentic AI) |
-| 7 | SEO+security audit | $49–$199/mo/site | Automated email +320%; security demand | codebase-inspection + secret-scanner + Stirling-PDF | deantek stats |
-| 8 | Social auto-poster | $300–$800/mo/client | AI gigs fastest-growing Fiverr cat | n8n + youtube-content + gif-search + ascii-art | betonai playbook |
-| 9 | Lead enrichment | $0.10–$0.50/lead or $29–$99/mo | 78% hire first-responder → lead speed | n8n + Crawl4AI + maps-cli | deantek stats |
-| 10 | AI video service | $100–$500/video | AI product video $50 vs $5,000 old | Remotion+Edge-TTS + CogVideoX | memvers.com/blog/ai-services-fiverr-2026 |
+| 1 | AI-agent retainer | $2,500–$6,000/mo | AI gigs +340% YoY; 84% enterprises raising agent spend | n8n + Hermes/OpenClaw + Crawl4AI + pgvector | https://betonai.net/ai-automation-rate-card-2026-what-to-charge-for-n8n-make-and-zapier-builds-real-rates-from-54-operators/ ; https://deantek.co/blog/ai-automation-small-business-statistics-2026 |
+| 2 | Voice AI receptionist | $900–$2,000 setup + $299–$799/mo | Voice-agent mkt $2.4B→$47.5B; 27% calls lost; 78% hire first | Piper + Whisper + Chatwoot + n8n | https://deepresearch.ninja/2026/05/AI-Voice-Agent-Adoption-and-Demand-in-SMEs/ ; https://deantek.co/blog/ai-automation-small-business-statistics-2026 |
+| 3 | n8n workflow build | $1,800–$4,500 flat / $95–$235/hr | 58% SMBs use GenAI; n8n parity + open-source pull | n8n + your `n8n` knowledge | https://betonai.net/ai-automation-rate-card-2026-what-to-charge-for-n8n-make-and-zapier-builds-real-rates-from-54-operators/ ; https://deantek.co/blog/ai-automation-small-business-statistics-2026 |
+| 4 | Cold-email agency | $2K–$8K/mo (recurring) | Automated email +320% revenue | n8n + Listmonk + Mautic | https://deantek.co/blog/ai-automation-small-business-statistics-2026 ; https://betonai.net/how-to-make-3k-12k-month-selling-ai-automation-gigs-on-fiverr-and-upwork-in-2026-the-complete-setup-to-scale-playbook-with-real-seller-revenue-data/ |
+| 5 | Document/PDF automation | $99–$399 setup + $49–$199/mo | fiverr.com/gigs/pdf-automation live category | Stirling-PDF + Docling + n8n | https://www.fiverr.com/gigs/pdf-automation ; https://github.com/Stirling-Tools/Stirling-PDF |
+| 6 | RAG-KB build | $1,000–$3,000 + $99–$199/mo | 84% enterprises raising AI invest | Mem0 + pgvector + Docling + Open WebUI | https://deantek.co/blog/ai-automation-small-business-statistics-2026 |
+| 7 | SEO+security audit | $49–$199/mo/site | Automated email +320%; security demand | codebase-inspection + secret-scanner + Stirling-PDF | https://deantek.co/blog/ai-automation-small-business-statistics-2026 |
+| 8 | Social auto-poster | $300–$800/mo/client | AI gigs fastest-growing Fiverr cat | n8n + youtube-content + gif-search + ascii-art | https://betonai.net/how-to-make-3k-12k-month-selling-ai-automation-gigs-on-fiverr-and-upwork-in-2026-the-complete-setup-to-scale-playbook-with-real-seller-revenue-data/ |
+| 9 | Lead enrichment | $0.10–$0.50/lead or $29–$99/mo | 78% hire first-responder → lead speed | n8n + Crawl4AI + maps-cli | https://deantek.co/blog/ai-automation-small-business-statistics-2026 |
+| 10 | AI video service | $100–$500/video | AI product video $50 vs $5,000 old | Remotion+Edge-TTS + CogVideoX | https://memvers.com/blog/ai-services-fiverr-2026 |
 
 ---
 
