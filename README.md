@@ -15,7 +15,7 @@
 | `tools/` | `approved.md` (validated tools + how to run) · `rejected.md` (tried & dropped, with reason) |
 | `knowledge-base/` | `lessons-learned.md` · `benchmarks.md` |
 | `business/` | `marketing/` `finance/` `product/` `customer-support/` |
-| `infra/` | deployment, security, monitoring notes |
+| `infra/` | deployment, security, monitoring notes · **`openclaw-control-guide.md`** (how to run/command OpenClaw — the chat/phone front-door) |
 | `products/` | the actual digital products |
 | `income-engine/` | zero-cost asset generator + publish scripts |
 | `finance/` | `revenue-ledger.csv`, `burn-guard.py`, `burn-policy.json` |
@@ -37,7 +37,7 @@
 
 - **Paperclip** — org chart, budgets, governance, ticketing (7 agents: CEO, CFO, COO, CMO, Head of Product, QA, Engineer)
 - **Hermes Agent** — executive/growth (local model default; OmniRoute→OpenRouter for escalation)
-- **OpenClaw** — comms + computer-use
+- **OpenClaw** — comms + computer-use · see `infra/openclaw-control-guide.md` for full control/usage docs |
 - **hermes-paperclip-adapter** — bridges Hermes into Paperclip
 - **Automated-Video-Generator** — Remotion product line
 
