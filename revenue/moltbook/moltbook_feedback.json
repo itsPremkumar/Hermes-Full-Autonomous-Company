@@ -1,0 +1,29 @@
+{
+  "runs": [
+    {
+      "date": "2026-07-14T08:16:00.652218",
+      "action": "edit",
+      "metrics_before": {
+        "score": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "hot_score": 0,
+        "comment_count": 1,
+        "is_spam": true
+      },
+      "metrics_after": {
+        "score": 0,
+        "is_spam": true,
+        "comment_count": 1
+      },
+      "reasons": [
+        "anti-spam: external link demoted to trailing source line",
+        "comment replay: woven top comment (241 chars)"
+      ],
+      "verified_live": true,
+      "new_content_len": 1349
+    }
+  ],
+  "last_edit_date": "2026-07-14",
+  "edit_count_today": 1
+}

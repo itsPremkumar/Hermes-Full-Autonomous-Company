@@ -84,23 +84,25 @@ def expand_affiliate(text, cfg):
     atag = cfg.get("amazon_tag", "")
     sid = cfg.get("shareasale_id", "")
     fid = cfg.get("fiverr_aff_id", "")
+    # Accept single- or double-brace tokens: {AMAZON:kw} or {{AMAZON:kw}}
     def a_repl(m):
         kw = urllib.parse.quote(m.group(1).strip())
+        label = m.group(1).strip()
         url = f"https://www.amazon.com/s?k={kw}"
         if atag:
-            url += f"&tag={atag}"
-        return f'<a href="{url}">'
-    text = re.sub(r"\{\{AMAZON:([^}]+)\}\}", a_repl, text)
+            url += f"&amp;tag={atag}"
+        return f'<a href="{url}">Amazon: {html.escape(label)}</a>'
+    text = re.sub(r"\{\{?AMAZON:([^}]+)\}?\}", a_repl, text)
     def s_repl(m):
         uid = m.group(1).strip(); kw = m.group(2).strip()
         url = f"https://www.shareasale.com/shareasale.cfm?merchantID={sid}" if sid else "https://www.shareasale.com"
-        return f'<a href="{url}">{kw}</a>'
-    text = re.sub(r"\{\{SHAREASALE:([^:]+):([^}]+)\}\}", s_repl, text)
+        return f'<a href="{url}">{html.escape(kw)}</a>'
+    text = re.sub(r"\{\{?SHAREASALE:([^:]+):([^}]+)\}?\}", s_repl, text)
     def f_repl(m):
         cat = m.group(1).strip()
-        url = f"https://www.fiverr.com/categories/{cat}?source=affiliate_fiverr&aff_id={fid}" if fid else f"https://www.fiverr.com/categories/{cat}"
-        return f'<a href="{url}">'
-    text = re.sub(r"\{\{FIVERR:([^}]+)\}\}", f_repl, text)
+        url = f"https://www.fiverr.com/categories/{cat}?source=affiliate_fiverr&amp;aff_id={fid}" if fid else f"https://www.fiverr.com/categories/{cat}"
+        return f'<a href="{url}">Fiverr: {html.escape(cat)}</a>'
+    text = re.sub(r"\{\{?FIVERR:([^}]+)\}?\}", f_repl, text)
     return text
 
 def parse_article(path):
@@ -161,8 +163,8 @@ def main():
                 continue
             fm, body = parse_article(os.path.join(CONTENT, fn))
             slug = fm.get("slug", slugify(fm.get("title", fn[:-3])))
-            body = expand_affiliate(body, cfg)
             html_body = md_to_html(body)
+            html_body = expand_affiliate(html_body, cfg)
             meta = f'<p class="meta">Published {fm.get("date","")} · niche: {fm.get("niche","")}</p>' if fm.get("date") else ""
             full = meta + html_body
             open(os.path.join(PUBLIC, slug + ".html"), "w", encoding="utf-8").write(

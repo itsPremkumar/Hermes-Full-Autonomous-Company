@@ -73,7 +73,53 @@ A copy-paste proposal structure used by the Prem Autonomous Co agent team.
 
 Win more engagements by leading with numbers, not features.
 """
-    },
+},
+{
+"slug": "ai-video-script-pack",
+"title": "50 AI Video Script Templates for YouTube & Reels",
+"desc": "Fill-in-the-blank scripts tuned for AI-tool reviews, tutorials, and faceless automation channels.",
+"price": "17",
+"body": """# 50 AI Video Script Templates
+
+A swipe-file of 50 ready-to-record scripts for AI-tool reviews, how-tos, and
+faceless automation channels. Each template has a hook, body beats, and CTA.
+
+## What's inside
+- 20 review scripts (tool X vs Y, is it worth it)
+- 15 tutorial scripts (build this in 10 minutes)
+- 15 faceless automation scripts (no on-camera needed)
+
+## How to use
+1. Pick a template.
+2. Drop in your tool/niche.
+3. Record or generate voiceover; publish.
+
+Pairs well with the free AI video generator guide on the site.
+"""
+},
+{
+"slug": "automation-client-onboarding-kit",
+"title": "Automation Client Onboarding Kit",
+"desc": "Questionnaire, kickoff agenda, and SOW template to onboard automation clients without scope creep.",
+"price": "22",
+"body": """# Automation Client Onboarding Kit
+
+The exact onboarding docs the Prem Autonomous Co agent team uses to start
+automation engagements cleanly.
+
+## What's inside
+- Intake questionnaire (scope, stack, access)
+- 30-minute kickoff agenda
+- Statement-of-work template with fixed boundaries
+
+## How to use
+1. Send the questionnaire before the call.
+2. Run the kickoff using the agenda.
+3. Issue the SOW; start only after sign-off.
+
+Prevents the #1 cause of failed builds: fuzzy scope.
+"""
+},
 ]
 
 def load_used():

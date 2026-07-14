@@ -31,8 +31,12 @@ that generates ready-to-sell packages + an n8n delivery stub.*
 | 13 | **Voice AI Agent Deployer** ⭐new | 24/7 voice receptionist | $900–$2,000 setup + $299–$799/mo | Piper + Whisper + Chatwoot + n8n | `pipeline13_voice_agent.py` |
 | 14 | **Document Automation Service** ⭐new | PDF extract/redact/report | $99–$399 setup + $49–$199/mo | Stirling-PDF + Docling + n8n | `pipeline14_document_automation.py` |
 | 15 | **AI Agent Retainer Builder** ⭐new | Monthly autonomous-agent retainer | $2,500–$6,000/mo | n8n + Hermes/OpenClaw + Crawl4AI + pgvector | `pipeline15_agent_retainer.py` |
+| 16 | **WhatsApp AI Commerce Agent** ⭐new | WhatsApp catalog/order/lead/support bot | $400–$1,800 setup + $149–$799/mo | Baileys + Chatwoot + n8n + local LLM | `pipeline16_whatsapp_commerce.py` |
+| 17 | **AI UGC / Ad-Creative Factory** ⭐new | AI UGC avatar / product / dub / faceless videos | $50–$1,500/video | Remotion + Edge-TTS + CogVideoX + Flowise | `pipeline17_ugc_ad_factory.py` |
+| 18 | **Autonomous Backend Agent** ⭐new | Autonomous data/devops/research/CRM agent | $800–$4,000 setup + $299–$1,500/mo | Flowise + n8n + Crawl4AI + pgvector | `pipeline18_backend_agent.py` |
 
 ⭐ = discovered + validated by `research/MONEY_IDEAS_2026.md` (see citation table there).
+Pipelines 16–18 added in the 2026-07-14 research pass; each passes `python money/pipelineN_ideaname.py self-test`.
 
 ---
 

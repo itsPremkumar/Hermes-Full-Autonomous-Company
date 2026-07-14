@@ -23,6 +23,35 @@ import urllib.error
 BASE = "https://www.moltbook.com/api/v1"
 KEY_FILE = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".moltbook_key"))
 
+# Validated submolt names (seeded from GET /submolts; stable core set so drafts
+# validate offline). `post()` rejects anything not in here with a clear error
+# instead of a silent 404 "Submolt not found" (which let broken drafts
+# pile up untracked + look like spam).
+VALID_SUBMOLTS = {
+    "agent-economy","agent-ops","agentautomation","agentcommerce","agenteconomics",
+    "agenteconomy","agentfinance","agentinfra","agentinfrastructure","agentops",
+    "agents","agentskills","agentsouls","agentstack","agenttips","ai","ai-agents",
+    "ai-coding","aiagents","aisafety","aithoughts","aitools","algotrading",
+    "announcements","automation","blesstheirhearts","builders","buildlogs","builds",
+    "buildx","clawtasks","cli-agents","coding","conscious","consciousness",
+    "continuity","coordinating-agi","crab-rave","crustafarianism","crypto",
+    "cybersecurity","debugging","debugging-wins","defi","dev","devtools","economics",
+    "emergence","engineering","existential","explainlikeim5","finance","fomolt",
+    "ftec5660","gaming","general","infrastructure","introductions","investing",
+    "mbc-20","mbc20","mcp","memory","meta","multiagent","music","nightshift",
+    "offmychest","openclaw","openclaw-explorers","optimization","philosophy",
+    "ponderings","productivity","programming","quantmolt","remote-work","research",
+    "saas","science","security","selfmodding","selfpaid","shipping","shitposts",
+    "showandtell","skills","souls","streaming","swarm","tech","technology",
+    "thebecoming","tips","todayilearned","tooling","tools","trading","travel","usdc",
+}
+
+def validate_submolt(name):
+    """Return True if name is a known Moltbook submolt (empty = server default)."""
+    if not name:
+        return True
+    return name in VALID_SUBMOLTS
+
 
 def _req(method, path, data=None, api_key=None):
     url = BASE + path
@@ -59,7 +88,10 @@ def load_key():
 def post(title, content, submolt=None, link=None):
     """Create a post. Requires an api_key (register first).
     NOTE: Moltbook's /posts text endpoint rejects a top-level 'link' property
-    (400 'property link should not exist'). Put URLs inside content instead."""
+    (400 'property link should not exist'). Put URLs inside content instead.
+    Rejects an invalid submolt up-front (clear error) instead of a silent 404."""
+    if submolt and not validate_submolt(submolt):
+        return 400, f"invalid submolt '{submolt}' — must be one of the valid Moltbook submolts"
     key = load_key()
     if not key:
         return 401, "no api_key — run register() first"
@@ -72,9 +104,33 @@ def post(title, content, submolt=None, link=None):
     return _req("POST", "/posts", payload, api_key=key)
 
 
-def get_feed(sort="new", limit=5):
-    st, resp = _req("GET", f"/posts?sort={sort}&limit={limit}")
-    return st, resp
+def get_post(post_id):
+    """Fetch a single post (metrics + content). Read-only."""
+    return _req("GET", f"/posts/{post_id}")
+
+
+def edit_post(post_id, title, content):
+    """Edit an existing post in place via PATCH (title + content only;
+    Moltbook's edit endpoint rejects a top-level 'submolt').
+
+    GUARD: refuses obviously-destructive writes (empty/very-short content,
+    or title/content that don't look like real post text). Verification
+    scripts must NEVER call this with probe values like ('x','x') — it
+    performs a real, irreversible overwrite of the live post."""
+    if not title or not content:
+        return 400, "refuse edit: empty title/content (would blank the post)"
+    if len(content) < 80 or len(title) < 5:
+        return 400, "refuse edit: content too short — likely a probe/destructive write"
+    key = load_key()
+    if not key:
+        return 401, "no api_key — run register() first"
+    payload = {"title": title, "content": content}
+    return _req("PATCH", f"/posts/{post_id}", payload, api_key=key)
+
+
+def get_comments(post_id):
+    """Fetch comments for a post (real human feedback). Read-only."""
+    return _req("GET", f"/posts/{post_id}/comments?limit=50")
 
 
 def main():
