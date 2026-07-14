@@ -1,0 +1,12 @@
+tier,name,price_point,positioning,best_for,deliverable_quota,revision_policy,response_sla,support_channel
+Free,Free,$0/mo,Proof-of-value entry point,Lead generation / top of funnel,Unlimited light use,n/a,Best effort,Community / email
+Starter,Starter,$15-40/task,One-off project testing,Single deliverables / trials,1 deliverable per task,1 round,48h,Email
+Pro,Pro,$99/mo,Recurring automation needs,Monthly recurring clients,8 deliverables / month,2 rounds / deliverable,24h,Priority email
+Scale,Scale,$299/mo,Power-user automation,High-volume clients,30 deliverables / month,3 rounds / deliverable,12h,Slack + email
+Enterprise,Enterprise,Custom,Dedicated agent for large teams,Large orgs / multi-team,Custom,SLA-defined,Custom,Dedicated channel
+Agency Bundle,Agency Bundle,$499/mo,Full-stack agent team,3-6 agent teams,Full stack / custom,Unlimited within scope,12h,Slack + monthly review
+
+bonus,annual_discount_calculator,,"2 months free on annual = ~17% off","Quote on annual plans",,,,
+bonus,reseller_pricing_sheet,,"25% recurring commission","Partners / affiliates",,,,
+bonus,add_on_pricing_matrix,,"Extra deliverables + rush fees","Overage / expedite",,,,
+bonus,comparison_table,,"Tier contrast for site/deck","Sales collateral",,,,

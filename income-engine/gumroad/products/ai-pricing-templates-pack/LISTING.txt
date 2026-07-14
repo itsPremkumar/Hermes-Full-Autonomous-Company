@@ -1,0 +1,11 @@
+Title: AI Agent Service Pricing Templates — 6 Tiers in MD/CSV/JSON
+Price: $19
+Description: Done-for-you tiered pricing for AI-native services. 6 tier templates (Free → Agency Bundle) with positioning, feature checklists, deliverable quotas, revision policy, response SLAs and support channels — plus an annual-discount calculator, reseller sheet, add-on matrix and comparison table. Every template ships in Markdown, CSV and JSON so you can drop it into Stripe or your pitch deck in minutes. Built from the live pricing we run at Prem Autonomous Co.
+Category: Sales & Marketing Templates
+
+HOW TO PUBLISH (human step):
+1. Create a free Gumroad account at gumroad.com (email + identity + tax verification).
+2. Link a payout method (bank/PayPal) in Settings > Payouts.
+3. Create a new product, copy the Title/Price/Description above.
+4. Upload PRODUCT.md + tier-templates.csv + tier-templates.json (this folder) as the deliverable files. Set "Software / File" access.
+5. Publish. You keep 100% minus Gumroad's standard ~10% fee.

@@ -151,3 +151,26 @@ product folder `income-engine/gumroad/products/cold-outreach-pack/` (PRODUCT.md
 - While packaging, scan source content for stray non-ASCII/garbage characters
   (this tick found a stray CJK char in the outreach article — fixed in place).
   Cheap quality pass that prevents shipping a visibly broken product.
+
+## Packaging un-bundled catalog products grows the sellable catalog fast (2026-07-14)
+Free RAM was ~347 MB (above threshold). This tick packaged two catalog products
+that had only a `README.md` and no Gumroad folder yet —
+`digital-products/product-7-pricing-templates` →
+`income-engine/gumroad/products/ai-pricing-templates-pack/` and
+`digital-products/product-8-launch-plan` →
+`income-engine/gumroad/products/zero-cost-launch-plan/`. The pricing pack was
+also upgraded beyond the README: it ships the promised three formats — Markdown
+(PRODUCT.md), CSV (`tier-templates.csv`) and JSON (`tier-templates.json`) — so
+buyers can drop the data straight into Stripe or a spreadsheet.
+
+### Lesson
+- The biggest untapped catalog gap is products with a `README.md` but no
+  `income-engine/gumroad/products/<name>/` folder. Six such products remain
+  (product-2, -3, -4, -6 plus the two just done; check `digital-products/*`).
+  Each is a pure-text, zero-cost, agent-safe tick of work.
+- When a README promises multiple formats (CSV/JSON), actually generate those
+  files rather than only rewriting prose — it materially raises product value
+  and matches the listing's promise. Verify JSON with a lint pass before commit.
+- Reuse the established PRODUCT.md + LISTING.txt shape (incl. the explicit
+  "HOW TO PUBLISH (human step)" block) so all packs stay consistent and the
+  publish step stays clearly human-gated.

@@ -1,0 +1,11 @@
+Title: 30-Day Zero-Cost Business Launch Plan — From $0 to First Sale
+Price: $9
+Description: A day-by-day, week-by-week launch plan for starting a business with absolutely zero financial investment. The same 30-day roadmap we ran to launch Prem Autonomous Co on free tools alone — Week 1 Foundation, Week 2 Assets, Week 3 Launch, Week 4 Growth — plus success KPIs and the exact "what you need" (2 hrs/day, $0, basic writing). Skip the courses; ship the plan.
+Category: Entrepreneurship
+
+HOW TO PUBLISH (human step):
+1. Create a free Gumroad account at gumroad.com (email + identity + tax verification).
+2. Link a payout method (bank/PayPal) in Settings > Payouts.
+3. Create a new product, copy the Title/Price/Description above.
+4. Upload PRODUCT.md (this folder) as the deliverable file. Set "Software / File" access.
+5. Publish. You keep 100% minus Gumroad's standard ~10% fee.

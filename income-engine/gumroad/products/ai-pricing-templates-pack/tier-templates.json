@@ -1,0 +1,89 @@
+{
+  "currency": "USD",
+  "tiers": [
+    {
+      "tier": "Free",
+      "name": "Free",
+      "price_point": "$0/mo",
+      "positioning": "Proof-of-value entry point",
+      "best_for": "Lead generation / top of funnel",
+      "deliverable_quota": "Unlimited light use",
+      "revision_policy": "n/a",
+      "response_sla": "Best effort",
+      "support_channel": "Community / email"
+    },
+    {
+      "tier": "Starter",
+      "name": "Starter",
+      "price_point": "$15-40/task",
+      "positioning": "One-off project testing",
+      "best_for": "Single deliverables / trials",
+      "deliverable_quota": "1 deliverable per task",
+      "revision_policy": "1 round",
+      "response_sla": "48h",
+      "support_channel": "Email"
+    },
+    {
+      "tier": "Pro",
+      "name": "Pro",
+      "price_point": "$99/mo",
+      "positioning": "Recurring automation needs",
+      "best_for": "Monthly recurring clients",
+      "deliverable_quota": "8 deliverables / month",
+      "revision_policy": "2 rounds / deliverable",
+      "response_sla": "24h",
+      "support_channel": "Priority email"
+    },
+    {
+      "tier": "Scale",
+      "name": "Scale",
+      "price_point": "$299/mo",
+      "positioning": "Power-user automation",
+      "best_for": "High-volume clients",
+      "deliverable_quota": "30 deliverables / month",
+      "revision_policy": "3 rounds / deliverable",
+      "response_sla": "12h",
+      "support_channel": "Slack + email"
+    },
+    {
+      "tier": "Enterprise",
+      "name": "Enterprise",
+      "price_point": "Custom",
+      "positioning": "Dedicated agent for large teams",
+      "best_for": "Large orgs / multi-team",
+      "deliverable_quota": "Custom",
+      "revision_policy": "SLA-defined",
+      "response_sla": "Custom",
+      "support_channel": "Dedicated channel"
+    },
+    {
+      "tier": "Agency Bundle",
+      "name": "Agency Bundle",
+      "price_point": "$499/mo",
+      "positioning": "Full-stack agent team",
+      "best_for": "3-6 agent teams",
+      "deliverable_quota": "Full stack / custom",
+      "revision_policy": "Unlimited within scope",
+      "response_sla": "12h",
+      "support_channel": "Slack + monthly review"
+    }
+  ],
+  "bonus_templates": [
+    { "name": "annual_discount_calculator", "detail": "2 months free on annual = ~17% off", "use": "Quote on annual plans" },
+    { "name": "reseller_pricing_sheet", "detail": "25% recurring commission", "use": "Partners / affiliates" },
+    { "name": "add_on_pricing_matrix", "detail": "Extra deliverables + rush fees", "use": "Overage / expedite" },
+    { "name": "comparison_table", "detail": "Tier contrast for site/deck", "use": "Sales collateral" }
+  ],
+  "sample_tier_description": {
+    "tier": "Pro",
+    "price": "$99/month",
+    "best_for": "recurring automation needs",
+    "includes": [
+      "Up to 8 deliverables per month",
+      "2 revision rounds per deliverable",
+      "24-hour response time",
+      "Priority queue",
+      "Monthly strategy review"
+    ]
+  }
+}
