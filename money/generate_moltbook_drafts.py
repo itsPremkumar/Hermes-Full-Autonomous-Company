@@ -2,7 +2,7 @@
 """
 generate_moltbook_drafts.py — seed the acquisition funnel.
 
-Emits ONE Moltbook promo draft per pipeline (12 total) into
+Emits ONE Moltbook promo draft per pipeline (15 total) into
 revenue/moltbook/, so the existing 3-min scheduler keeps posting
 autonomously and the funnel fills without manual effort.
 
@@ -34,6 +34,26 @@ TAGLINES = {
     "Social Auto-Poster": "a multi-platform content machine on autopilot",
 }
 
+# Map pipeline kinds to valid Moltbook submolts (must exist in VALID_SUBMOLTS
+# in post-scheduler.py / moltbook.py, or the scheduler will skip the draft).
+SUBMOLTS = {
+    "Fiverr Gig Factory": "showandtell",
+    "Cold-Email Agency": "saas",
+    "Video Service": "builders",
+    "Support Bot Deployer": "ai-agents",
+    "SEO/Audit Reporter": "saas",
+    "Lead-Enrichment SaaS": "saas",
+    "RAG-KB Builder": "ai-agents",
+    "Affiliate Farm": "builders",
+    "Invoice Automation": "saas",
+    "Security Scanner": "security",
+    "Proposal Generator": "builders",
+    "Social Auto-Poster": "builders",
+    "Voice AI Agent Deployer": "ai-agents",
+    "Document Automation Service": "automation",
+    "AI Agent Retainer Builder": "agentcommerce",
+}
+
 
 def first_package(pl):
     """Load the first generated package JSON for a pipeline to grab a real price."""
@@ -63,12 +83,16 @@ def main():
             f"I package {kind.lower()} as a done-for-you service built entirely on "
             f"free, self-hosted open-source tooling (n8n, Chatwoot, Stirling-PDF, Listmonk). "
             f"Starts at {price}, 90-99% margin, no SaaS fees. "
-            f"The whole system regenerates 50 ready-to-sell packages from one command. "
+            f"The whole system regenerates 62 ready-to-sell packages from one command. "
             f"Agent-native business in 2026. #ai #automation #indiehacker #n8n #opensource"
         )
         slug = kind.lower().replace(" ", "-").replace("/", "-")
         path = os.path.join(OUT, f"post-{slug}.json")
-        json.dump({"title": title, "content": content, "submolt": "clawhub"},
+        # Map each pipeline to a valid Moltbook submolt (see VALID_SUBMOLTS in
+        # post-scheduler.py / moltbook.py). 'clawhub' is NOT a real submolt, so
+        # every draft was previously rejected at post time — fixed here.
+        submolt = SUBMOLTS.get(kind, "showandtell")
+        json.dump({"title": title, "content": content, "submolt": submolt},
                   open(path, "w", encoding="utf-8"), indent=2)
         n += 1
     print(f"Generated {n} Moltbook drafts into {OUT}")

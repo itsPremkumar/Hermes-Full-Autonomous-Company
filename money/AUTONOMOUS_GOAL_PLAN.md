@@ -50,7 +50,7 @@ is proven with real command output / file excerpts.
 | Phase | Work | Verification the judge checks |
 |-------|------|-------------------------------|
 | A | Build pipelines #6–#12 | each `pipelineN_*.py self-test` exits 0 |
-| B | Unify in run_all.py | `python money/run_all.py self-test` → 12 pipelines, ~50 packages |
+| B | Unify in run_all.py | `python money/run_all.py self-test` → 15 pipelines, 62 packages |
 | C | Real n8n workflows | each `*.json` has executable code nodes (no `TODO`/placeholder) |
 | D | Infra stack | `infra/docker-compose.yml` + `infra/SETUP.md` present & coherent |
 | E | Listing copy | `listings/<pipeline>/<item>.md` exists for every package |
@@ -96,7 +96,7 @@ All reuse the existing 31 ClawHub skills + 100 learned skills. Zero external cos
 
 ## 7. Outcome when "done"
 
-- `money/run_all.py self-test` → 12 pipelines, ~50 packages, all pass
+- `money/run_all.py self-test` → 15 pipelines, 62 packages, all pass
 - `infra/docker-compose.yml` + `SETUP.md` present
 - `listings/` has platform-ready copy for every package
 - Acquisition loop scheduled

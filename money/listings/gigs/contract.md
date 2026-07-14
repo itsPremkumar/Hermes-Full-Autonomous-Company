@@ -1,6 +1,6 @@
 # I will generate your legal contract or proposal
 
-**Price:** contact for quote
+**Price:** $120/gig
 **Margin:** —%
 **Tags:** legal document, contract generator, proposal writer, freelance contract, nda, docassemble
 
@@ -9,7 +9,9 @@ A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-
+- **Basic** ($30, 3 days): Setup only; 1 workflow; Email support
+- **Standard** ($120, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
+- **Premium** ($240, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin

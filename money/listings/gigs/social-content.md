@@ -1,6 +1,6 @@
 # I will auto-generate 30 days of social media content
 
-**Price:** contact for quote
+**Price:** $400/gig
 **Margin:** —%
 **Tags:** social media, content creation, content calendar, n8n, ai content, social automation
 
@@ -9,7 +9,9 @@ A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-
+- **Basic** ($100, 3 days): Setup only; 1 workflow; Email support
+- **Standard** ($400, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
+- **Premium** ($800, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin

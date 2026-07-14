@@ -1,6 +1,6 @@
 # I will build a private RAG knowledge base for your business
 
-**Price:** contact for quote
+**Price:** $1500/gig
 **Margin:** —%
 **Tags:** rag, knowledge base, ai search, chatgpt for business, document ai, vector database
 
@@ -9,7 +9,9 @@ A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-
+- **Basic** ($375, 3 days): Setup only; 1 workflow; Email support
+- **Standard** ($1500, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
+- **Premium** ($3000, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin

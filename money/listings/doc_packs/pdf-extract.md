@@ -1,17 +1,17 @@
-# I will build you an AI customer support chatbot
+# I will automate PDF extraction & data entry with free open-source tools
 
-**Price:** $800/gig
+**Price:** $149/gig
 **Margin:** —%
-**Tags:** ai chatbot, customer support, chatwoot, n8n, ai assistant, helpdesk automation, faq bot
+**Tags:** pdf automation, data extraction, invoice processing, stirling pdf, docling, n8n, document automation, pdf to excel
 
 ## What you get
 A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-- **Basic** ($200, 3 days): Setup only; 1 workflow; Email support
-- **Standard** ($800, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
-- **Premium** ($1600, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
+- **Basic** ($37, 3 days): Single template; 1 workflow; Email support
+- **Standard** ($149, 5 days): Setup + test; Up to 3 templates; Loom walkthrough; 7-day support
+- **Premium** ($298, 7 days): Full system; Unlimited templates; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin
@@ -31,11 +31,11 @@ A: Yes — every package is generated from a template and tuned to your vertical
 ## Technical spec (for the build)
 ```json
 {
- "name": "deliver-chatbot",
+ "name": "deliver-doc-pdf-extract",
  "nodes": [
   {
    "parameters": {},
-   "name": "Webhook (order intake)",
+   "name": "Webhook (intake)",
    "type": "n8n-nodes-base.webhook",
    "typeVersion": 1,
    "position": [
@@ -45,7 +45,7 @@ A: Yes — every package is generated from a template and tuned to your vertical
   },
   {
    "parameters": {},
-   "name": "Build automation",
+   "name": "Stirling-PDF / Docling transform",
    "type": "n8n-nodes-base.code",
    "typeVersion": 1,
    "position": [
@@ -65,18 +65,18 @@ A: Yes — every package is generated from a template and tuned to your vertical
   }
  ],
  "connections": {
-  "Webhook (order intake)": {
+  "Webhook (intake)": {
    "main": [
     [
      {
-      "node": "Build automation",
+      "node": "Stirling-PDF / Docling transform",
       "type": "main",
       "index": 0
      }
     ]
    ]
   },
-  "Build automation": {
+  "Stirling-PDF / Docling transform": {
    "main": [
     [
      {
@@ -88,6 +88,6 @@ A: Yes — every package is generated from a template and tuned to your vertical
    ]
   }
  },
- "note": "Tools: Chatwoot + Hermes/OpenClaw + agent-sentinel (all free). Replace code node with your delivery logic."
+ "note": "Tools: Stirling-PDF + Docling + n8n + your doc-extractor skill \u2014 all free/self-hosted. Replace code node with your doc logic."
 }
 ```

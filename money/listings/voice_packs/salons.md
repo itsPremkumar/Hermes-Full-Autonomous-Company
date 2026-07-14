@@ -1,17 +1,17 @@
-# I will build you an AI customer support chatbot
+# I will build an AI voice booking assistant for your salon or spa
 
-**Price:** $800/gig
+**Price:** $1000/gig
 **Margin:** —%
-**Tags:** ai chatbot, customer support, chatwoot, n8n, ai assistant, helpdesk automation, faq bot
+**Tags:** ai voice agent, salon booking, appointment scheduler, spa automation, virtual assistant, n8n, chatwoot, missed call text back
 
 ## What you get
 A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-- **Basic** ($200, 3 days): Setup only; 1 workflow; Email support
-- **Standard** ($800, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
-- **Premium** ($1600, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
+- **Basic** ($250, 3 days): Single-line agent; 1 script; Email support
+- **Standard** ($1000, 5 days): Full voice agent; Booking/CRM hook; Loom walkthrough; 7-day support
+- **Premium** ($2000, 7 days): Multi-line + escalation; Unlimited scripts; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin
@@ -31,11 +31,11 @@ A: Yes — every package is generated from a template and tuned to your vertical
 ## Technical spec (for the build)
 ```json
 {
- "name": "deliver-chatbot",
+ "name": "deliver-voice-agent-salons",
  "nodes": [
   {
    "parameters": {},
-   "name": "Webhook (order intake)",
+   "name": "Twilio/Webhook (inbound call)",
    "type": "n8n-nodes-base.webhook",
    "typeVersion": 1,
    "position": [
@@ -45,7 +45,7 @@ A: Yes — every package is generated from a template and tuned to your vertical
   },
   {
    "parameters": {},
-   "name": "Build automation",
+   "name": "Whisper STT + Hermes agent",
    "type": "n8n-nodes-base.code",
    "typeVersion": 1,
    "position": [
@@ -55,8 +55,8 @@ A: Yes — every package is generated from a template and tuned to your vertical
   },
   {
    "parameters": {},
-   "name": "Deliver + notify",
-   "type": "n8n-nodes-base.emailSend",
+   "name": "Piper TTS + Chatwoot handoff",
+   "type": "n8n-nodes-base.code",
    "typeVersion": 1,
    "position": [
     600,
@@ -65,22 +65,22 @@ A: Yes — every package is generated from a template and tuned to your vertical
   }
  ],
  "connections": {
-  "Webhook (order intake)": {
+  "Twilio/Webhook (inbound call)": {
    "main": [
     [
      {
-      "node": "Build automation",
+      "node": "Whisper STT + Hermes agent",
       "type": "main",
       "index": 0
      }
     ]
    ]
   },
-  "Build automation": {
+  "Whisper STT + Hermes agent": {
    "main": [
     [
      {
-      "node": "Deliver + notify",
+      "node": "Piper TTS + Chatwoot handoff",
       "type": "main",
       "index": 0
      }
@@ -88,6 +88,6 @@ A: Yes — every package is generated from a template and tuned to your vertical
    ]
   }
  },
- "note": "Tools: Chatwoot + Hermes/OpenClaw + agent-sentinel (all free). Replace code node with your delivery logic."
+ "note": "Tools: Piper + Whisper + Hermes/OpenClaw + Chatwoot + n8n \u2014 all free/self-hosted. Replace code nodes with your STT/LLM/TTS logic."
 }
 ```

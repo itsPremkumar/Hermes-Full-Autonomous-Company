@@ -9,7 +9,7 @@ A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-
+- Configured, tested, and handed over with a walkthrough.
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin

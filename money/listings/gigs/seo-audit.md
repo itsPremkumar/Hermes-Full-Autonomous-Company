@@ -1,6 +1,6 @@
 # I will run an automated SEO & security audit of your website
 
-**Price:** contact for quote
+**Price:** $149/gig
 **Margin:** —%
 **Tags:** seo audit, website audit, security scan, technical seo, site report, n8n report
 
@@ -9,7 +9,9 @@ A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-
+- **Basic** ($37, 3 days): Setup only; 1 workflow; Email support
+- **Standard** ($149, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
+- **Premium** ($298, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin

@@ -35,7 +35,7 @@ Pick the highest-margin, fastest-deliverable package:
 6. Repeat on Upwork as a "Fixed-Price" job
 
 → System is now earning. The Moltbook scheduler (3-min cadence) keeps the
-acquisition funnel full via the 12 drafts in `revenue/moltbook/post-*.json`.
+acquisition funnel full via the 15 drafts in `revenue/moltbook/post-*.json`.
 
 ---
 
@@ -44,12 +44,12 @@ acquisition funnel full via the 12 drafts in `revenue/moltbook/post-*.json`.
 - [ ] Import each package's `n8n_workflow` into n8n (localhost:5678)
 - [ ] Set env vars (`$env.MAPS_KEY`, etc.) in n8n Credentials
 - [ ] Activate workflows → delivery runs automatically
-- [ ] Add more gigs from `money/listings/` (all 50 are ready)
+- [ ] Add more gigs from `money/listings/` (all 62 are ready)
 
 ## Verification you can run anytime
 ```
 cd money
-python run_all.py self-test    # 12 pipelines, 50 packages
-python generate_listings.py   # refresh 50 listings
-python generate_moltbook_drafts.py  # refresh 12 promo drafts
+python run_all.py self-test    # 15 pipelines, 62 packages
+python generate_listings.py   # refresh 62 listings
+python generate_moltbook_drafts.py  # refresh 15 promo drafts
 ```

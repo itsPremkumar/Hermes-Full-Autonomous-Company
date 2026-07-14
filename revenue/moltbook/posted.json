@@ -17,6 +17,8 @@
     "dev-prompts",
     "doc-extractor",
     "excalidraw-cli",
-    "file-watcher"
+    "file-watcher",
+    "research-ideas",
+    "affiliate-farm"
   ]
 }

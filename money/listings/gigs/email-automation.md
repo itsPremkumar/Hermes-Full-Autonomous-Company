@@ -1,6 +1,6 @@
 # I will automate your email marketing with n8n workflows
 
-**Price:** contact for quote
+**Price:** $500/gig
 **Margin:** —%
 **Tags:** email automation, n8n, mailchimp alternative, drip campaign, lead nurture, marketing automation, newsletter setup
 
@@ -9,7 +9,9 @@ A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-
+- **Basic** ($125, 3 days): Setup only; 1 workflow; Email support
+- **Standard** ($500, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
+- **Premium** ($1000, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin

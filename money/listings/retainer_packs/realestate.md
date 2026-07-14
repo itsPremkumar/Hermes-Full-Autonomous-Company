@@ -1,17 +1,17 @@
-# I will build you an AI customer support chatbot
+# I will run a monthly AI-agent retainer for your real-estate team
 
-**Price:** $800/gig
+**Price:** $4000/gig
 **Margin:** —%
-**Tags:** ai chatbot, customer support, chatwoot, n8n, ai assistant, helpdesk automation, faq bot
+**Tags:** ai agent, real estate lead gen, n8n, crm automation, lead qualification, autonomous agent, ai retainer
 
 ## What you get
 A done-for-you, automated solution built on 100% free/open-source tooling.
 No recurring SaaS fees — the system runs on your own infrastructure.
 
 ## Delivery process
-- **Basic** ($200, 3 days): Setup only; 1 workflow; Email support
-- **Standard** ($800, 5 days): Setup + test; Up to 3 workflows; Loom walkthrough; 7-day support
-- **Premium** ($1600, 7 days): Full system; Unlimited workflows; Monthly retainer option; Priority support
+- **Pilot** ($1333, 1 week): 1 agent; Core workflow; Email support; Weekly report
+- **Growth** ($4000, 1 week): 2–3 agents; CRM/marketplace hooks; Loom updates; Monthly call
+- **Scale** ($8000, 2 weeks): Unlimited agents; Full autonomy; Priority support; Quarterly roadmap
 
 ## Why this works
 - Self-hosted stack (n8n + free tools) → 90–99% profit margin
@@ -31,11 +31,11 @@ A: Yes — every package is generated from a template and tuned to your vertical
 ## Technical spec (for the build)
 ```json
 {
- "name": "deliver-chatbot",
+ "name": "deliver-agent-realestate",
  "nodes": [
   {
    "parameters": {},
-   "name": "Webhook (order intake)",
+   "name": "Schedule / Webhook (trigger)",
    "type": "n8n-nodes-base.webhook",
    "typeVersion": 1,
    "position": [
@@ -45,7 +45,7 @@ A: Yes — every package is generated from a template and tuned to your vertical
   },
   {
    "parameters": {},
-   "name": "Build automation",
+   "name": "Hermes agent (reason + act)",
    "type": "n8n-nodes-base.code",
    "typeVersion": 1,
    "position": [
@@ -55,8 +55,8 @@ A: Yes — every package is generated from a template and tuned to your vertical
   },
   {
    "parameters": {},
-   "name": "Deliver + notify",
-   "type": "n8n-nodes-base.emailSend",
+   "name": "Deliver + log to pgvector",
+   "type": "n8n-nodes-base.code",
    "typeVersion": 1,
    "position": [
     600,
@@ -65,22 +65,22 @@ A: Yes — every package is generated from a template and tuned to your vertical
   }
  ],
  "connections": {
-  "Webhook (order intake)": {
+  "Schedule / Webhook (trigger)": {
    "main": [
     [
      {
-      "node": "Build automation",
+      "node": "Hermes agent (reason + act)",
       "type": "main",
       "index": 0
      }
     ]
    ]
   },
-  "Build automation": {
+  "Hermes agent (reason + act)": {
    "main": [
     [
      {
-      "node": "Deliver + notify",
+      "node": "Deliver + log to pgvector",
       "type": "main",
       "index": 0
      }
@@ -88,6 +88,6 @@ A: Yes — every package is generated from a template and tuned to your vertical
    ]
   }
  },
- "note": "Tools: Chatwoot + Hermes/OpenClaw + agent-sentinel (all free). Replace code node with your delivery logic."
+ "note": "Tools: n8n + Hermes/OpenClaw + Crawl4AI + pgvector + Chatwoot \u2014 all free/self-hosted. Replace code node with your agent logic."
 }
 ```
