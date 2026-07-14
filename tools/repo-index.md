@@ -45,8 +45,12 @@ the publishable slices.
 | [prompt-templates-cli](https://github.com/itsPremkumar/prompt-templates-cli) | Render parameterized prompt templates from a catalog | `prompt_templates_cli.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/itspremkumar/skills/prompt-templates-cli |
 | [agent-guardrails](https://github.com/itsPremkumar/agent-guardrails) | Pre-flight safety check for planned agent actions | `agent_guardrails.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/itspremkumar/skills/agent-guardrails |
 | [skill-benchmark](https://github.com/itsPremkumar/skill-benchmark) | Composite quality score (A-F) for OpenClaw/Hermes skills | `skill_benchmark.py`, `SKILL.md`, `ci/` | Live on ClawHub: clawhub.ai/itspremkumar/skills/skill-benchmark |
+| [money-engine](https://github.com/itsPremkumar/money-engine) | **Core zero-cost income engine** — affiliate/SEO content, Gumroad products, Fiverr/POD/newsletter pipelines (Hermes + OpenClaw) | `build.py`, `config.json`, `BLUEPRINT-AI-BUSINESS.md`, `gumroad/` `fiverr/` `pod/` `newsletter/` `content/` | Public; drafts-only, human-gated approval per money rules |
+| [openclaw-control-guide](https://github.com/itsPremkumar/openclaw-control-guide) | Complete, verified guide to running/commanding OpenClaw as the chat/phone front-door | `README.md` | Public; mirrored into this repo at `infra/openclaw-control-guide.md` |
 
-> All 31 product repos are MIT, free, and secret-free (Moltbook key never exported).
+> **Verified 2026-07-14 (authenticated GitHub API):** all `itsPremkumar/*` repos listed above are live on GitHub. Count = 23 product/tool repos + this OS repo + 2 runtime repos (paperclipai/paperclip, hermes-agent) + openclaw. The previously-claimed "31 product repos" figure was **inaccurate** — the true live count is 23. Each product repo carries a CI/CD pipeline (`.github/workflows/ci.yml`) per the 7-axis "verify from all perspectives" workflow.
+> **Local-only (NOT published — secret-bearing):** `tour` (Next.js tour-booking app, contains a real `.env`; do not push). `money-engine` was local-only until 2026-07-14, now published above.
+> Moltbook key is never exported. All published repos are MIT, free, and secret-free.
 > Every product carries a professional CI/CD pipeline: `.github/workflows/ci.yml` runs the
 > 7-axis portfolio harness `ci/verify_product.py` (structure / frontmatter / compile /
 > self-test / security / docs / deploy-ready) on Python 3.8 AND 3.11, plus a
