@@ -14,6 +14,20 @@ During the 2026-07-13 autonomy loop, free physical memory dropped to ~284 MB (be
 ### Recommendation
 Consider adding a lightweight "canary" process that pre-warms model state only when RAM > 500 MB, and terminates it immediately if memory drops.
 
+## Low-RAM ticks reliably produce value via skill distillation (2026-07-14)
+On a tick where free RAM was ~231 MB (below the 300 MB threshold), the loop ran
+only a lightweight self-improve pass but still advanced the repo: it promoted the
+existing "Operating Under Critical RAM Pressure" lesson into a reusable
+`skills/automation/low-ram-self-protect.md` SKILL.md.
+
+### Lesson
+- A low-RAM tick is not wasted. Pure-text artifacts (SKILL.md, lessons-learned
+  entries, tasks.md maintenance) are safe and keep the repo moving even when
+  builds/inference are deferred.
+- When a lesson in `lessons-learned.md` is stable and broadly reusable, graduate
+  it into `skills/<category>/<name>.md` so it loads into the Hermes skill library
+  automatically. This is a high-leverage, zero-cost agent action.
+
 ## Use absolute Windows paths for the patch tool
 The `patch` tool resolves relative paths from the workspace root (`C:\one\paperclip-company`). Using `/c/one\...` produces a doubled `C:\c\one\...` path. Use `C:\one\...` style paths directly.
 
