@@ -54,9 +54,11 @@ build trust and convert interested teams into custom automation engagements.
 | --- | --- |
 | Autonomous Operations Playbook | Done |
 | Product Analysis & Zero-Investment Monetization Plan | Done |
-| Agent-labor service description + pricing tiers | In progress |
-| 3 sample short-form videos | In progress |
-| Direct outreach on free job boards | In progress |
+| Agent-labor service description + pricing tiers | Staged (CEO-approved $129–$499/mo + $990 custom; founder publish gate) |
+| 3 sample short-form videos | Rendered (AVG pipeline) — publish to YouTube/TikTok pending founder login |
+| Direct outreach on free job boards | Kit staged (PRE-8) — founder executes posting |
+| 11 Gumroad digital products (incl. 150 Developer Prompts) | Staged — Gumroad publish pending founder login |
+| This showcase repo + LinkedIn launch copy | Staged (PRE-5) — founder publish gate |
 
 ---
 

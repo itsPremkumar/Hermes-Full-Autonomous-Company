@@ -1,10 +1,15 @@
 {
   "store": {
-    "name": "Prem Autonomous Co — Digital Products",
+    "name": "Prem Autonomous Co \u2014 Digital Products",
     "tagline": "Build tools that make founders and creators money",
     "platform": "Gumroad",
     "currency": "USD",
-    "payment_methods": ["Credit Card", "PayPal", "Apple Pay", "Google Pay"],
+    "payment_methods": [
+      "Credit Card",
+      "PayPal",
+      "Apple Pay",
+      "Google Pay"
+    ],
     "worldwide_shipping": true,
     "instant_delivery": true
   },
@@ -12,10 +17,15 @@
     {
       "id": "prem-50-viral-scripts",
       "title": "50 Viral Short-Form Video Scripts",
-      "tagline": "Done-for-You YouTube Shorts / Reels / TikTok Scripts — 5 Niches, Ready to Film",
+      "tagline": "Done-for-You YouTube Shorts / Reels / TikTok Scripts \u2014 5 Niches, Ready to Film",
       "price_usd": 12,
       "category": "Content / Templates",
-      "file_formats": ["PDF", "Markdown", "CSV", "JSON"],
+      "file_formats": [
+        "PDF",
+        "Markdown",
+        "CSV",
+        "JSON"
+      ],
       "sample_script": "Space is stranger than you think. A day on Venus is longer than its whole year...",
       "status": "ready",
       "product_dir": "product-1-video-scripts"
@@ -23,21 +33,33 @@
     {
       "id": "prem-agent-playbook",
       "title": "Autonomous AI Agent Operations Playbook",
-      "tagline": "Run an Entire Company with AI Agents — Zero Headcount, Zero Burn",
+      "tagline": "Run an Entire Company with AI Agents \u2014 Zero Headcount, Zero Burn",
       "price_usd": 29,
       "category": "Business / Operations",
-      "file_formats": ["PDF", "Markdown"],
-      "includes_templates": ["AGENTS.md", ".env.example", "issue-template.json", "heartbeat-config.yaml"],
+      "file_formats": [
+        "PDF",
+        "Markdown"
+      ],
+      "includes_templates": [
+        "AGENTS.md",
+        ".env.example",
+        "issue-template.json",
+        "heartbeat-config.yaml"
+      ],
       "status": "ready",
       "product_dir": "product-2-playbook"
     },
     {
       "id": "prem-remotion-templates",
       "title": "Remotion Short-Form Video Template Pack",
-      "tagline": "Production-Ready Video Generation Templates for AVG — 12 Templates",
+      "tagline": "Production-Ready Video Generation Templates for AVG \u2014 12 Templates",
       "price_usd": 19,
       "category": "Templates / Development",
-      "file_formats": ["JSON", "Markdown", "Configuration"],
+      "file_formats": [
+        "JSON",
+        "Markdown",
+        "Configuration"
+      ],
       "templates_count": 12,
       "status": "ready",
       "product_dir": "product-3-remotion-templates"
@@ -48,7 +70,9 @@
       "tagline": "8 Complete Assets to Launch Your AI-Native Business at $0 Cost",
       "price_usd": 29,
       "category": "Business / Strategy",
-      "file_formats": ["Markdown"],
+      "file_formats": [
+        "Markdown"
+      ],
       "assets_count": 8,
       "status": "ready",
       "product_dir": "product-4-monetization-kit"
@@ -59,7 +83,10 @@
       "tagline": "Done-for-You Sequences That Get Replies (Not Ignored)",
       "price_usd": 15,
       "category": "Marketing / Sales",
-      "file_formats": ["Markdown", "CSV"],
+      "file_formats": [
+        "Markdown",
+        "CSV"
+      ],
       "templates_count": 13,
       "status": "ready",
       "product_dir": "product-5-outreach"
@@ -67,10 +94,13 @@
     {
       "id": "prem-job-board-guide",
       "title": "Free Job Board Outreach Mastery Guide",
-      "tagline": "Land Clients on Naukri, LinkedIn, Wellfound, YC & More — $0 Spent",
+      "tagline": "Land Clients on Naukri, LinkedIn, Wellfound, YC & More \u2014 $0 Spent",
       "price_usd": 12,
       "category": "Career / Freelance",
-      "file_formats": ["Markdown", "PDF"],
+      "file_formats": [
+        "Markdown",
+        "PDF"
+      ],
       "platforms_covered": 10,
       "status": "ready",
       "product_dir": "product-6-job-board"
@@ -81,7 +111,11 @@
       "tagline": "Customizable Tiered Pricing for AI-Native Services",
       "price_usd": 19,
       "category": "Templates / Business",
-      "file_formats": ["Markdown", "CSV", "JSON"],
+      "file_formats": [
+        "Markdown",
+        "CSV",
+        "JSON"
+      ],
       "tier_templates": 6,
       "status": "ready",
       "product_dir": "product-7-pricing-templates"
@@ -89,10 +123,14 @@
     {
       "id": "prem-30-day-launch",
       "title": "30-Day Zero-Cost Business Launch Plan",
-      "tagline": "From Zero to First Paying Customer in 30 Days — $0 Spent",
+      "tagline": "From Zero to First Paying Customer in 30 Days \u2014 $0 Spent",
       "price_usd": 9,
       "category": "Business / Strategy",
-      "file_formats": ["Markdown", "PDF", "CSV"],
+      "file_formats": [
+        "Markdown",
+        "PDF",
+        "CSV"
+      ],
       "days_covered": 30,
       "target_mrr": 245,
       "status": "ready",
@@ -101,10 +139,14 @@
     {
       "id": "prem-agent-caps",
       "title": "AI Agent Capability Manifest Toolkit",
-      "tagline": "Validate, scaffold & cross-check agent capability manifests — zero dependencies, agent-native",
+      "tagline": "Validate, scaffold & cross-check agent capability manifests \u2014 zero dependencies, agent-native",
       "price_usd": 14,
       "category": "Developer Tools / AI Agents",
-      "file_formats": ["Python", "JSON", "Markdown"],
+      "file_formats": [
+        "Python",
+        "JSON",
+        "Markdown"
+      ],
       "runnable": true,
       "dependencies": "Python 3.8+ (stdlib only)",
       "status": "ready",
@@ -113,22 +155,36 @@
     {
       "id": "prem-dev-prompts",
       "title": "150 Developer Productivity Prompts",
-      "tagline": "Battle-tested AI prompts for code review, debugging, architecture, refactoring, testing, and docs — 150 copy-paste prompts",
+      "tagline": "Battle-tested AI prompts for code review, debugging, architecture, refactoring, testing, and docs \u2014 150 copy-paste prompts",
       "price_usd": 14,
       "category": "Developer Tools / Prompts",
-      "file_formats": ["Markdown"],
+      "file_formats": [
+        "Markdown"
+      ],
       "prompts_count": 150,
-      "categories": ["Code Review", "Debugging", "Architecture Design", "Refactoring", "Testing", "Documentation"],
+      "categories": [
+        "Code Review",
+        "Debugging",
+        "Architecture Design",
+        "Refactoring",
+        "Testing",
+        "Documentation"
+      ],
       "status": "ready",
       "product_dir": "dev-prompts-pack"
     },
     {
       "id": "prem-agent-sentinel",
-      "title": "Agent Sentinel — Security Audit Toolkit for AI Skills",
+      "title": "Agent Sentinel \u2014 Security Audit Toolkit for AI Skills",
       "tagline": "Vet any OpenClaw/Hermes skill for risky permissions before you install it. Batch-scan, CI-gate, zero dependencies.",
       "price_usd": 14,
       "category": "Developer Tools / Security",
-      "file_formats": ["Python", "Bash", "JSON", "Markdown"],
+      "file_formats": [
+        "Python",
+        "Bash",
+        "JSON",
+        "Markdown"
+      ],
       "runnable": true,
       "dependencies": "Python 3.8+ (stdlib only)",
       "status": "ready",
@@ -148,6 +204,14 @@
     "total_product_categories": 10,
     "ready_to_list": 11,
     "runnable_tools": 2,
-    "file_formats_used": ["PDF", "Markdown", "CSV", "JSON", "Configuration", "Python", "Bash"]
+    "file_formats_used": [
+      "PDF",
+      "Markdown",
+      "CSV",
+      "JSON",
+      "Configuration",
+      "Python",
+      "Bash"
+    ]
   }
 }
