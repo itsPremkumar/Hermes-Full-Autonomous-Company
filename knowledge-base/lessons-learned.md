@@ -87,3 +87,33 @@ the free `secret-scanner` / `skill-lint` skills already in `clawhub-skills/`.
   so the funnel has a concrete destination and the post ages well.
 - The article should be runnable on the same constrained box the company runs on
   (no deps, no network) — demonstrate that constraint as proof, not an apology.
+
+## income-engine generators were never run (2026-07-14 tick)
+On this tick, `revenue/blog/` had 7 hand-written funnel articles but the
+`income-engine/content/` and `income-engine/gumroad/products/` output streams were
+**empty** — the two existing generators (`generate_blog.py`, `generate_gumroad.py`)
+had never been executed, even though the catalog lists 11 ready products and 5 blog
+niches were configured.
+
+### What I did (agent-safe)
+- Ran `python income-engine/generate_blog.py` → it populated 5 affiliate guides into
+  `income-engine/content/` (idempotent via `.used_blog.json`). The generator works
+  with stdlib only; no pip.
+- Wrote a new original SEO funnel article
+  (`revenue/blog/2026-07-14-zero-budget-ai-automation-agency.md`) — no affiliate
+  tokens, ROI-framed, links to the existing "AI agency stack" angle (compounds the
+  cluster).
+- Created a real `tasks.md` board mirror so future ticks have structured work and do
+  not silently fall back to self-improve. Human-gated items (Gumroad publish,
+  payouts, signups) are explicitly flagged, not executed.
+
+### Lesson
+- **Generators ≠ output.** Having a pipeline script is not the same as having run it.
+  On a fresh tick, `git status` the known output dirs (`income-engine/content`,
+  `income-engine/gumroad/products`, `revenue/blog`) before assuming work is done.
+- The `generate_gumroad.py` ideas (n8n pack, ROI calculator, proposal template) do
+  **not** match the 11 catalog products — a future tick should extend or replace its
+  `PRODUCT_IDEAS` to emit one folder per real catalog product so the 11 ready items
+  actually get Gumroad-ready listings (still human-gated to publish).
+- Path gotcha re-confirmed: write_file with `/c/one/...` produced `C:\c\one\...`.
+  Always use `C:\one\...` absolute Windows paths in this environment.
