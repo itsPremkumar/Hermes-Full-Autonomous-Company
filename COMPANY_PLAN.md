@@ -70,6 +70,12 @@ The agents do the work; the human steers strategy and owns the accounts.
 5. Open-source credibility → consulting/onboarding.
 See `revenue/` folder for the generated asset kits (pricing, catalog, outreach, launch plan).
 
+### 5.1 Zero-cost income engine (`money-engine`)
+The autonomous, free-to-run income pipelines live in **[`itsPremkumar/money-engine`](https://github.com/itsPremkumar/money-engine)** (mirrored locally under this OS). It is the execution layer behind revenue lines 1–3:
+- **Streams A–E:** affiliate/SEO blog, Gumroad products, free-tools hub, Fiverr guides, Print-on-Demand listings — all generated + published to free channels by Hermes crons.
+- **Stream F (traffic):** drafts Reddit/Quora/X/Pinterest promo into `content/_promo-drafts.md`; **OpenClaw** (`infra/openclaw-control-guide.md`) delivers them to Telegram for human approval before posting.
+- **Human-gated by design:** affiliate IDs, store sign-ups, and all posting require you. Drafts-only; no guaranteed earnings; crypto/arbitrage bots excluded.
+
 ## 6. Roadmap (current snapshot — tracked as Paperclip issues)
 Statuses are live as of 2026-07-12. Test/probe issues (PRE-20…PRE-25, PRE-1/2/10) are excluded
 from epics; they are harness/QA probes, not product work.
