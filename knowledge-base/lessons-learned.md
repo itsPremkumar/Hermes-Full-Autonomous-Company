@@ -174,3 +174,27 @@ buyers can drop the data straight into Stripe or a spreadsheet.
 - Reuse the established PRODUCT.md + LISTING.txt shape (incl. the explicit
   "HOW TO PUBLISH (human step)" block) so all packs stay consistent and the
   publish step stays clearly human-gated.
+
+## Packaging product-2 (Autonomous AI Agent Operations Playbook) — 2026-07-14
+The highest-value un-packaged catalog product (`prem-agent-playbook`, $29) was
+packaged from its 60-line `digital-products/product-2-playbook/README.md` into
+`income-engine/gumroad/products/agent-ops-playbook/`. Because the README only
+listed bonus templates by name (`AGENTS.md`, `.env.example`, `issue-template.json`,
+`heartbeat-config.yaml`) without shipping them, this tick authored all four as
+real, self-contained files — so the pack is complete and deployable, not just a
+promise.
+
+### Lesson
+- A README that *names* bonus assets but doesn't ship them is a packaging debt.
+  When packaging such a product, generate the named assets from the playbook's
+  own content — don't hunt for them elsewhere. The result is a self-contained
+  product that matches its listing promise.
+- The `.env.example` ships empty/placeholder-only by design; the autonomy loop's
+  secret scan (in heartbeat-config.yaml) blocks any populated `.env` from commit.
+  This keeps the "never commit secrets" rule enforceable at the product level.
+- Use `C:\one\...` absolute paths (not `/c/one\...`) with the write tool to
+  avoid the doubled `C:\c\one\...` stray-directory bug noted earlier.
+- Five of the eight original catalog products are now packaged (product-1,
+  -5, -7, -8 done earlier; product-2 this tick). Remaining un-packaged:
+  product-3 (remotion templates), product-4 (monetization kit), product-6
+  (job-board guide).

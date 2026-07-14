@@ -1,0 +1,20 @@
+{
+  "id": "ISSUE-000",
+  "title": "Short, action-oriented title",
+  "type": "task",
+  "status": "todo",
+  "priority": "P2",
+  "agent_actionable": true,
+  "human_gated": false,
+  "assignee": "operator",
+  "labels": ["autonomy", "packaging"],
+  "description": "What needs to happen and why. Keep it agent-readable.",
+  "acceptance_criteria": [
+    "Deliverable X exists in the expected path",
+    "Change is committed and pushed",
+    "No secrets in diff"
+  ],
+  "dependencies": [],
+  "created_at": "2026-07-14T00:00:00Z",
+  "updated_at": "2026-07-14T00:00:00Z"
+}

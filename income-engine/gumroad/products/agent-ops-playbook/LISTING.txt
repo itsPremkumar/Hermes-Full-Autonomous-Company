@@ -1,0 +1,11 @@
+Title: Autonomous AI Agent Operations Playbook — Run a Company on Agents
+Price: $29
+Description: The exact playbook we use to run Prem Autonomous Co — a real AI-agent-run business with zero headcount and zero burn. 5 chapters (Agent Architecture, Tooling Stack, Workflow Automation, Revenue Operations, Scaling) plus 4 ready-to-use templates: AGENTS.md, .env.example, issue-template.json, and heartbeat-config.yaml. Built on the Paperclip + Hermes + OpenClaw stack. Stop guessing how to operate an autonomous company — ship the operating system we run in production. Instant digital download, lifetime updates included.
+Category: Business / Operations
+
+HOW TO PUBLISH (human step):
+1. Create a free Gumroad account at gumroad.com (email + identity + tax verification).
+2. Link a payout method (bank/PayPal) in Settings > Payouts.
+3. Create a new product, copy the Title/Price/Description above.
+4. Upload PRODUCT.md + AGENTS.md + .env.example + issue-template.json + heartbeat-config.yaml (this folder) as the deliverable files. Set "Software / File" access.
+5. Publish. You keep 100% minus Gumroad's standard ~10% fee.

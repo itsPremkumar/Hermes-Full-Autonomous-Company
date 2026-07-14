@@ -1,0 +1,42 @@
+# heartbeat-config.yaml — Autonomous loop configuration
+# Idempotent, fail-safe, RAM-aware. Every tick re-reads this.
+
+loop:
+  enabled: true
+  interval_min: 15
+  max_runtime_min: 10
+  idempotent: true          # safe to re-run after a crash
+
+ram_guard:
+  check_command: "wmic OS Get FreePhysicalMemory"
+  unit: KB
+  low_threshold_kb: 307200  # 300 MB
+  on_low: lightweight_pass  # defer heavy work; docs/skills only
+
+git:
+  remote: origin
+  branch: master
+  pull_strategy: ff-only    # never merge-rebase automatically
+  secret_scan:
+    enabled: true
+    block_patterns:
+      - "sk-or-*"           # OpenRouter keys
+      - ".env"              # never commit populated env
+      - "password="
+      - "secret="
+
+task_selection:
+  source_of_truth: tasks.md
+  prefer: agent_actionable_and_not_human_gated
+  skip_and_flag:
+    - gumroad_publish
+    - payouts
+    - bank_paypal_link
+    - account_signup
+    - tax
+    - any_money_movement
+
+safety:
+  human_gated_stays_human: true
+  abort_on_secret_leak: true
+  max_consecutive_failures: 3
