@@ -277,6 +277,7 @@ files, not in any chat. The following subsystems are defined as concrete repo ar
 | Repository index | `tools/repo-index.md` | Searchable catalog (purpose/license/maintenance/integration/owner) |
 | Failure taxonomy | `docs/failure-taxonomy.md` | 8 categories, each with a recovery strategy |
 | Prompt-craft lessons | `docs/prompt-craft-lessons.md` | Transferable structural lessons from external prompt analysis (leaked-material rejected) |
+| Agent stack architecture | `docs/hermes-paperclip-openclaw-architecture.md` | Hermes = 1st boss (self-improving), Paperclip = 2nd boss (ops), OpenClaw = channel; verified vs live state + GitHub API |
 | Maturity levels | `docs/maturity.md` | Idea→…→Archived; gates autonomy per level |
 | Never reinvent | §4 + `tools/repo-index.md` | Search ≥3 mature solutions, compare, reuse, build only if none fits |
 | Production checklist | `docs/production-readiness.md` | Ship gate (docs/tests/security/rollback/monitor/tag/checkpoint/sign-off) |
