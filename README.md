@@ -15,7 +15,7 @@
 | `tools/` | `approved.md` (validated tools + how to run) · `rejected.md` (tried & dropped, with reason) |
 | `knowledge-base/` | `lessons-learned.md` · `benchmarks.md` |
 | `business/` | `marketing/` `finance/` `product/` `customer-support/` |
-| `infra/` | deployment, security, monitoring notes · **`openclaw-control-guide.md`** (how to run/command OpenClaw — the chat/phone front-door) |
+| `infra/` | deployment, security, monitoring notes · `openclaw-control-guide.md` (chat/phone front-door) · **`paperclip-control-guide.md`** (company runtime control) |
 | `products/` | the actual digital products |
 | `income-engine/` | zero-cost asset generator + publish scripts |
 | `finance/` | `revenue-ledger.csv`, `burn-guard.py`, `burn-policy.json` |
